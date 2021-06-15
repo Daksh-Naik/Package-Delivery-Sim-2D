@@ -19,7 +19,7 @@ var RoadworkGroup, roadworksL, roadworksL2, roadworksR, roadworksR2, roadworksR3
 let fr = 40;
 let DTtimer = 0;
 let oppotimer = 0;
-let timer = 30;
+let timer = 40;
 let timerleft = 60;
 let packages = 5;
 let packagedeli = 0;

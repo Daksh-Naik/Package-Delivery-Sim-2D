@@ -1,1 +1,0 @@
-Package Delivery Sim 2D by P5.PLAY and P5.JS

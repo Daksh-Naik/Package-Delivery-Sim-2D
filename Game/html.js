@@ -141,6 +141,7 @@ class HTMLPSCHARS {
         this.timetakeninst.position(10, 100);
         this.timetakeninst.html("Total time taken : ");
         this.timetakeninst.style('color', 'white');
+        this.timetakeninst.style('font-family', 'Trebuchet MS');
         this.timetakeninst.style('background-color', 'black');
         this.timetakeninst.style('padding', '15px');
         this.timetakeninst.style('border-radius', '15px');
@@ -151,6 +152,7 @@ class HTMLPSCHARS {
         this.timetaken.style('color', 'white');
         this.timetaken.style('background-color', 'black');
         this.timetaken.style('padding', '15px');
+        this.timetaken.style('font-family', 'Trebuchet MS');
         this.timetaken.style('border-radius', '15px')
 
     }

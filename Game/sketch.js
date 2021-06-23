@@ -313,7 +313,7 @@ function draw() {
         htmlps.startDisplay();
     }
 
-    if (keyDown("E")) {
+    if (keyDown("E") && gameState === Start) {
         gameState = Play;
     }
 
@@ -703,3 +703,5 @@ function oppotimerCounter() {
         oppotimer++;
     }
 }
+
+//Package Delivery Sim 2D P5 : Developed by Daksh Naik, made with P5.PLAY, P5.JS and P5.DOM, hosted by Github Pages. Last update : 20-6-2021 at 11:35 

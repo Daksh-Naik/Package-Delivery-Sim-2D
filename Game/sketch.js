@@ -358,7 +358,6 @@ function draw() {
 
         if (delvan.isTouching(HousePA)) {
             htmlps.DropPackageInstructShow();
-            delvan.collide(TrafficGroup);
         } else {
             htmlps.DropPackageInstructHide();
         }

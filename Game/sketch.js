@@ -671,6 +671,9 @@ function draw() {
     if (gameState === angrymode) {
 
         timer = 500;
+        
+    delvan.collide(allLanes);
+    delvan.collide(iPaths);
 
         TrafficGroup.destroyEach();
         RoadworkGroup.destroyEach();

@@ -130,6 +130,9 @@ class HTMLPSCHARS {
         this.mtimer.style('border-radius', '25px');
         this.mtimer.style('user-select', 'none');
 
+    }
+
+    timeTakenShow() {
         this.mtimereas.position(10, 350);
         this.mtimereas.html(" "+timer +" Seconds");
         this.mtimereas.style('color', 'white');
@@ -139,9 +142,6 @@ class HTMLPSCHARS {
         this.mtimereas.style('border-radius', '15px');
         this.mtimereas.style('user-select', 'none');
 
-    }
-
-    timeTakenShow() {
         this.timetakeninst.position(10, 100);
         this.timetakeninst.html("Total time taken : ");
         this.timetakeninst.style('color', 'white');

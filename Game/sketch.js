@@ -43,6 +43,7 @@ var Play = 1;
 var End = 2;
 var Due = 3;
 var Win = 4;
+var angrymode = 5;
 var gameState = Start;
 
 function preload() {
@@ -660,6 +661,59 @@ function draw() {
 
     if (packages === 0 && gameState === Play) {
         gameState = Win;
+    }
+    
+    
+    if (keyDown("X") && gameState === Play) {
+        gameState = angrymode;
+    }
+
+    if (gameState === angrymode) {
+
+        timer = 500;
+
+        TrafficGroup.destroyEach();
+        RoadworkGroup.destroyEach();
+
+        htmlps.devmodeON();
+        htmlps.dashHideWin();
+        htmlps.dashDisplaydevMode();
+        htmlps.allHousesDisplayOff();
+
+        if (keyDown("UP_ARROW")) {
+            delvan.addSpeed(0.2, delvan.rotation);
+        }
+
+        if (keyDown("UP_ARROW") && keyDown("W")) {
+            delvan.y = delvan.y - 15;
+            delvan.addSpeed(0.7, delvan.rotation);
+        }
+
+        if (keyDown("DOWN_ARROW")) {
+            delvan.y = delvan.y + 10;
+            delvan.addSpeed(-0.5, delvan.rotation);
+        }
+
+        if (keyDown("LEFT_ARROW") && keyDown("UP_ARROW")) {
+            delvan.rotation -= 2;
+        }
+
+        if (keyDown("RIGHT_ARROW") && keyDown("UP_ARROW")) {
+            delvan.rotation += 2;   
+        }
+
+        if (keyDown("LEFT_ARROW") && keyDown("DOWN_ARROW")) {
+            delvan.rotation -= 2;
+        }
+
+        if (keyDown("RIGHT_ARROW") && keyDown("DOWN_ARROW")) {
+            delvan.rotation += 2;
+        }
+
+    }
+
+    if (keyDown("E") && gameState === angrymode) {
+        window.location.reload();
     }
 
     drawSprites();

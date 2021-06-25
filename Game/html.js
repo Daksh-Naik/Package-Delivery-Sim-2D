@@ -39,6 +39,10 @@ class HTMLPSCHARS {
 
         this.gamewintitle = createElement('h2'); 
         this.gamewinscores = createElement('h3');
+        
+        
+        this.angrymode = createElement('h2');
+        this.devmoderes = createElement('h2');
     }
 
     showTitle() {
@@ -399,5 +403,34 @@ class HTMLPSCHARS {
         this.restartinst.style('background-color', 'black');
         this.restartinst.style('padding', '10px')
 
+    }
+    
+    
+    devmodeON() {
+        this.angrymode.position(1000, 80);
+        this.angrymode.html("Altaer Mode : ON");
+        this.angrymode.style('color', 'white');
+        this.angrymode.style('font-family', 'Trebuchet MS');
+    }
+    
+    dashDisplaydevMode() {
+        this.odometer.hide();
+        this.mtimereas.hide(); 
+        this.mtimer.hide();
+        this.packagesdeli.hide();
+        this.packagesleft.hide();
+        this.oppodtimert.hide();
+        this.timetaken.hide();
+        this.timetakeninst.hide();
+        this.DTtimert.hide();
+
+        this.devmoderes.position(1000, 150);
+        this.devmoderes.html("Press F5 to Revert");
+        this.devmoderes.style('color', 'white');
+        this.devmoderes.style('font-family', 'Trebuchet MS');
+    }
+
+    devmodeOFF() {
+        this.angrymode.html("Altaer Mode : OFF");
     }
 }

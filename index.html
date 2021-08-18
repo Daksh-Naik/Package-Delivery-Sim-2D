@@ -1,671 +1,173 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <title>Package Delivery Sim 2D P5</title>
+        <title>Package Delivery Sim 2D V1 P5</title>
+
         <meta name="viewport" content="width=device-width">
+        
         <link rel="icon" href="Game/images/delvan/delivprof.png">
+        <link rel="stylesheet" href="base.css">
+        
         <meta name="description" content="Package Delivery Sim 2D V1 P5 : Game Menu - Index | Hosted by Github Pages | Made by Daksh Naik">
     </head>
         <style>
 
-            html {
-                user-select: none;
-                scroll-behavior: smooth;
-                -moz-window-dragging: false;
-            }
+            h1 {padding: 10px; font-size: 40px; text-decoration: underline; transition: 0.3s; color: rgb(255, 255, 255);}
+            h1:hover { color: rgb(219, 219, 219); }
 
-            body {
-                user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                background-color: rgb(3, 3, 3);
-                text-align: center;
-                transition: all 0.3s;
-            }
-
-            @keyframes fadeIn {
-                    0% {opacity: 0;}
-                    100% {opacity: 1;}
-            } 
-
-            ::-webkit-scrollbar {
-                width: 20px;
-                background-color: black;
-                transition: 0.5s;
-            }
-
-            ::-webkit-scrollbar-track {
-                background: black;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background:rgb(166, 255, 166);
-                border-radius: 75px;
-                transition: 0.5s;
-            }
-
-            ::-webkit-scrollbar-thumb:hover {
-                background: rgb(114, 255, 114);
-            }
-
-            h1 {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                padding: 10px;
-                font-size: 40px;
-                text-decoration: underline;
-                transition: 0.3s;
-                color: antiquewhite;
-            }
-
-            h1:hover {
-                color: rgb(168, 168, 168);
-            }
-
-            .topnav {
-                transition: 0.5s;
-                overflow: hidden;
-                background-color: rgb(34, 34, 34);
-            }
-
-            .topnav a {
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                transition: 0.5s;
-                }
-
-            .topnav a:hover {
-                background-color: rgb(255, 255, 255);
-                color: black;
-            }
-
-            .topnav a.active {
-                background-color: #9bff61;
-                color: rgb(0, 0, 0);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-weight: 600;
-            }
-
-            .topnav a.active:hover {
-                background-color:rgb(233, 233, 233);
-                color: black;
-                font-weight: 900;
-                font-size: 18px;
-                text-shadow: 2px 2px rgb(24, 255, 35);
-            }
-
-            .topnav .plagame {
-                background-color: hsl(140, 100%, 89%);
-                color: black;
-            }
-
-            .topnav .plagame:hover {
-                background-color: black;
-                color: #3eff7f;
-            }
-
+            .topnav { transition: 0.5s; overflow: hidden; background-color: rgb(34, 34, 34);}
+            .topnav a { float: left; display: block;  padding: 14px 16px; text-decoration: none; font-size: 17px; transition: 0.5s;}
+            .topnav a:hover { background-color: rgb(255, 255, 255); color: black; text-decoration: none;}
+            .topnav a.active { background: linear-gradient(rgb(60, 255, 0), rgb(255, 255, 255)); font-weight: 600; color: black;}
+            .topnav a.active:hover { background-color:rgb(233, 233, 233); font-size: 18px;}
+            .topnav .plagame { background-color: hsl(182, 100%, 50%); color: black; }
+            .topnav .plagame:hover {background-color: black; color: #3eff7f; }
             @media screen and (max-width: 1010px) {
                 .topnav a:not(:first-child) {display: none;}
-                .topnav a.icon {
-                    float: right;
-                    display: block;
-                }
-
-                .topnav a.active {
-                    width: max-content;
-                }
+                .topnav a.icon { float: right; display: block; }
+                .topnav a.active { width: max-content; }
             }
-
-            @media screen and (max-width: 950px) {
+            @media screen and (max-width: 950px) { 
                 .topnav.responsive {position: relative;}
-                .topnav.responsive .icon {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-            }
-            .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-            }
+                .topnav.responsive .icon {position: absolute; right: 0; top: 0; }
+            .topnav.responsive a { float: none; display: block; text-align: left; } }
 
-            #scroll-to-top{
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                z-index: 99;
-                font-size: 20px;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 4px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                color: black;
-                background-color: rgb(0, 255, 13);
+            #scroll-to-top{ display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; font-size: 20px;
+                border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 4px; color: black;
+                background-color: rgb(0, 255, 13); transition: 0.3s; font-weight: 900;}
+            #scroll-to-top:hover { color: rgb(9, 255, 0); background-color:rgb(26, 26, 26); }
+
+            .title {padding: 45px; margin: 20px; background: linear-gradient(#73ff00, rgb(255, 255, 255)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+            .title:hover {font-size: 45px;}
+
+            .game-story { color: rgb(252, 0, 50); font-weight: 800; padding: 30px; transition: 0.5s; font-size:20px; }
+            .game-story:hover { color: #ff92a8; font-size: 21px; }
+
+            .game-specs { border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); margin: 10px; font-size: 19px; font-weight: 400; padding: 25px; color: rgb(194, 190, 255); transition: 0.3s; }
+            .game-specs:hover { color: #d3d1ff; }
+            .game-specs-tested{ margin: 20px; text-align: left; }
+            .game-specs-tested-machi{ margin: 20px; text-align: right;}
+            .game-specs-about{ margin: 20px; text-align: left;}
+            .game-specs-other{margin: 20px;}
+
+            .brief { color: rgb(184, 255, 184); margin: 10px; padding: 30px; font-weight: 100; transition: 0.5s; font-size: 19px;list-style-type:square; } 
+            
+            img { width: 100%; max-width: 100%; height: auto; margin-left: auto; margin-right: auto; }
+
+            code { background-color: rgb(223, 223, 223); color: black; padding: 1px 3px; border-radius: 5px; transition: 0.3s; font-weight: 900;} 
+            code:hover{ background-color: black; color: white;}
+
+            .controls { color: rgb(184, 228, 255); background:linear-gradient(to top right, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); margin: 15px; padding: 30px; font-size: larger; border-radius: 5px; }
+
+            .ohyes{ background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; justify-content: space-around;
+                background: linear-gradient(to bottom right, rgb(0, 0, 0) 20%, rgb(17, 17, 17) 100%); }
+            .buttonP{ font-size: 35px; background: linear-gradient(to bottom left, #73ff00 0%, #ffffff 100%); color: black;
+                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s; }
+            .buttonP:hover{ text-decoration: none; font-size: 40px; background: linear-gradient(to top right, #73ff00 0%, #ffffff 100%); color: black; }
+            .stablerel{ margin: 10px; }
+            .buttonPnodis { text-decoration: none; padding:40px; border-radius: 25px;  color:rgb(255, 0, 0); font-weight: 800;font-size: 30px; transition: 0.3s;  }
+
+            .updates {padding: 20px 20px; border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); }
+
+            .hints { color:rgb(255, 255, 255); font-weight: 300; transition: 0.3s; }
+            
+            .knownbugs {  font-weight: 500; transition: 0.3s; list-style-type:square; }
+ 
+            .stats { padding: 0px 5px; background-color: initial; transition: 0.3s; font-size: 18px; font-weight: 500; }
+
+            .game-credits { background-color: rgb(20, 20, 20); padding: 10px; font-size: 20px; transition: 0.4s; border-top-style: solid; border-width: 5px; border-color: rgb(131, 131, 131); }
+            .game-credits:hover { background-color: rgb(15, 15, 15); }
+
+            .p5-js-cred { font-weight: 900; padding: 10px 30px; color:#ed225d; text-decoration: none; transition: 0.3s; }
+            .p5-js-cred:hover { color: #fa759b; font-size: 25px; }
+
+            .externals-cred { padding: 10px 20px; }
+            .externals-cred-links {display: flex; justify-content: space-around;}
+
+            .coding-train { font-family: 'Comic Sans MS'; color: rgb(255, 19, 255); padding: 10px 30px; font-weight: 600; font-size: 20px; transition: 0.3s;    }
+            .coding-train:hover { color: rgb(197, 0, 197); font-size: 21px; }
+            .w3sch { color:rgb(0, 190, 0); font-weight: 900; padding: 10px 30px; font-size: 20px; transition: 0.3s; }
+            .w3sch:hover { color: rgb(52, 255, 52); font-size: 21px; }
+            .stckover {
+                color:rgb(226, 148, 2); font-weight: 900; padding: 10px 30px; font-size: 20px; transition: 0.3s; }
+            .stckover:hover { color: rgb(255, 182, 45); font-size: 21px; }
+            .devcommu { color:rgb(202, 202, 202); padding: 10px 30px; font-size: 20px; text-decoration: none; transition: 0.3s;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+            .devcommu:hover { color: white; font-size: 21px; }
+            .webdev { color:rgb(0, 110, 255); font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px; padding: 10px 30px; transition: 0.3s; }
+            .webdev:hover { color: rgb(65, 65, 65); font-size: 21px; }
+            .removebg { color: rgb(119, 119, 119); font-size: 20px; padding: 10px 30px; text-decoration: none; transition: 0.3s; }
+            .removebg:hover { color: rgb(255, 255, 255); font-size: 21px; }
+
+            .languages-prog { color: lightgreen; font-weight: 200; padding: 10px 20px; transition: 0.3s }
+            .languages-prog:hover{color: rgb(84, 228, 84); }
+
+            .host { padding: 25px; font-weight: 400; transition: 0.5s; }
+            .host:hover { background-color: rgb(25, 25, 25); }
+            .hosta { transition: 0.5s; }
+            .hosta:hover { color: #3eff7f; background-color: rgb(20, 20, 20); font-size: 23px; }
+
+            .information { font-size: 15px; padding: 30px 20px; border-radius: 25px; transition: 0.8s; }
+            
+            .impo { background-color: black; font-style: italic; font-size: 18px; padding: 10px 30px; transition: 0.5s; }
+
+            address{color: rgb(133, 133, 133); transition: 0.5s; padding: 20px 30px; }
+            address:hover { color: rgb(220, 220, 220); background-color: rgb(15, 15, 15); }
+
+            .siteam3e { color:rgb(133, 133, 133); text-decoration: none; transition: 0.3s; }
+            .siteam3e:hover { color:orange; font-size: 21px; text-decoration: underline; }
+
+            .gamelogo { margin: 10px; padding: 50px; background-color: black;}
+            .gamelogo-text{
+                font-size: 50px;
+                background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 transition: 0.3s;
-                font-weight: 900;
-            }
-
-            #scroll-to-top:hover {
-                color: rgb(9, 255, 0);
-                background-color:rgb(26, 26, 26);
-            }
-
-            .title {
-                color: rgb(212, 212, 212);
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            }
-
-            .title:hover {
-                color: white;
-                font-size: 45px;
-            }
-
-            .game-story {
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color: rgb(252, 0, 50);
-                padding-left: 100px;
-                padding-right: 100px;
-                font-weight: 800;
-                transition: 0.5s;
-                font-size:20px;
-            }
-
-            .game-story:hover {
-                color: #ff92a8;
-                font-size: 21px;
-            }
-
-            .game-specs {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 19px;
-                font-weight: 400;
-                padding: 5px;
-                color: rgb(163, 157, 255);
-                text-align: center;
-                transition: 0.3s;
-            }
-
-            .game-specs:hover {
-                color: #ecebff;
-            }
-
-            .brief {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color: rgb(126, 255, 126);
-                padding-left: 80px;
-                padding-right: 80px;
-                font-weight: 100;
-                transition: 0.5s;
-                font-size: 19px;
-                list-style-type:square;
-            }
-
-            .brief:hover {
-                color: rgb(198, 255, 198);
-            }
-
-            img {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            code {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                background-color: rgb(223, 223, 223);
-                color: black;
-                padding-left: 5px;
-                padding-right: 5px;
-                transition: 0.3s;
-            }
-
-            code:hover {
-                color: rgb(255, 255, 255);
-                background-color: rgb(20, 20, 20);
-            }
-
-            .controls {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color: rgb(0, 162, 255);
-                font-weight: bolder;
-                transition: 0.3s;
-                font-size: 19px;
-            }
-
-            .controls:hover {
-                color: #68e1ff;
-            }
-
-            .buttonP {
-                text-decoration: none;
-                padding: 10px 40px;
-                border-radius: 25px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color:lightblue;
-                background-color: rgb(12, 0, 94);
-                font-weight: 800;
-                font-size: 30px;
-                transition: 0.3s;
-            }
-
-            .buttonP:hover{
-                color: rgb(16, 0, 247);
-                background-color: rgb(211, 214, 255);
-                text-decoration: none;
-                font-size: 34px;
-                padding: 10px 60px;
-            }
-
-            .stablerel {
-                color: white;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 16px;
             }
             
-            .buttonPnodis {
-                text-decoration: none;
-                padding: 10px 40px;
-                border-radius: 25px;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                color:rgb(255, 0, 0);
-                font-weight: 800;
-                font-size: 30px;
-                transition: 0.3s;
-            }
-
-            .updates {
-                color: white;
-                padding: 20px 20px;
-                border-radius: 15px;
-                background-color: rgb(20, 20, 20);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            }
-
-            .hints {
-                color:rgb(211, 211, 211);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                text-align: center;
-                font-weight: 300;
-                transition: 0.3s;
-            }
-
-            .hints:hover {
-                color: rgb(230, 230, 230);
-            }
-
-            .knownbugs {
-                color: rgb(210, 210, 210);
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                text-align: center;
-                font-weight: 500;
-                transition: 0.3s;
-                list-style-type:square;
-            }
- 
-            .stats {
-                padding: 0px 5px;
-                color: rgb(200, 200, 200);
-                background-color: initial;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                transition: 0.3s;
-                font-size: 18px;
-                font-weight: 500;
-            }
-
-            .stats:hover {
-                color: white;
-            }
-
-            .game-credits {
-                background-color: rgb(20, 20, 20);
-                color: rgb(255, 255, 225);
-                text-align: center;
-                padding: 10px;
-                font-size: 20px;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                transition: 0.4s;
-                border-top-style: solid;
-                border-width: 5px;
-                border-color: rgb(131, 131, 131);
-            }
-
-            .game-credits:hover {
-                background-color: rgb(15, 15, 15);
-            }
-
-            .p5-js-cred {
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-weight: 900;
-                padding: 10px 30px;
-                color:#ed225d;
-                text-decoration: none;
-                transition: 0.3s;
-            }
-
-            .p5-js-cred:hover {
-                text-decoration:underline;
-                color: #fa759b;
-                font-size: 25px;
-            }
-
-            .externals-cred {
-                padding: 10px 20px;
-            }
-
-            .coding-train {
-                font-family: 'Comic Sans MS';
-                color: rgb(255, 19, 255);
-                padding: 10px 30px;
-                font-weight: 600;
-                font-size: 20px;
-                transition: 0.3s;
-                text-decoration: none;
-            }
-
-            .coding-train:hover {
-                color: rgb(197, 0, 197);
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .w3sch {
-                color:rgb(0, 190, 0);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-weight: 900;
-                padding: 10px 30px;
-                font-size: 20px;
-                text-decoration: none;
-                transition: 0.3s;
-            }
-
-            .w3sch:hover {
-                color: rgb(52, 255, 52);
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .stckover {
-                color:rgb(226, 148, 2);
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-weight: 900;
-                padding: 10px 30px;
-                font-size: 20px;
-                text-decoration: none;
-                transition: 0.3s;
-            }
-
-            .stckover:hover {
-                color: rgb(255, 182, 45);
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .devcommu {
-                color:rgb(202, 202, 202);
-                padding: 10px 30px;
-                font-size: 20px;
-                text-decoration: none;
-                transition: 0.3s;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
-
-            .devcommu:hover {
-                color: white;
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .webdev {
-                color:rgb(0, 110, 255);
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 20px;
-                padding: 10px 30px;
-                text-decoration: none;
-                transition: 0.3s;
-            }
-
-            .webdev:hover {
-                color: rgb(65, 65, 65);
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .removebg {
-                color: rgb(119, 119, 119);
-                font-family: 'Trebuchet MS';
-                font-size: 20px;
-                padding: 10px 30px;
-                text-decoration: none;
-                transition: 0.3s;
-            }
-
-            .removebg:hover {
-                color: rgb(255, 255, 255);
-                text-decoration: underline;
-                font-size: 21px;
-            }
-
-            .languages-prog {
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                color: lightgreen;
-                font-weight: 200;
-                padding: 10px 20px;
-                transition: 0.3s
-            }
-
-            .languages-prog:hover{
-                color: rgb(84, 228, 84);
-            }
-
-            .host {
-                text-align: center;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                color: rgb(238, 255, 238);
-                padding: 25px;
-                font-weight: 400;
-                transition: 0.5s;
-            }
-
-            .host:hover {
-                background-color: rgb(25, 25, 25);
-            }
-
-            .hosta {
-                text-decoration: none;
-                color: white;
-                transition: 0.5s;
-            }
-
-            .hosta:hover {
-                color: #3eff7f;
-                background-color: rgb(20, 20, 20);
-                text-decoration: underline;
-                font-size: 23px;
-            }
-
-            .information {
-                color: white;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 15px;
-                padding: 30px 20px;
-                border-radius: 25px;
-                transition: 0.8s;
-            }
-
-            .information:hover {
-                background-color:rgb(212, 212, 212);
-                color: black;
-                font-weight: 600;
-                font-size: 17px;
-            }
-
-            .impo {
-                color: white;
-                background-color: black;
-                font-family: 'Trebuchet MS';
-                font-style: italic;
-                font-size: 18px;
-                padding: 10px 30px;
-                transition: 0.5s;
-            }
-
-            address{
-                color: rgb(133, 133, 133);
-                transition: 0.5s;
-                padding: 20px 30px;
-            }
-
-            address:hover {
-                color: rgb(220, 220, 220);
-                background-color: rgb(15, 15, 15);
-            }
-
-            .siteam3e {
-                color:rgb(133, 133, 133);
-                text-decoration: none;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                transition: 0.3s;
-            }
-
-            .siteam3e:hover {
-                color:orange;
-                font-size: 21px;
-                text-decoration: underline;
-            }
-
-            hr {
-                margin-top: 20px;
-                margin-left: 100px;
-                margin-right: 100px;
-            }
-
-    .fader-anim {        
--webkit-animation: fadein 2s; 
-   -moz-animation: fadein 2s; 
-    -ms-animation: fadein 2s; 
-     -o-animation: fadein 2s; 
-        animation: fadein 2s;
-
-    }
-
-                
-    @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
-
-    @-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
-
-    @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
-
-    @-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
-
-    @-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
+            hr { margin: 20px; margin-left: 100px; margin-right: 100px; }
 
     @media only screen and (min-width: 1300px) {
-        .buttonPnodis {
-            display: none;
-        }
-
-        #plagame {
-            display: none;
-        }
-
+        .buttonPnodis { display: none; }
+        #plagame {  display: none; }
     }
 
     @media only screen and (max-width : 1300px) {
-        .buttonP {
-            display:none;
-        }
-        
-        img {
-            display: none;
-        }
+        .buttonP { display:none; } 
+        img { display: none; }
+        .stablerel { display: none; }
+        .topnav .plagame { display: none; }
+        .controls{ padding: 15px; }
+    }
 
-        .stablerel {
-            display: none;
-        }
-
-        .topnav .plagame {
-            display: none;
+    @media only screen and (max-width: 900px) {
+        .externals-cred-links{
+            flex-direction: column;
         }
     }
 
     @media only screen and (max-width : 700px) {
-        .title {
-            font-size: 14;
-            padding: 80px;
-        }
-
-        .game-story {
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .brief {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .buttonP {
-            display: none;
-        }
-
-        .externals-cred {
-            margin: 25px;
-        }
-
-        .address {
-            font-size: 5px;
-        }
-
-        hr {
-            margin-right:  10px;
-            margin-left: 10px;
-        }
+        .title { font-size: 14; padding: 80px; }
+        .game-story { padding-left: 0px;padding-right: 0px; } 
+        .brief { padding-left: 10px; padding-right: 10px; }
+        .buttonP {display: none; } 
+        .externals-cred { margin: 25px; }
+        .address { font-size: 5px; }
+        hr { margin-right:  10px; margin-left: 10px; }
+        .controls { padding: 5px;}
+        .gamelogo{ margin: 5px; padding: 10px; }
+        .game-specs{ padding:5px }
+        .game-specs-tested{ margin: 1px }
     }
 
     @media only screen and (min-width: 300) {
-        .title {
-            padding: 0px 0px;
-            margin: 10px;
-        }
+        .title { padding: 0px 0px;margin: 10px;  }
     }
-        </style>
-    <body class="fader-anim">
+
+    </style>
+  
+  <body class="fader-anim">
 
         <div class="topnav" id="myTopnav">
             <a href="#title" class="active" title="Game">Package Delivery Sim 2D V1.0</a>
@@ -686,78 +188,118 @@
         </div>
 
         <div class="game-specs" id="Specs">
-            <h2>System Requirements / Game Specs</h2>
-            <p>
-            <ul>
-            <li><strong style="font-size: 22px;">A Desktop / Laptop is a must.</strong></li><br>
-            <li><strong>It's highly recommended that you turn on hardware acceleration on your browser before playing this game.</strong></li><br>
-            <li>Tested on Chrome Browser (avg FPS : 30-48 | avg CPU Usage : 60-80%).</li>
-            <li>Tested on Mozilla Firefox Browser (avg FPS : 30-45 | I don't really recommend using this browser for long periods of playing).</li>
-            <li>Tested on Microsoft Edge (avg FPS : 30-48 | avg CPU Usage : 50-70% | MS Edge gives good performance).</li><br>
-            </ul>
-            <hr>
-            <ul>
-            <li>Minimum CPU Speed : 1.8ghz (CPU Usage upto 60-70%)</li>
-            <li>CPU clock speed upto : 2.3Ghz (entirely depends on your browser).</li>
-            <li>Memory Utilization upto 10%</li>
-            <li>About 2 MB of Images to download, 4 MB to download resources.</li>
-            </ul>
-                <br>
-
-            <ul>
-            <li>This game has no Audio - Media.</li>
-            <li>Game Canvas : 1350x600</li>
-            <li>Game Display : Top Cam 2D</li>
-            </ul>
-            <ul>
-            <li>* Higher FPS gameplay will be coming soon.</li>
-            <li>* If you're facing low FPS and if you're on Integrated Graphics, please don't play, this may damage your device on long periods of time.</ul>
-        </p>
+            <h2>System Requirements - Game Specifications</h2>
+            <h3>A Laptop / Desktop is a must.</h3>
+            <p>(Keyboard is necessary)</p>
+            <br>
+            <p>It's highly recommended that you turn on your <strong>browser's hardware acceleration before playing this game.</strong></p>
+            <br><br>
+                <div class="game-specs-tested">
+                    <p>Tested and experimented on browsers like : </p>
+                    <br>
+                    <ul>
+                        <li>Google Chrome : 92.0.4515.159 (64-bit)</li>
+                            <ul>
+                                <li>Average FPS : 30 - 48</li>
+                                <li>Average CPU Usage : 60 - 80%</li>
+                                <li>I recommend this one.</li>
+                            </ul>
+                        <br>
+                        <li>Mozilla Firefox : 91.0.1 (64-bit)</li>
+                            <ul>
+                                <li>Average FPS : 30 - 40</li>
+                                <li>Average CPU Usage : 70 - 85%</li>
+                                <li>I don't recommend this one, your gameplay will be a bit laggy. You may try it.</li>
+                            </ul>
+                        <br>
+                        <li>Microsoft Edge : 92.0.902.73 (64-bit)</li>
+                            <ul>
+                                <li>Average FPS : 30 - 48</li>
+                                <li>Average CPU Usage : 50 - 80%</li>
+                                <li>This one's good. The gameplay here was as smooth as butter.</li>
+                            </ul>
+                    </ul>
+                </div>
+                <br><br>
+                <div class="game-specs-tested-machi">
+                    <p>Requirements and Performance assurance (not much accurate).</p>
+                    <p>(entirely depends upon your device)</p>
+                    <br>
+                    <ul>
+                        <li>Minimum CPU Speed : 1.8ghz (Avg CPU Usage : 60 - 70% on integrated graphics)</li>
+                        <li>Memory Utilization upto 10% - 15%</li>
+                        <li>About 4MB of resources to download, 2MB to download images.</li>
+                    </ul>
+                </div>
+                <br><br>
+                <div class="game-specs-about">
+                    <p>Other information :</p>
+                    <br>
+                    <ul>
+                        <li>This game has no Audio / GIFs</li>
+                        <li>Game Canvas : 1360 x 600 PX</li>
+                        <li>Game Display : Top Cam 2D</li>
+                    </ul>
+                </div>
+                <br><br>
+                <div class="game-specs-other">
+                    <p>Higher FPS gameplay will be coming soon (I don't get paid for this :/).</p>
+                    <p>If you are playing on integrated graphics and you're facing low FPS (However, it's quite rare), please don't play for long periods of time.</p>
+                    <p>The game gets a bit laggy after some distance. So it's highly recomended that you close all other background-tabs on your browser and apps before playing the game.</p>
+                </div>
         </div>
-        <hr>
+        
         <div class="brief" id="brief-overview">
             <h2>Can you give me a brief over-view?</h2>
-            <strong style="font-size: larger;"><p>First of all, this game is 2D (Top Cam Display).</p></strong>
+            <br>
+                <strong><p>First of all, this game is 2D (Top Cam Display).</p></strong>
+            <br><br>
             <p>Basically, you have to deliver 5 packages, to 5 distinctive houses (that look different from the background houses).
                 <br> You will be told where the houses are by keeeping an eye to the dashboard on your <strong>Right</strong>.<br><br>
-                The dashboard will show your <strong>Distance travelled <cite>(actually, it is in pixels, but represented as meters)</cite>, time driven and time driven in the opposite lane <cite>(counted by pressing the UP ARROW key)</cite>
-                , packages left and packages yet to be delivered <br>and the houses yet to deliver the packages.</strong> <br><br>
-                You will be given <strong>40 Seconds</strong> initially, you will be given more seconds everytime you deliver a package.
-                <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                <ul>
-                <li>You have to dodge : <strong>Road-works and the Traffic</strong>.<br></li>
-                <li>Each time you <strong>deliver a package, the count increases.</strong><br></li>
-                <li>You cannot go out of the canvas (seriously, why do you want to go out of the canvas?).</li>
-                <li>You are given <strong>feedbacks by : Distance travelled, total time survived, Driven Time and the amount of packages delivered / left, and time left.</strong></li>
-                </ul>    
-            </div>
+                    The dashboard will show your <strong>Distance travelled <cite>(actually, it is in pixels, but represented as meters)</cite>, time driven and time driven in the opposite lane <cite>(counted by pressing the UP ARROW key)</cite>
+                    , packages left and packages yet to be delivered <br>and the houses yet to deliver the packages.</strong> <br><br>
+                    You will be given <strong>40 Seconds</strong> initially, you will be given more seconds everytime you deliver a package.
+                <br>
+                <div>
+                    <ul>
+                        <br>
+                        <li>You have to dodge : <strong>Road-works and the Traffic</strong>.<br></li>
+                        <li>Each time you <strong>deliver a package, the count increases.</strong><br></li>
+                        <li>You cannot go out of the canvas (seriously, why do you want to go out of the canvas?).</li>
+                        <br>
+                        <li>You are given <strong>feedbacks by : Distance travelled, total time survived, Driven Time and the amount of packages delivered / left, and time left.</strong></li>
+                    </ul>    
+                </div>
             </p><br>
         </div>
 
         <div>
-            <img src="https://cdn.glitch.com/aa341c59-60fa-4a72-888b-b0c60d2757ae%2Foverscreenshot.png?v=1628835829966" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
+            <img src="Game/images/overscreenshot.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
         </div>
         <hr>
+
         <div class="controls" id="keys" name="keys">
-            <h2>The Game Controls :</h2>
-            <p>Press <code>UP ARROW</code> key to move forward (up).<br>
-               Press <code>DOWN ARROW</code> key to move back / reverse (down).<br>
-               Press <code>LEFT ARROW</code> and <code>RIGHT ARROW</code> keys to steer/rotate, you have to either press <code>UP ARROW</code> or <code>DOWN ARROW</code> keys to steer and move.<br>
-               Press <code>W</code> and <code>UP ARROW</code> key to Drive even more (move up) faster.<br><br>
-               Press <code>D</code> key to Drop a Package at a House.<br>
-               Press <code>F5</code> or <code>CTRL + R</code> or <code>E</code> (after losing or winning the game) to restart / refresh the game.</p><br><br>
+            <h2>Game Controls / Keybinds</h2>
+            <br>
+            <p>Press <code>UP ARROW</code> to move forward (up).</p>
+            <p>Press <code>DOWN ARROW</code> to move backward (down).</p>
+            <p>Press <code>LEFT ARROW</code> and <code>RIGHT ARROW</code> keys to steer / rotate.</p>
+            <br>
+            <p>Press <code>W</code> key to move forward (up) faster.</p>
+            <p>Press <code>D</code> key to drop a package at a house.</p>
+            <p>Press <code>F5</code> or <code>E</code> key to restart / refresh the game.</p>
         </div>
 
-        <div style="text-align: center;" id="play-game">
+        <div class="ohyes" id="play-game">
             <br><br>
-            <p class="stablerel" style="font-size: 13px;">Before fastening your seatbelt, make sure you read all the information carefully!</p>
-            <a class="buttonP" href="Game/index.html" title="Play the Game! Make sure you read the things above before playing it!" target="_blank">Play it : Package Delivery Sim 2D V1.0 P5</a><br>
+            <p class="stablerel" style="font-size: 13px; margin:10px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
+            <h2><a class="buttonP" href="Game/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D V1.0 P5</a></h2><br>
             <p class="stablerel">Stable Release V1.06.2</p>
         </div>
 
         <div style="text-align:center ;">
             <a class="buttonPnodis">&#9940; Sorry, it has been detected that your device doesn't support this game.<br>
-                Kindly switch to a Laptop / Desktop with<br>a resolution of 1300x600 or higher. &#9940;</a><br><br><br><br>
+                Kindly switch to a Laptop / Desktop with<br>a resolution of 1200x600 or higher. &#9940;</a><br><br><br><br>
         </div>
 
         <div class="updates" id="updates">
@@ -812,9 +354,13 @@
             <h2 style="text-decoration: underline;">Stats</h2>
             <div class="stats">
                 <p>It took about : <strong>42 Hours, 27 Minutes</strong> to develop the UI, Core Game and this Menu.</p>
+                <br>
                 <p>5 Updates / Releases, each adding, stabilizing and fixing the game.</p>
+                <br>
                 <p>Game and UI thoroughly refreshed and revised, and tested on different devices.</p>
+                <br><br>
                 <p><cite>Latest Update : V1.06.2 on 25-06-2021</cite></p>
+                <p><cite>Latest UI Update : 08 - 18 - 2021</cite></p>
             <br><br>
             </div>
             <hr>
@@ -833,12 +379,14 @@
 
             <div class="externals-cred">
                 <h1 style="font-size: 25px; text-decoration: none;">Also,</h1>
-                <a class="w3sch" href="https://www.w3schools.com/" target="_blank" rel="noreferrer">w3Schools</a>
-                <a class="stckover" href="https://stackoverflow.com/" target="_blank" rel="noreferrer">Stack Overflow</a>
-                <a class="coding-train" href="https://thecodingtrain.com/" target="_blank" rel="noreferrer">The Coding Train!</a>
-                <a class="devcommu" href="https://dev.to" target="_blank" rel="noreferrer">DEV COMMUNITY</a>
-                <a class="webdev" href="https://web.dev" target="_blank" rel="noreferrer">web.dev</a>
-                <a class="removebg" href="https://remove.bg" target="_blank" rel="noreferrer">remove.bg</a>
+                <div class="externals-cred-links">
+                    <a class="w3sch" href="https://www.w3schools.com/" target="_blank" rel="noreferrer">w3Schools</a>
+                    <a class="stckover" href="https://stackoverflow.com/" target="_blank" rel="noreferrer">Stack Overflow</a>
+                    <a class="coding-train" href="https://thecodingtrain.com/" target="_blank" rel="noreferrer">The Coding Train!</a>
+                    <a class="devcommu" href="https://dev.to" target="_blank" rel="noreferrer">DEV COMMUNITY</a>
+                    <a class="webdev" href="https://web.dev" target="_blank" rel="noreferrer">web.dev</a>
+                    <a class="removebg" href="https://remove.bg" target="_blank" rel="noreferrer">remove.bg</a>
+                </div>
             </div>
 
             <div class="host">
@@ -869,34 +417,35 @@
                 I, no one else, have (or has) no idea who's viewing or playing this game. This is all done locally on your browser after the complete download process. 
             </div>
             <hr>
-            <address style="text-align: left;">Game, Site menu, UI designed and developed by : <a class="siteam3e" rel="noreferrer" href="https://daksh-naik.github.io/Profile-V2/index.html" target="_blank">Daksh Naik</a><br>in collaboration with Dharini S, WhiteHat JR.</address>
-        </div><br><br><br><br>
+            <address style="text-align: left;">Game, Site menu, UI designed and developed by : <a class="siteam3e" rel="noreferrer" href="https://daksh-naik.github.io/Profile/" target="_blank">Daksh Naik</a><br>in collaboration with Dharini S, WhiteHat JR.</address>
+
+        </div>
+
+            <div class="gamelogo">
+                <h2 class="gamelogo-text">Package Delivery Sim 2D P5</h2>
+                <cite style="font-size: 7px;">"It is what it is..."</cite>
+            </div>
+        
+            <br><br><br><br>
 
         <button onclick="GotoTopFunction()" id="scroll-to-top" title="Jump to top"> ^ </button>
 
-      <script>
-         var mybutton = document.getElementById("scroll-to-top");
-         
+    <script>
+         var mybutton = document.getElementById("scroll-to-top");     
          window.onscroll = function() {
             scrollToTopFunction()
         }
-         
          function scrollToTopFunction() {
            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 60) {
              mybutton.style.display = "block";
            } else {
              mybutton.style.display = "none";
-           }
-         }
-         
+           } }
          function GotoTopFunction() {
            document.body.scrollTop = 10;
            document.documentElement.scrollTop = 0;
         }
-
-      </script>
-
-      
+    </script>
     <script>
         function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -904,8 +453,7 @@
             x.className += " responsive";
         } else {
             x.className = "topnav";
-        }
-        }
+        } }
     </script>
 
     </body>

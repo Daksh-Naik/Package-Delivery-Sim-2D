@@ -37,6 +37,7 @@
         .performance { padding: 100px; }
         .MOBILE { display: none; padding: 20px; color: rgb(255, 56, 56); }
         .cheatsinfor { padding: 30px; }
+        .faq {padding: 40px;}
 
         @media only screen and (max-width: 830px) {
             .introduct { padding: 10px; }
@@ -53,6 +54,10 @@
 
         @media only screen and (max-width: 850px) {
             .MOBILE { display: block; }
+        }
+
+        @media only screen and (max-width:450px) {
+            .faq { padding: 10px;}
         }
 
         </style>
@@ -76,7 +81,7 @@
     <section class="instruct">
         <div style="text-align: left;">
             <h3> - What do I need?</h3>
-            <p>The most important thing needed is your <strong>Browser's Developer Console / Tools.</strong></p>
+            <p>The most important thing needed is your <strong>Browser's Developer Console / Tools.</strong> No, don't worry, you don't need to download it. It's already installed.</p>
             <br>
             <p>Hot-keys / Keybinds for various browsers : </p>
             <dl>
@@ -101,7 +106,7 @@
                 <p>If you've figured out your Dev Tools / Console, search for a Tab within the panel <strong>" Console "</strong>.</p>
                 <p>On this page, you may find a totally empty console. So, <a href="Game/index.html" target="_blank">go back and start the game in a new window.</a></p>
                 <br>
-                <p>When you're in the <a href="Game/index.html" target="_blank">Game Tab,</a> open the Developer Console / Tools panel.</p>
+                <p>When you're in the <a href="Game/index.html" target="_blank">Game Window Tab,</a> open the Developer Console / Tools panel.</p>
                 <h4>It will look somewhat like this (Chrome Browser):</h4>
                 <picture>
                     <source type="image/avif" srcset="Game/images/devconsole.avif" title="Dev Tools / Console : Example" />
@@ -120,6 +125,44 @@
                     <li><a href="#gameplay">Game Play</a></li>
                 </ul>
             </div>
+            <div class="faq">
+                <h3>Some frequently asked questions,</h3>
+                <dl>
+                    <dt>Q. Are the cheats saved? How can I reset it?</dt>
+                    <dd> - If you restart your browser window or tab / game, all the cheats will be re-set. They don't get saved forever.</dd>
+                </dl>
+                <dl>
+                    <dt>Q. Why's there a black canvas when I open the console?</dt>
+                    <dd> - The black screen is the Media Query, it's intentional. Whenever the screen pixels are lesser than 
+                        <strong>1360X PX</strong>, the canvas sets to black as there is no game support yet introduced for mobile devices.
+                        So, when you open up the console, the canvas shrinks, that makes it go black. Don't fret, you aren't at fault.</dd>
+                </dl>
+                <dl>
+                    <dt>Q. Did you make the console and the cheats?</dt>
+                    <dd> - Of-course not. This is a built-in browser console, also known as Developer Tools exclusively used by developers to test web-stuff.
+                        You can even open it up on other websites!</dd>
+                </dl>
+                <dl>
+                    <dt>Q. Cheats... basically... what do you mean?</dt>
+                    <dd> - The cheats, aren't basically cheats, not what you're thinking. This is basically changing the variable data / firing an event. No, it's not some serious hacking I would say. This is all done locally on your machine.</dd>
+                </dl>
+                <dl>
+                    <dt>Q. How to reset?</dt>
+                    <dd> - Press <kbd>F5</kbd> or Refresh your browser window (game) to reset everything.</dd>
+                </dl>
+                <dl>
+                    <dt>Q. These cheats are too less for me. Can I do more?</dt>
+                    <dd> - Sure! This game <a href="https://github.com/Daksh-Naik/Package-Delivery-Sim-2D" target="_blank" rel="norefferer">is open-sourced at Github! You can check it out</a> to access variable names and / or create your own cheats!</dd>
+                </dl>
+                <dl>
+                    <dt>Q. How can I add / do more cheats?</dt>
+                    <dd> - It's quite a tricky and a practical process - more like a research. With references from the below given examples, you may create your own to ease the game!
+                        If you have any existing knowledge of JS and P5.PLAY.JS, it'll be a breeze for you.</dd>
+                </dl>
+            </div>
+            <div class="MOBILE">
+                <h3>Please, note that <br>you will need a Laptop / Desktop to do that. You can't do it on your mobile / tab.</h3>
+            </div>
         </div>
     </section>
 
@@ -129,63 +172,64 @@
             <h3>Following are some of the cheats that are experimented. You may use them. If they are really really less for you, you can create your own cheats as-well!</h3>
         </div>
         <div class="cheats-time" id="cheatstime">
+            <p>Left-click anywhere within the empty space in the console tab, and start typing!</p>
             <h3>Alter Time :</h3>
             <p>To alter time, following are some of the <strong>variables</strong> you can type to modify / change digits.</p>
             <dl>
                 <dt>- To alter / change <strong>Remaining Time Left,</strong></dt>
-                <dd>Type <kbd>timer = 1000</kbd>. You can even enter your desired digit.</dd>
+                <dd>Type <kbd>timer = 1000</kbd> You can even enter your desired digit.</dd>
                 <p>( Adding a -digit will obviously end the game! )</p>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Travelled,</strong></dt>
-                <dd>Type <kbd>DTtimer = 1000</kbd>. You can even enter your desired digit.</dd>
+                <dd>Type <kbd>DTtimer = 1000</kbd> You can even enter your desired digit.</dd>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Travelled in opposite Lane,</strong></dt>
-                <dd>Type <kbd>oppotimer = 1000</kbd>. You can even enter your desired digit.</dd>
+                <dd>Type <kbd>oppotimer = 1000</kbd> You can even enter your desired digit.</dd>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Taken,</strong></dt>
-                <dd>Type <kbd>timertaken = 1000</kbd>. You can even enter your desired digit.</dd>
+                <dd>Type <kbd>timertaken = 1000</kbd> You can even enter your desired digit.</dd>
             </dl>
             <br><br>
             <div id="packages">
                 <h3>Alter Packages Count :</h3>
                 <dl>
                     <dt> - To alter / change <strong>Remaining Packages (about to be delivered),</strong></dt>
-                    <dd>Type <kbd>packages = 1000</kbd>. You can even enter your desired digit.</dd>
+                    <dd>Type <kbd>packages = 1000</kbd> You can even enter your desired digit.</dd>
                 </dl>
                 <dl>
                     <dt> - To alter / change <strong>Packages delivered,</strong></dt>
-                    <dd>Type <kbd>packagedeli = 1000</kbd>. You can even enter your desired digit.</dd>
+                    <dd>Type <kbd>packagedeli = 1000</kbd> You can even enter your desired digit.</dd>
                 </dl>
             </div>
         </div>
         <div class="gamestates" id="gameStates">
             <h3>Here comes the States of the game! It's quite practical, you may experiment it!</h3>
-            <p>Please note, un-rational setting / changing of the states of this game may lead into several problems in the game (bugs). You will have to refresh your browser window if it so happens that it crashes ultimately.</p>
+            <p>Please note, ir-rational setting / changing of the states of this game may lead into several problems in the game (bugs). You will have to refresh your browser window if it so happens that it crashes ultimately.</p>
             <br><br>
             <h3>Altering Game States :</h3>
             <dl>
                 <dt> - To set State to <strong>Start,</strong></dt>
-                <dd>Type <kbd>gameState = 0</kbd>. This will start the game, may not work sometimes.</dd>
+                <dd>Type <kbd>gameState = 0</kbd> This will start the game, may not work sometimes.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>In-Game : Play,</strong></dt>
-                <dd>Type <kbd>gameState = 1</kbd>. This will set the game state to play right away.</dd>
+                <dd>Type <kbd>gameState = 1</kbd> This will set the game state to play right away.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Fail : Met in an accident,</strong></dt>
-                <dd>Type <kbd>gameState = 2</kbd>. This will end the game, may not work sometimes.</dd>
+                <dd>Type <kbd>gameState = 2</kbd> This will end the game, may not work sometimes.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Fail : Crossed Time Limit / Too late,</strong></dt>
-                <dd>Type <kbd>gameState = 3</kbd>. This will freeze the game kind of. </dd>
+                <dd>Type <kbd>gameState = 3</kbd> This will freeze the game kind of. </dd>
                     <p>Because if you're in the middle of the game-play this state fires only when the timer is less than 0. You may still try it.</p>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Win : Delivered all the packages,</strong></dt>
-                <dd>Type <kbd>gameState = 4</kbd>. You will the win the game right away!</dd>
+                <dd>Type <kbd>gameState = 4</kbd> You will the win the game right away!</dd>
             </dl>
             <p>If you've ran into a problem, restart the game.</p>
             <br><br>
@@ -194,12 +238,12 @@
                 <p>You can even change your position!</p>
                 <dl>
                     <dt> - To set the <strong>" X " Quadrant / Position of the Van,</strong></dt>
-                    <dd>Type <kbd>delvan.x = 1000</kbd>. This will set the position to " X " 1000PX!</dd>
+                    <dd>Type <kbd>delvan.x = 1000</kbd> This will set the position to " X " 1000PX!</dd>
                     <p>Note, adding a -digit will set the position towards the <strong>Left,</strong> adding a +digit will set the position towards the <strong>Right.</strong></p>
                 </dl>
                 <dl>
                     <dt> - To set the <strong>" Y " Quadrant / Position of the Van,</strong></dt>
-                    <dd>Type <kbd>delvan.y = 1000</kbd>. This will set the position to " Y " 1000PX!</dd>
+                    <dd>Type <kbd>delvan.y = 1000</kbd> This will set the position to " Y " 1000PX!</dd>
                     <p>Note, adding a -digit will set the position towards the <strong>Top,</strong> adding a +digit will set the position towards the <strong>Bottom.</strong></p>
                 </dl>
             </div>
@@ -230,6 +274,9 @@
             <h2>You can still do more!</h2>
             <h3>Above cheats were only examples. You can create your own too if you have enough P5.PLAY.JS Skills.</h3>
             <h3>To do more, this game <a href="https://github.com/Daksh-Naik/Package-Delivery-Sim-2D" target="_blank" rel="norefferer">is open-sourced at Github! You can check it out</a> to create your own cheats!</h3>
+        </div>
+        <div class="MOBILE">
+            <h3>Note : <br>You will need a Laptop / Desktop to do that. You can't do it on your mobile / tab.</h3>
         </div>
     </section>
 

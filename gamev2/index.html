@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = en>
+
+    <head>
+        <title>Package Delivery Sim 2D P5 - AV</title>
+        <meta name="vieport" content="width:device-width">
+        <link rel="icon" href="images/delvan/delivprof.png">
+        <meta name="description" content="Package Delivery Sim 2D P5 AV : In - Game : Play | Hosted by Github Pages | Made by Daksh Naik">
+ 
+    <meta charset="utf-8">
+
+    <script src="p5.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="p5.play.js"></script>
+
+    <style>
+
+        body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
+        canvas { display: block; }
+        h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
+        h6 {font-size: 20px; padding: 15px;}
+        #sett {display: none;}
+        .AV h7 { font-size: 32px; color: white; font-weight: 900; text-align: right;}
+        .loading { padding: 150px; display: grid; place-items:center;}
+        
+        .fader-anim {        -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
+            @keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+            @-moz-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+            @-webkit-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+            @-ms-keyframes fadein { from { opacity: 0; } to   { opacity: 1; }}    
+            @-o-keyframes fadein { from { opacity: 0; } to   { opacity: 1; }}
+
+        @media only screen and (max-width: 1300px) {
+            body {background-color: black;}
+            h1 {display: none;}
+            h2 {display: none;}
+            h3 {display: none;}
+            h4{display: none;}
+            h5{display: block;}
+            canvas {display: none;}
+        }
+
+        @media only screen and (min-width:1301px){
+            canvas {display: block;}
+        }
+         
+    </style>
+</head>
+<body class="fader-anim">
+
+        <div id="p5_loading" class="loading">
+            <h6 class="AV">Package Delivery Sim 2D : <cite> AV </cite> P5 </h6>
+            <h6 id="auth" class="authent">Authenticating...</h6>
+            <h6>Initializing the required resources for you... Just a moment... Please?</h6>
+            <h6 id="sett">Setting up...</h6>
+        </div>
+
+        <h5>Error : Too less resolution!<br><br>
+        Sorry, you have a too less pixel device. Switch to a higher one of atleast 1300x630 PX</h5>
+
+        <script src="sketch.js"></script>
+        <script src="html.js"></script>
+
+        <script>
+            setTimeout(function() {
+                document.getElementById('auth').style.display = "none";
+                document.getElementById('sett').style.display = "block";
+            }, 3000);
+        </script>
+
+</body>
+</html>

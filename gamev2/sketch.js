@@ -725,51 +725,51 @@ function draw() {
             htmlps.mHouse11DashDisplayDeliv();
         }
 
-        // if (frameCount % 80 === 0) {
-        //     PTraffic = createSprite(350, delvan.y - 800, 40, 80);
-        //     PTraffic.lifetime = 500;
-        //     var PTrafficvar = Math.round(random(1, 2));
-        //     switch (PTrafficvar) {
-        //         case 1: PTraffic.x = Math.round(random(300, 375));
-        //                 PTraffic.width = 40;
-        //                 PTraffic.height = 80;
-        //                 PTraffic.velocityY = (Math.round(random(-5, -15)));
-        //                 PTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
-        //             break;
-        //         case 2: PTraffic.x = Math.round(random(200, 270));
-        //                 PTraffic.width = Math.round(random(60, 70));
-        //                 PTraffic.height = Math.round(random(150, 200));
-        //                 PTraffic.velocityY = (Math.round(random(-5, -10)));
-        //                 PTraffic.shapeColor = color(random(150, 255), random(150, 200), random(150, 150));
-        //             break;
-        //         default: break;
-        //     }
-        //     TrafficAr.push(PTraffic);
-        //     TrafficGroup.add(PTraffic);
-        // }
+        if (frameCount % 80 === 0) {
+            PTraffic = createSprite(350, delvan.y - 800, 40, 80);
+            PTraffic.lifetime = 500;
+            var PTrafficvar = Math.round(random(1, 2));
+            switch (PTrafficvar) {
+                case 1: PTraffic.x = Math.round(random(300, 375));
+                        PTraffic.width = 40;
+                        PTraffic.height = 80;
+                        PTraffic.velocityY = (Math.round(random(-5, -15)));
+                        PTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
+                    break;
+                case 2: PTraffic.x = Math.round(random(200, 270));
+                        PTraffic.width = Math.round(random(60, 70));
+                        PTraffic.height = Math.round(random(150, 200));
+                        PTraffic.velocityY = (Math.round(random(-5, -10)));
+                        PTraffic.shapeColor = color(random(150, 255), random(150, 200), random(150, 150));
+                    break;
+                default: break;
+            }
+            TrafficAr.push(PTraffic);
+            TrafficGroup.add(PTraffic);
+        }
 
-        // if (frameCount % 100 === 0) {
-        //     OTraffic = createSprite(450, delvan.y - 800, 40, 80);
-        //     OTraffic.lifetime = 200;
-        //     var OTrafficvar = Math.round(random(1, 2));
-        //     switch (OTrafficvar) {
-        //         case 1: OTraffic.x = Math.round(random(425, 470));
-        //                 OTraffic.width = 40;
-        //                 OTraffic.height = 80;
-        //                 OTraffic.velocityY = (Math.round(random(7, 20)));
-        //                 OTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
-        //             break;
-        //         case 2: OTraffic.x = Math.round(random(530, 600));
-        //                 OTraffic.width = Math.round(random(60, 70));
-        //                 OTraffic.height = Math.round(random(150, 200));
-        //                 OTraffic.velocityY = (Math.round(random(5, 10)));
-        //                 OTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
-        //             break;
-        //         default: break;
-        //     }
-        //     TrafficAr.push(OTraffic);
-        //     TrafficGroup.add(OTraffic);
-        // }
+        if (frameCount % 100 === 0) {
+            OTraffic = createSprite(450, delvan.y - 800, 40, 80);
+            OTraffic.lifetime = 200;
+            var OTrafficvar = Math.round(random(1, 2));
+            switch (OTrafficvar) {
+                case 1: OTraffic.x = Math.round(random(425, 470));
+                        OTraffic.width = 40;
+                        OTraffic.height = 80;
+                        OTraffic.velocityY = (Math.round(random(7, 20)));
+                        OTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
+                    break;
+                case 2: OTraffic.x = Math.round(random(530, 600));
+                        OTraffic.width = Math.round(random(60, 70));
+                        OTraffic.height = Math.round(random(150, 200));
+                        OTraffic.velocityY = (Math.round(random(5, 10)));
+                        OTraffic.shapeColor = color(random(150, 255), random(150, 255), random(150, 255));
+                    break;
+                default: break;
+            }
+            TrafficAr.push(OTraffic);
+            TrafficGroup.add(OTraffic);
+        }
 
         if (TrafficGroup.isTouching(HousePA)) {
             trafftouch = true;

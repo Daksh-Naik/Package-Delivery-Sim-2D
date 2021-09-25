@@ -77,5 +77,5 @@ li{ margin: 5px; }
             .defnavbar-overlay-menubut { bottom: 0; border-radius: 100px 0px 0px 0px; }
             .overlay a { font-size: 20px; }
             .overlayclosebtn { right: 10px; }
-            #scroll-to-top { bottom: 100px; }
+            #scroll-to-top { position:fixed; right:10px; bottom: 100px; }
         }

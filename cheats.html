@@ -15,7 +15,7 @@
     <style>
         body {  -webkit-animation: fadein 2s; -moz-animation: fadein 2s;  -ms-animation: fadein 2s;  -o-animation: fadein 2s;  animation: fadein 2s }
         .gamelogo { margin: 30px; padding: 50px; background-color: black;}
-        .gamelogo-text{ margin: 60px; font-size: 50px; background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255)); background-clip: unset;
+        .gamelogo-text{ margin: 100px 0px 60px 0px; font-size: 50px; background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255)); background-clip: unset;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: 0.3s; }
         h2 { font-size: 35px; }
         kbd { user-select: text; background-color: rgb(230, 230, 230); color: black; font-family: 'Segoe UI'; font-weight: 700; border-radius: 5px; transition: 0.3s; }
@@ -65,11 +65,35 @@
 </head>
 <body>
 
+    <div class="defnavbar">
+        <div class="defnavbar-logo">
+            <h3>Package Delivery Sim 2D <cite>P5</cite></h3>
+        </div>
+        <div class="defnavbar-overlay-menubut" onClick="openNav()">
+            <p>&#9776; Menu</p>
+        </div>
+    </div>
+    <div id="myNav" class="overlay">
+        <a class="overlayclosebtn" onclick="closeNav()" id="closebuto">&times;</a>
+            <div class="overlay-content" onclick="closeNav()">
+                <a href="#title" class="defnavbar-logo" style="color: rgb(115, 255, 0);">Package Delivery Sim 2D <cite>P5</cite></a>
+                <a href="#intro">Cheats - Intro</a>
+                <a href="index.html">Back to Index</a>
+                <a href="#req">Requirements</a>
+                <a href="#lyze">Analyze</a>
+                <a href="#list" >Cheats List</a>
+                <a href="#faq">FAQ</a>
+                <a href="#action">In-action</a>
+                <a href="#more">More</a>
+                <a href="index.html">Back to Index</a>
+            </div>
+    </div>
+
     <div>
-        <h1 class="gamelogo-text">Package Delivery Sim 2D <cite>P5</cite></h1>
+        <h1 class="gamelogo-text" id="title">Package Delivery Sim 2D <cite>P5</cite></h1>
         <h2>Cheats - Hacks</h2>
         <h3>Alter / ease the game!</h3>
-        <div class="introduct">
+        <div class="introduct" id="intro">
             <p>Is the game to hard? Too fancy to hack it? Yep, you have full permission to hack / cheat it by your browser's Dev Console.
                 Here's how to do it.</p>
         </div>
@@ -79,7 +103,7 @@
         <h3><a href="index.html">Follow this link to go back.</a></h3>
     </div>
 
-    <section class="instruct">
+    <section class="instruct" id="req">
         <div style="text-align: left;">
             <h3> - What do I need?</h3>
             <p>The most important thing needed is your <strong>Browser's Developer Console / Tools.</strong> No, don't worry, you don't need to download it. It's already installed.</p>
@@ -102,7 +126,7 @@
             <br>
             <p>Go to <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="_blank" rel="norefferer">Mozilla's Introduction to Dev Console</a> to learn more about Developer Consoles / Tools.</p>
             <br><br>
-            <div class="instruct-more">
+            <div class="instruct-more" id="lyze">
                 <h3> - I'm all set. What now?</h3>
                 <p>If you've figured out your Dev Tools / Console, search for a Tab within the panel <strong>" Console "</strong>.</p>
                 <p>On this page, you may find a totally empty console. So, <a href="index.html#keys" target="_blank">go back and start the game in a new window.</a></p>
@@ -116,7 +140,7 @@
                 <h2>Ready? Let's go!</h2>
                 <h3><a href="index.html">Follow this link to go back to index.</a></h3>
             </div>
-            <div class="cheatsinfor">
+            <div class="cheatsinfor" id="list">
                 <h4>Types of cheats experimented :</h4>
                 <ul>
                     <li><a href="#cheatstime">Time Cheats</a></li>
@@ -126,7 +150,7 @@
                     <li><a href="#gameplay">Game Play</a></li>
                 </ul>
             </div>
-            <div class="faq">
+            <div class="faq" id="faq">
                 <h3>Some frequently asked questions,</h3>
                 <dl>
                     <dt>Q. Are the cheats saved? How can I reset it?</dt>
@@ -167,7 +191,7 @@
         </div>
     </section>
 
-    <section class="cheats">
+    <section class="cheats" id="action">
         <div>
             <h2>Available Cheats (Experimented)</h2>
             <h3>Following are some of the cheats that are experimented. You may use them. If they are really really less for you, you can create your own cheats as-well!</h3>
@@ -271,7 +295,7 @@
     </section>
 
     <section>
-        <div>
+        <div id="more">
             <h2>You can still do more!</h2>
             <h3>Above cheats were only examples. You can create your own too if you have enough P5.PLAY.JS Skills.</h3>
             <h3>To do more, this game <a href="https://github.com/Daksh-Naik/Package-Delivery-Sim-2D" target="_blank" rel="norefferer">is open-sourced at Github! You can check it out</a> to create your own cheats!</h3>
@@ -284,7 +308,24 @@
     <div class="gamelogo">
         <h2 class="gamelogo-text">Package Delivery Sim 2D <cite>P5</cite></h2>
         <cite style="font-size: 5px;">"It is what it is..."</cite>
+        <br><br>
+        <p style="font-size: 10px;">Developed by : 
+            <a style="color:inherit" class="siteam3e" rel="noreferrer" href="https://daksh-naik.github.io/Profile/" target="_blank">Daksh Naik</a>
+        </p>
     </div>
+
+    <script>
+        var closebuto = document.getElementById("closebuto");
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            closebuto.style.display = "block";
+        }
+    
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            closebuto.style.display = "none";
+        }
+    </script>
     
 </body>
 </html>

@@ -27,7 +27,7 @@ li{ margin: 5px; }
 
 ::-webkit-scrollbar { width: 20px; background-color: black; transition: 0.5s; }
 ::-webkit-scrollbar-track { background: black; }
-::-webkit-scrollbar-thumb { background:rgb(166, 255, 166); border-radius: 75px; transition: 0.5s; }
+::-webkit-scrollbar-thumb { background:rgb(166, 255, 166); border-radius: 0px; transition: 0.5s; }
 ::-webkit-scrollbar-thumb:hover { background: rgb(114, 255, 114) }
 
 .fader-anim {        -webkit-animation: fadein 2s; -moz-animation: fadein 2s;  -ms-animation: fadein 2s;  -o-animation: fadein 2s;  animation: fadein 2s; }
@@ -55,4 +55,27 @@ li{ margin: 5px; }
         @-o-keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
+        }
+
+        .defnavbar { position: fixed; top: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.300); display: flex; }
+        .defnavbar-logo { border-radius: 0px 0px 100px 0px; background-color: rgba(0, 0, 0, 0.600); color: rgb(115, 255, 0);
+            padding: 10px 40px 10px 10px; transition: 0.3s; font-weight: 900; text-rendering: optimizeLegibility; }
+        .defnavbar-logo:hover { background-color: rgba(0, 0, 0, 0.900); letter-spacing: 1px; color: rgb(180, 250, 123); }
+        .defnavbar-overlay-menubut { background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
+            cursor: pointer; position: fixed; right: 0px; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
+            transition: 0.3s; border-radius: 10px 10px 10px 100px; text-shadow: 2px 2px 4px #000000; }
+        .defnavbar-overlay-menubut:hover { letter-spacing: 2px; color: rgb(196, 232, 255); }
+        .overlay { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.700);
+            overflow-x: hidden; transition: 0.5s; }
+        .overlay-content { display: flex; flex-direction: column; justify-content: space-around; position: relative;
+            text-align: center; margin-top: 30px; }
+        .overlay a { margin: 25px; padding: 8px; text-decoration: none; font-size: 40px; display: block; transition: 0.3s; text-shadow: 2px 2px 4px #000000; } 
+        .overlay a:hover, .overlay a:focus { color: #f1f1f1; }
+        .overlay .overlayclosebtn { display: none; position: fixed; top: 20px; right: 45px; font-size: 60px; cursor: pointer; z-index: 99; }
+    
+        @media only screen and (max-width: 500px) {
+            .defnavbar-overlay-menubut { bottom: 0; border-radius: 100px 0px 0px 0px; }
+            .overlay a { font-size: 20px; }
+            .overlayclosebtn { right: 10px; }
+            #scroll-to-top { bottom: 100px; }
         }

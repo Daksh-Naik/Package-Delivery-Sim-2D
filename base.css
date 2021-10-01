@@ -13,11 +13,18 @@ body {
 }
 
 img { width: 100%; max-width: 100%; height: auto; margin-left: auto; margin-right: auto; }
-a{ color: lightskyblue; text-decoration: none; font-weight: 900;}
-a:hover{ text-decoration: underline; }
+a{ color: lightskyblue; text-decoration: none; font-weight: 900; transition: 0.3s;}
+a:hover{ text-decoration: underline; color: rgb(183, 227, 255);}
 h2{ margin: 30px; padding: 10px; }
 h3{ margin: 10px; padding: 10px; }
 h4{ margin: 10px; }
+
+kbd { padding: 0px 5px 0px 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: 'Segoe UI'; font-weight: 700; margin: 0px 5px 0px 5px; transition: 0.3s; text-transform: uppercase; box-shadow: 3px 3px 5px rgba(173, 173, 173, 0.3);}
+kbd:hover { background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.9);  }
+
+code {  user-select: text; background-color: rgb(223, 223, 223); color: black; padding: 1px 5px 1px 5px; border-radius: 5px; transition: 0.3s; font-weight: 900;} 
+code:hover{ background-color: black; color: white;}
+
 
 ul{ margin: 15px; }
 li{ margin: 5px; }
@@ -69,8 +76,8 @@ li{ margin: 5px; }
             overflow-x: hidden; transition: 0.5s; }
         .overlay-content { display: flex; flex-direction: column; justify-content: space-around; position: relative;
             text-align: center; margin-top: 30px; }
-        .overlay a { margin: 25px; padding: 8px; text-decoration: none; font-size: 40px; display: block; transition: 0.3s; text-shadow: 2px 2px 4px #000000; } 
-        .overlay a:hover, .overlay a:focus { color: #f1f1f1; }
+        .overlay a { margin: 25px; padding: 8px; text-decoration: none; font-size: 40px; display: block; transition: 0.3s; text-shadow: 3px 3px 5px #000000; } 
+        .overlay a:hover { color: #f1f1f1; }
         .overlay .overlayclosebtn { display: none; position: fixed; top: 20px; right: 45px; font-size: 60px; cursor: pointer; z-index: 99; }
     
         @media only screen and (max-width: 500px) {

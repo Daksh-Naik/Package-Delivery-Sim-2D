@@ -15,7 +15,7 @@
         <meta property="og:title" content="Package Delivery Sim 2D P5"/>
         <meta property="og:description" content="Package Delivery Sim 2D P5 , a Web-Game purely created by P5.PLAY.JS and P5.DOM. | Hosted by : Github-Pages."/>
     
-        <meta property="og:image" content="gamev1/images/delvan/delivprof.png"/>
+        <meta property="og:image" content="thumbnail.png"/>
         <meta property="og:image:width" content="600"/>
         <meta property="og:image:height" content="350"/>
         
@@ -34,7 +34,9 @@
                 background-color: rgb(0, 255, 13); transition: 0.3s; font-weight: 900;}
             #scroll-to-top:hover { color: rgb(9, 255, 0); background-color:rgb(26, 26, 26); }
 
-            .title {padding: 45px; margin: 200px 0px 50px 0px; background: linear-gradient(#73ff00, rgb(255, 255, 255)); background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+            .title {
+                padding: 45px; margin: 200px 0px 50px 0px;  background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
+                background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
             .title:hover {font-size: 45px;}
 
             .intronews { margin:20px; padding: 40px; background-color: rgb(10, 10, 10); text-align: left;}
@@ -71,27 +73,24 @@
             .lighttd2:hover { background-color: rgb(144, 238, 144); color: rgb(0, 0, 0); }
             .verstable th { padding: 40px; width: 300px; }
 
-            code { background-color: rgb(223, 223, 223); color: black; padding: 1px 3px; border-radius: 5px; transition: 0.3s; font-weight: 900;} 
-            code:hover{ background-color: black; color: white;}
-
-            .controlsLT { color: #bfffbf;     background: linear-gradient(to top left, #000000 73%, #006d00 100%); margin: 15px; padding: 30px; font-size: larger; border-radius: 5px; }
+            .controlsLT { color: #bfffbf;     background: linear-gradient(to top left, #000000 73%, #006d00 100%); margin: 15px; padding: 30px; font-size: larger; }
 
             .ohyesLT{ background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; justify-content: space-around;
                 background: linear-gradient(to bottom right, #000000 73%, #006d00 100%); }
 
             .buttonPLT{ font-size: 35px; background: linear-gradient(to bottom left, #73ff00 0%, #ffffff 100%); color: black;
-                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s; }
+                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s;  box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.452); }
             .buttonPLT:hover{ text-decoration: none; font-size: 40px; background: linear-gradient(to top right, #73ff00 0%, #ffffff 100%); color: black; }
             .stablerelLT{ margin: 10px; }
             .buttonPnodis { text-decoration: none; padding:40px; border-radius: 25px;  color:rgb(255, 0, 0); font-weight: 800;font-size: 30px; transition: 0.3s;  }
 
-            .controlsAV { color: #fac8fa; background: linear-gradient(to top left, #000000 73%, #ff0066 100%); margin: 15px; padding: 30px; font-size: larger; border-radius: 5px; }
+            .controlsAV { color: #fac8fa; background: linear-gradient(to top left, #000000 73%, #ff0066 100%); margin: 15px; padding: 30px; font-size: larger; }
 
             .ohyesAV { background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; justify-content: space-around;
                 background: linear-gradient(to bottom right, #000000 73%, #ff0066 100%); }
             
             .buttonPAV{ font-size: 35px; background: linear-gradient(to bottom left, #ff66ff 0%, #ffffff 100%); color: black;
-                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s; }
+                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s; box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.452);}
             .buttonPAV:hover{ text-decoration: none; font-size: 40px; background: linear-gradient(to top right, #ff66ff 0%, #ffffff 100%); color: black; }
 
             .updates {padding: 20px 20px; border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); }
@@ -151,7 +150,6 @@
                 background-clip: unset;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                transition: 0.3s;
             }
 
             .cheating {
@@ -243,31 +241,20 @@
             <div class="overlay-content" onclick="closeNav()">
                 <a href="#title" class="defnavbar-logo" style="color: rgb(115, 255, 0);">Package Delivery Sim 2D <cite>P5</cite></a>
                 <a href="#Game-Story">Story</a>
-                <a href="#Specs">Specs</a>
-                <a href="#brief-overview">Brief</a>
+                <a href="#Specs">Specs & Req</a>
+                <a href="#brief-overview">Brief Info</a>
                 <a href="#LT-game" style="color: rgb(128, 255, 128);" class="abc">Play : Lite (LT)</a>
                 <a href="#AV-game" style="color: rgb(255, 0, 102);" class="abc">Play : Advanced (AV)</a>
-                <a href="#tips">Tips & Tricks</a>
                 <a href="cheats.html" target="_blank" rel="norefferer">Cheats</a>
                 <a href="#updates">News & Updates</a>
+                <a href="#tips">Tips & Tricks</a>
+                <a href="#Troubleshooting">Troubleshoot</a>
                 <a href="#credits">Info & Credits</a>
             </div>
     </div>
 
-        <!-- <div class="topnav" id="myTopnav">
-            <a href="#title" class="active" title="Game">Package Delivery Sim 2D</a>
-            <a href="#Game-Story" title="Go to Game Story">Game Story</a>
-            <a href="#Specs" title="Read the System Requirements and Specifications">Read System Specs</a>
-            <a href="#brief-overview" title="Read brief over-view">Brief</a>
-            <a href="#keys" title="Read Game Controls">Game Controls</a>
-            <a href="#keys" class="topnav plagame" title="Play the Game Directly">Play the Game</a>
-            <a href="#updates" class="ik" title="News and Updates">News</a>
-            <a href="#credits" title="Game Statistics and Credits, Special thanks, Information and Terms">Info & Credits</a>
-        </div> -->
 
-
-
-        <h1 id="title" class="title">Package Delivery Sim 2D<cite style="font-size: 20px;"> P5</cite></h1><br>
+        <h1 id="title" class="title">Package Delivery Sim 2D<cite style="font-size: 20px; "> P5</cite></h1><br>
         
         <div>
             <p class="MOBILE">Sorry, you won't be able to play this game on this device. You have a too less resolution. Kindly switch over to atleast <strong>1300x600</strong> resolution device to play it.</p>
@@ -325,7 +312,7 @@
                         <li>Minimum CPU Speed : 1.8ghz (Avg CPU Usage : 60 - 70% on integrated graphics)</li>
                         <li>Memory Utilization upto 10% - 15%</li>
                         <li><cite class="lt">For LT</cite> About 4.72 MB of resources to download.</li>
-                        <li><cite class="av">For AV</cite> About 6.92 MB of resources to download.</li>
+                        <li><cite class="av">For AV</cite> About 7.03 MB of resources to download.</li>
                     </ul>
                 </div>
                 <br><br>
@@ -429,7 +416,7 @@
                         <td class="lighttd2">No</td>
                     </tr>
                     <tr>
-                        <td class="advancedtd">6.92MB</td>
+                        <td class="advancedtd">7.03MB</td>
                         <td class="propstd">- Size -</td>
                         <td class="lighttd">4.72MB</td>
                     </tr>
@@ -455,56 +442,62 @@
         <div class="controlsLT" id="LT-game" name="keys">
             <h2>Game Controls / Keybinds for <cite class="LT">LT</cite></h2>
             <br>
-            <p>Press <code>UP ARROW</code> to move forward (up).</p>
-            <p>Press <code>DOWN ARROW</code> to move backward (down).</p>
-            <p>Press <code>LEFT ARROW</code> and <code>RIGHT ARROW</code> keys to steer / rotate.</p>
+            <p>Press <kbd>UP ARROW</kbd> to move forward (up).</p>
+            <p>Press <kbd>DOWN ARROW</kbd> to move backward (down).</p>
+            <p>Press <kbd>LEFT ARROW</kbd> and <kbd>RIGHT ARROW</kbd> keys to steer / rotate.</p>
             <br>
-            <p>Press <code>W</code> key to move forward (up) faster.</p>
-            <p>Press <code>D</code> key to drop a package at a house.</p>
-            <p>Press <code>F5</code> or <code>E</code> key to restart / refresh the game.</p>
+            <p>Press <kbd>W</kbd> key to move forward (up) faster.</p>
+            <p>Press <kbd>D</kbd> key to drop a package at a house.</p>
+            <p>Press <kbd>F5</kbd> or <kbd>E</kbd> key to restart / refresh the game.</p>
         </div>
 
         <div class="ohyesLT" id="play-game">
             <br><br>
+            <p class="stablerelLT" style="color: rgb(182, 255, 122);">Play Lite : Shorter, easier, lighter, basic version. Quit anytime by closing the tab.</p>
             <p class="stablerelLT" style="font-size: 13px; margin:10px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
             <h2><a class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D LT P5</a></h2><br>
-            <p class="stablerelLT">Stable Release LT V1.10.3</p>
+            <p class="stablerelLT">Stable Release LT V1.12.4</p>
         </div>
 
         <div class="controlsAV" id="AV-game" name="keys">
             <h2>Game Controls / Keybinds for <cite class="AV">AV</cite></h2>
             <br>
-            <p>Press <code>UP ARROW</code> to move forward (up).</p>
-            <p>Press <code>DOWN ARROW</code> to move backward (down).</p>
-            <p>Press <code>LEFT ARROW</code> and <code>RIGHT ARROW</code> keys to steer / rotate.</p>
+            <p>Press <kbd>UP ARROW</kbd> to move forward (up).</p>
+            <p>Press <kbd>DOWN ARROW</kbd> to move backward (down).</p>
+            <p>Press <kbd>LEFT ARROW</kbd> and <kbd>RIGHT ARROW</kbd> keys to steer / rotate.</p>
             <br>
-            <p>Press <code>W</code> key to move forward (up) faster.</p>
-            <p>Press <code>D</code> key to drop a package at a house.</p>
-            <p>Press <code>C</code> key to turn on Cruise Control.</p>
-            <p>Press <code>V</code> key to turn off Cruise Control.</p>
-            <p>Press <code>F5</code> or <code>E</code> key to restart / refresh the game.</p>
+            <p>Press <kbd>W</kbd> key to move forward (up) faster.</p>
+            <p>Press <kbd>D</kbd> key to drop a package at a house.</p>
+            <p>Press <kbd>C</kbd> key to turn on Cruise Control.</p>
+            <p>Press <kbd>V</kbd> key to turn off Cruise Control.</p>
+            <p>Press <kbd>F5</kbd> or <kbd>E</kbd> key to restart / refresh the game.</p>
         </div>
 
         <div class="ohyesAV" id="play-game">
             <br><br>
+            <p class="stablerelAV" style="color: rgb(255, 163, 206);">Play Advanced : Lengthier, medium-difficulty, endurance, advanced version. Quit anytime by closing the tab.</p>
             <p class="stablerelAV" style="font-size: 13px; margin:10px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
             <h2><a class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D AV P5</a></h2><br>
-            <p class="stablerelAV">Stable Release AV V2.02.3</p>
+            <p class="stablerelAV">Stable Release AV V2.07.2</p>
         </div>
 
         <div class="updates" id="updates">
             <h2>What's new?</h2>
-            <h3>Now introducing <cite class="av">AV Version V2.02.3</cite></h3>
-            <p><cite class="lt">LT V1.10.03 (3rd Sep, 2021)</cite> contains :</p>
+            <p><cite class="lt">LT V1.12.4 (1st Oct, 2021)</cite> contains :</p>
             <ul>
-                <li>The earlier version has been named to <cite class="lt">LT (Lite)</cite></li>
-                <li>- Lifetime optimised for oncoming-traffic.</li>
-                
+                <li>- Custom algorithm for life-time of sprites, fixes major lag issues.</li>
+                <li>Element positions smoothened out.</li>
             </ul>
             <br><br>
-            <p><cite class="av">AV V2.02.03 (3rd Sep, 2021)</cite> contains :</p>
+            <p><cite class="av">AV V2.07.02 (1st Oct, 2021)</cite> contains :</p>
             <ul>
-                <li>Updates will be pushed soon.</li>
+                <li>Element positions smoothened out.</li>
+                <li>Increased height of the canvas.</li>
+                <li>- Custom algorithm for life-time, fixes major lag issues.</li>
+                <li>- Increased max-record timer (from 60 to 190).</li>
+                <li>- Controls enhanced (Cruise Control).</li>
+                <li>-On-road directions and navigation - highway / area names printed on the road.</li>
+                <li>-Background cities, apartments, position of the buildings are enhanced.</li>
             </ul>
         </div>
 
@@ -512,11 +505,11 @@
         <div class="hints" id="tips">
             <h1 style="font-size: 21px;">Tips and Tricks</h1>
             <p> There are some tips that you can implement to win : <ul>
-                <li>I recommend you keeping a hand around or on <code>W</code> and <code>D</code> keys and a hand on <code>Arrow</code> keys. There's no use of your mouse in this game.</li>
+                <li>I recommend you keeping a hand around or on <kbd>W</kbd> and <kbd>D</kbd> keys and a hand on <kbd>Arrow</kbd> keys. There's no use of your mouse in this game.</li>
                 <li>Drive upon the solid line (center line) more, rather than staying within the lanes. By this your chances of not hitting the traffic will be reduced.</li>
                 <li>When dropping the packages, stay away from the traffic and go up to the house door to drop the package.</li>
                 <li>I recommend you not to drive faster (i.e. don't press the W key), instead, drive using the arrow key. There'll be enough time for you to deliver the packages.</li>
-                <li>Press both <code>UP ARROW</code> keys and <code>DOWN ARROW</code> keys to drive even slower, in case if you have to tail-gate the vehicle infront of you.</li>
+                <li>Press both <kbd>UP ARROW</kbd> keys and <kbd>DOWN ARROW</kbd> keys to drive even slower, in case if you have to tail-gate the vehicle infront of you.</li>
                 <li>Enable <strong>Browser Hardware Acceleration (If you have a GPU)</strong> to play the game in good frame rates.</li>
             </ul></p><br>
         </div>
@@ -525,8 +518,6 @@
             <h1 style="font-size: 25px;">Known Bugs and Problems</h1>
             <p style="font-size: 18px;">There are some bugs in the game which you may have noticed :
             <ul>
-            <li>Traffic Vehicles teleport right infront of you when near a house : While this issue is quite rare, a fix will be deployed soon.</li>
-            <li>Over-lapping Road-works : This has to do something with frame-count properties and will be fixed soon. However, higher-FPS gameplay won't be having these problems.</li>
             <li>Disappearing Traffic and Road-works : It's the life-time property that destroys the traffic after a certain period of time. This is done to fix lag issues.</li><br>
             </ul>
             <ul>
@@ -535,9 +526,10 @@
             <li>Can't press 3 arrow-keys at once : This is all dependant on your Keypad / Keyboard. Lenovo and DELL laptops don't have these problems.</li>
             <li>Game Canvas too big : If you're using a Device that has lesser resolution <strong>(eg. lesser than 1300x600)</strong>, this is because the initial game-canvas has been set to this resolution, so kindly switch over to a higher resolution device to play or switch to full screen without being distracted by the scroll.</li>
         </ul></p>
-            <h2>Troubleshooting : Less resolution</h2>
+            <h2 id="Troubleshooting">Troubleshooting : Less resolution</h2>
             <p>If you've not yet understood what I mean by resolution, let me put that simple : You need a device that has <cite>1300</cite> pixels width or higher.</p>
             <p>If you have a device that has higher resolution, but if you still cannot play it, try changing the resolution of your laptop / desktop from your device settings.</p><br><br>
+            <p>It's needed so that the element positions do not flicker.</p>
             <br>
             <p>I have no idea what OS you're using. So, try fiddling through your display settings, change some stuff.</p>
             <p>Some external links that can provide you more information :</p>
@@ -546,7 +538,14 @@
             <p><a href="https://help.ubuntu.com/stable/ubuntu-help/look-resolution.html.en" rel="norefferer" target="_blank" rel="norefferer">Changing display settings in Linux</a></p>
             <p><a href="https://support.google.com/chromebook/answer/6320705?hl=en" rel="norefferer" target="_blank" rel="norefferer">Changing display settings in ChromeBook OS.</a></p>
             <br><br>
-            <p>A guide will be coming soon to troubleshoot problems.</p>
+            <h3>Recommended hot fixes :</h3>
+            <p>You can try doing -</p>
+            <ul>
+                <li>Press <kbd>CTRL</kbd> + <kbd> - </kbd> to zoom out the screen, <kbd>CTRL</kbd> + <kbd>+</kbd> to zoom in.</li>
+                <br>
+                <li>Fire up the developer console and <strong>Toggle the device toolbar.</strong> Choose <strong>Laptop - L 4k</strong>
+                 option, which will zoom out the screen, enabling you to play the game without any fuss.</li>
+            </ul>
         </div>
 
         <div class="cheating" id="cheats">
@@ -557,15 +556,15 @@
         <div class="game-credits" id="credits">
             <h2 style="text-decoration: underline;">Stats</h2>
             <div class="stats">
-                <p>It took about : <strong>72 Hours, 13 Minutes</strong> to develop the UI, Core Game and this Menu.</p>
+                <p>It took about : <strong>75 Hours</strong> to develop the UI, Core Game and this Menu.</p>
                 <br>
                 <p>8 Updates / Releases, each adding, stabilizing and fixing the game.</p>
                 <br>
                 <p>Games and UI thoroughly refreshed and revised, and tested on different devices.</p>
                 <br><br>
-                <p><cite class="lt">LT : Latest Update : V1.10.3 on 25-08-2021</cite></p>
-                <p><cite class="av">AV : Updates about to be released soon.</cite></p>
-                <p><cite>Latest UI Update : 24-09-2021</cite></p>
+                <p><cite class="lt">LT : Latest Update : V1.12.04 on 01-09-2021</cite></p>
+                <p><cite class="av">AV : Latest Update : V2.07.02 on 01-09-2021.</cite></p>
+                <p><cite>Latest UI Update : 01-09-2021</cite></p>
             <br><br>
             </div>
             <hr>

@@ -18,14 +18,13 @@
         .gamelogo-text{ margin: 100px 0px 60px 0px; font-size: 50px; background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255)); background-clip: unset;
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: 0.3s; }
         h2 { font-size: 35px; }
-        kbd { user-select: text; background-color: rgb(230, 230, 230); color: black; font-family: 'Segoe UI'; font-weight: 700; border-radius: 5px; transition: 0.3s; }
         img { max-height: fit-content; width:fit-content}
-        ::selection { background-color: #00ff0d; color: #000000; }
-        kbd:hover { background-color: black; color: white;  }
+        ::selection { background-color: rgba(26, 26, 26, 0.901); color: rgb(128, 255, 128);; }
         .introduct { padding: 50px; }
         .instruct { margin: 40px; padding: 50px;
             background: linear-gradient(to bottom, rgb(20, 20, 20) 0%, #000000 100%); }
         .instruct h3 { font-size: 30px; margin: 10px; }
+        .note { color: rgb(255, 189, 65); font-weight: 600; }
         dl { padding: 40px; }
         dd { padding-top: 10px; padding-left: 50px; }
         .instruct-more { margin: 30px;}
@@ -37,7 +36,7 @@
         .gamestates { text-align: left; padding: 70px; }
         .performance { padding: 100px; }
         .MOBILE { display: none; padding: 20px; color: rgb(255, 56, 56); }
-        .cheatsinfor { padding: 30px; }
+        .cheatsinfor { padding: 30px; font-size: 30px;}
         .faq {padding: 40px;}
 
         @media only screen and (max-width: 830px) {
@@ -45,6 +44,7 @@
             .instruct { margin: 5px; padding: 5px; }
             .cheats { padding: 10px; margin:2px; }
             .cheats-time { padding: 10px; }
+            .cheatsinfor { font-size: 15px; } 
             .gamestates { padding: 10px; }
             .performance { padding: 10px; }
             .gamelogo { padding: 10px; }
@@ -81,9 +81,9 @@
                 <a href="index.html">Back to Index</a>
                 <a href="#req">Requirements</a>
                 <a href="#lyze">Analyze</a>
-                <a href="#list" >Cheats List</a>
+                <a href="#list" >- Cheats List -</a>
                 <a href="#faq">FAQ</a>
-                <a href="#action">In-action</a>
+                <a href="#action" style="color: rgb(115, 255, 0);">In-action</a>
                 <a href="#more">More</a>
                 <a href="index.html">Back to Index</a>
             </div>
@@ -106,7 +106,7 @@
     <section class="instruct" id="req">
         <div style="text-align: left;">
             <h3> - What do I need?</h3>
-            <p>The most important thing needed is your <strong>Browser's Developer Console / Tools.</strong> No, don't worry, you don't need to download it. It's already installed.</p>
+            <p>The most important thing needed is your <strong class="note">Browser's Developer Console / Tools.</strong> No, don't worry, you don't need to download it. It's already installed.</p>
             <br>
             <p>Hot-keys / Keybinds for various browsers : </p>
             <dl>
@@ -129,9 +129,9 @@
             <div class="instruct-more" id="lyze">
                 <h3> - I'm all set. What now?</h3>
                 <p>If you've figured out your Dev Tools / Console, search for a Tab within the panel <strong>" Console "</strong>.</p>
-                <p>On this page, you may find a totally empty console. So, <a href="index.html#keys" target="_blank">go back and start the game in a new window.</a></p>
+                <p class="note">On this page, you may find a totally empty console. So, <a href="index.html#keys" target="_blank">go back and start the game in a new window.</a></p>
                 <br>
-                <p>When you're in the <a href="index.html#keys" target="_blank">Game Window Tab,</a> open the Developer Console / Tools panel.</p>
+                <p class="note">When you're in the <a href="index.html#keys" target="_blank">Game Window Tab,</a> open the Developer Console / Tools panel.</p>
                 <h4>It will look somewhat like this (Chrome Browser):</h4>
                 <picture>
                     <source type="image/avif" srcset="gamev1/images/devconsole.avif" title="Dev Tools / Console : Example" />
@@ -145,9 +145,12 @@
                 <ul>
                     <li><a href="#cheatstime">Time Cheats</a></li>
                     <li><a href="#packages">Packages</a></li>
+                    <li><a href="#truefalse">Remove Objections</a></li>
                     <li><a href="#gameStates">Game States</a></li>
                     <li><a href="#position">Positions</a></li>
+                    <li><a href="#teleport">House Teleport</a></li>
                     <li><a href="#gameplay">Game Play</a></li>
+                    <li><a href="#combos">Combos</a></li>
                 </ul>
             </div>
             <div class="faq" id="faq">
@@ -173,7 +176,7 @@
                 </dl>
                 <dl>
                     <dt>Q. How to reset?</dt>
-                    <dd> - Press <kbd>F5</kbd> or Refresh your browser window (game) to reset everything.</dd>
+                    <dd> - Press <code>F5</code> or Refresh your browser window (game) to reset everything.</dd>
                 </dl>
                 <dl>
                     <dt>Q. These cheats are too less for me. Can I do more?</dt>
@@ -194,39 +197,50 @@
     <section class="cheats" id="action">
         <div>
             <h2>Available Cheats (Experimented)</h2>
-            <h3>Following are some of the cheats that are experimented. You may use them. If they are really really less for you, you can create your own cheats as-well!</h3>
+            <h3 class="note">Following are some of the cheats that are experimented. You copy and paste them. If they are really really less for you, you can create your own cheats as-well!</h3>
         </div>
         <div class="cheats-time" id="cheatstime">
-            <p>Left-click anywhere within the empty space in the console tab, and start typing!</p>
+            <p class="note">Select and copy your desired <code>cheat code</code>, then, go back to the game screen, fire up the developer console, click anywhere in the empty area and paste!</p>
             <h3>Alter Time :</h3>
             <p>To alter time, following are some of the <strong>variables</strong> you can type to modify / change digits.</p>
             <dl>
                 <dt>- To alter / change <strong>Remaining Time Left,</strong></dt>
-                <dd>Type <kbd>timer = 1000</kbd> You can even enter your desired digit.</dd>
-                <p>( Adding a -digit will obviously end the game! )</p>
+                <dd>Select, copy <code>timer = 1000</code> You can even enter your desired digit.</dd>
+                <p class="note">( Adding a -digit will obviously end the game! )</p>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Travelled,</strong></dt>
-                <dd>Type <kbd>DTtimer = 1000</kbd> You can even enter your desired digit.</dd>
+                <dd>Select, copy <code>DTtimer = 1000</code> You can even enter your desired digit.</dd>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Travelled in opposite Lane,</strong></dt>
-                <dd>Type <kbd>oppotimer = 1000</kbd> You can even enter your desired digit.</dd>
+                <dd>Select, copy <code>oppotimer = 1000</code> You can even enter your desired digit.</dd>
             </dl>
             <dl>
                 <dt> - To alter / change <strong>Time Taken,</strong></dt>
-                <dd>Type <kbd>timertaken = 1000</kbd> You can even enter your desired digit.</dd>
+                <dd>Select, copy <code>timertaken = 1000</code> You can even enter your desired digit.</dd>
             </dl>
             <br><br>
             <div id="packages">
                 <h3>Alter Packages Count :</h3>
                 <dl>
                     <dt> - To alter / change <strong>Remaining Packages (about to be delivered),</strong></dt>
-                    <dd>Type <kbd>packages = 1000</kbd> You can even enter your desired digit.</dd>
+                    <dd>Select, copy <code>packages = 1000</code> You can even enter your desired digit.</dd>
                 </dl>
                 <dl>
                     <dt> - To alter / change <strong>Packages delivered,</strong></dt>
-                    <dd>Type <kbd>packagedeli = 1000</kbd> You can even enter your desired digit.</dd>
+                    <dd>Select, copy <code>packagedeli = 1000</code> You can even enter your desired digit.</dd>
+                </dl>
+            </div>
+            <div id="truefalse">
+                <h3>Remove objections :</h3>
+                <dl>
+                    <dt> - To remove <strong>Traffic,</strong></dt>
+                    <dd>Select, copy <code>spawntraf = false</code></dd>
+                </dl>
+                <dl>
+                    <dt> - To remove <strong>Road-works,</strong><cite class="lt"> in Lite Version</cite></dt>
+                    <dd>Select, copy <code>spawnrw = false</code></dd>
                 </dl>
             </div>
         </div>
@@ -237,24 +251,24 @@
             <h3>Altering Game States :</h3>
             <dl>
                 <dt> - To set State to <strong>Start,</strong></dt>
-                <dd>Type <kbd>gameState = 0</kbd> This will start the game, may not work sometimes.</dd>
+                <dd>Select, copy <code>gameState = 0</code> This will start the game, may not work sometimes.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>In-Game : Play,</strong></dt>
-                <dd>Type <kbd>gameState = 1</kbd> This will set the game state to play right away.</dd>
+                <dd>Select, copy <code>gameState = 1</code> This will set the game state to play right away.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Fail : Met in an accident,</strong></dt>
-                <dd>Type <kbd>gameState = 2</kbd> This will end the game, may not work sometimes.</dd>
+                <dd>Select, copy <code>gameState = 2</code> This will end the game, may not work sometimes.</dd>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Fail : Crossed Time Limit / Too late,</strong></dt>
-                <dd>Type <kbd>gameState = 3</kbd> This will freeze the game kind of. </dd>
-                    <p>Because if you're in the middle of the game-play this state fires only when the timer is less than 0. You may still try it.</p>
+                <dd>Select, copy <code>gameState = 3</code> This will freeze the game kind of. </dd>
+                    <p class="note">Because if you're in the middle of the game-play this state fires only when the timer is less than 0. You may still try it.</p>
             </dl>
             <dl>
                 <dt> - To set State to <strong>Win : Delivered all the packages,</strong></dt>
-                <dd>Type <kbd>gameState = 4</kbd> You will the win the game right away!</dd>
+                <dd>Select, copy <code>gameState = 4</code> You will the win the game right away!</dd>
             </dl>
             <p>If you've ran into a problem, restart the game.</p>
             <br><br>
@@ -263,13 +277,90 @@
                 <p>You can even change your position!</p>
                 <dl>
                     <dt> - To set the <strong>" X " Quadrant / Position of the Van,</strong></dt>
-                    <dd>Type <kbd>delvan.x = 1000</kbd> This will set the position to " X " 1000PX!</dd>
+                    <dd>Select, copy <code>delvan.x = 1000</code> This will set the position to " X " 1000PX!</dd>
                     <p>Note, adding a -digit will set the position towards the <strong>Left,</strong> adding a +digit will set the position towards the <strong>Right.</strong></p>
                 </dl>
                 <dl>
                     <dt> - To set the <strong>" Y " Quadrant / Position of the Van,</strong></dt>
-                    <dd>Type <kbd>delvan.y = 1000</kbd> This will set the position to " Y " 1000PX!</dd>
+                    <dd>Select, copy <code>delvan.y = 1000</code> This will set the position to " Y " 1000PX!</dd>
                     <p>Note, adding a -digit will set the position towards the <strong>Top,</strong> adding a +digit will set the position towards the <strong>Bottom.</strong></p>
+                </dl>
+            </div>
+            <div id="teleport">
+                <h3>Teleport to Houses</h3>
+                <p>Annoying traffic? You can teleport to houses at-the-fly!</p>
+                <dl>
+                    <dt> - To teleport to <strong>the first House :</strong>(in both : <cite class="lt">LT</cite> and <cite class="av">AV</cite>)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse1PA.y;
+                            delvan.x = mHouse1PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the second House :</strong>(in both : <cite class="lt">LT</cite> and <cite class="av">AV</cite>)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse2PA.y;
+                            delvan.x = mHouse2PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the third House :</strong>(in both : <cite class="lt">LT</cite> and <cite class="av">AV</cite>)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse3PA.y;
+                            delvan.x = mHouse3PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the fourth House :</strong>(in both : <cite class="lt">LT</cite> and <cite class="av">AV</cite>)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse4PA.y;
+                            delvan.x = mHouse4PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the fifth House :</strong>(in both : <cite class="lt">LT</cite> and <cite class="av">AV</cite>)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse5PA.y;
+                            delvan.x = mHouse5PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the sixth House :</strong>(in : <cite class="av">AV</cite> only)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse6PA.y;
+                            delvan.x = mHouse6PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> - To teleport to <strong>the seventh House :</strong>(in : <cite class="av">AV</cite> only)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse7PA.y;
+                            delvan.x = mHouse7PA.x;
+                        </code>
+                    </dd>
+                </dl>
+                <p class="note">And then... continue upto till 11th.</p>
+                <dl>
+                    <dt> - To teleport to <strong>the eleventh House :</strong>(in : <cite class="av">AV</cite> only)</dt>
+                    <dd>Select, copy <br>
+                        <code style="white-space: pre-line;">
+                            delvan.y = mHouse11PA.y;
+                            delvan.x = mHouse11PA.x;
+                        </code>
+                    </dd>
                 </dl>
             </div>
         </div>
@@ -278,18 +369,35 @@
             <h3>Game Play too slow for you? You have a high-end PC but not happy with the FPS? Good for you, you can even alter the performance!</h3>
             <dl>
                 <dt>To set <strong>FPS Cap,</strong></dt>
-                <dd>Type <kbd>frameRate(60)</kbd>, this will increase the cap, it may or may not work. You can still give it a try.</dd>
-                <p>When you type only <kbd>frameRate()</kbd>, it displays the current FPS of your browser. Don't set too high! It may heat up your CPU a lot.</p>
+                <dd>Select, copy <code>frameRate(60)</code>, this will increase the cap, it may or may not work. You can still give it a try.</dd>
+                <p>When you type only <code>frameRate()</code>, it displays the current FPS of your browser. Don't set too high! It may heat up your CPU a lot.</p>
                 <br>
-                <p>You can even type <kbd>frameCount</kbd> to check the frame count of the screen.</p>
+                <p>You can even type <code>frameCount</code> to check the frame count of the screen.</p>
             </dl>
             <br><br>
             <h3>Too small canvas?</h3>
                 <dl>
                     <dt>To set <strong>Canvas Dimensions,</strong></dt>
-                    <dd>Type <kbd>createCanvas(2000, 700)</kbd>, in this code, this will create a canvas of <strong>2000x, 700y.</strong> You can even change it to whatever you want.</dd>
-                    <p>Setting up a too large / small will alter the positions of the elements and it may not look good!</p>
+                    <dd>Select, copy <code>createCanvas(2000, 700)</code>, in this code, this will create a canvas of <strong>2000x, 700y.</strong> You can even change it to whatever you want.</dd>
+                    <p class="note">Setting up a too large / small will alter the positions of the elements and it may not look good!</p>
                 </dl>
+        </div>
+        <div id="combos" style="text-align: left;">
+            <h3>Combinations</h3>
+            <p>Cheat codes combined, so that you don't have to copy paste again and again.</p>
+            <dl>
+                <dt>To <strong>remove Traffic, set Timer, remove Invisible Boundaries, set Position of the van at the center,</strong></dt>
+                <dd>Select, copy : <br>
+                    <code style="white-space: pre-line;"> 
+                        spawntraf = false;
+                        timer = 1000;
+                        mHouseBounds.length = 0;
+                        delvan.x = 250
+                    </code>
+                </dd>
+                <p> This will : remove Traffic, set Timer to 1000, remove all Invisible House Boundaries, and set position of the van to 250 (at the center of the road).
+                </p>
+            </dl>
         </div>
         <h3><a href="index.html">Follow this link to go back to index.</a></h3>
     </section>

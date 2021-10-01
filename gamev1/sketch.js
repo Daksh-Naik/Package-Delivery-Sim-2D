@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D LT Made with P5.JS & P5.PLAY.JS
-//Stable Release V1.10.8
+//Stable Release V1.14.2
 
 p5.disableFriendlyErrors = true;
 
@@ -37,6 +37,8 @@ var allRoadworks = [];
 var TrafficAr = [];
 var HousePA = [];
 var mHouseBounds = [];
+var spawntraf = true;
+var spawnrw = true;
 
 var Start = 0;
 var Play = 1;
@@ -432,7 +434,7 @@ function draw() {
             htmlps.mHouse5DashDisplayDeliv();
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -200 && delvan.y > -10000) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -200 && delvan.y > -10000 && spawnrw===true) {
             var roadworksimagesL = Math.round(random(1, 2))
             switch (roadworksimagesL) {
                 case 1: roadworksL = createSprite(200, Math.round(random(delvan.y - 1800, -10000)), 50, 300);
@@ -452,7 +454,7 @@ function draw() {
             RoadworkGroup.add(roadworksL);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 130 === 0 && delvan.y < -1100 && delvan.y > -11000) {
+        if (keyDown("UP_ARROW") && frameCount % 130 === 0 && delvan.y < -1100 && delvan.y > -11000 && spawnrw===true) {
             var roadworksimagesL2 = Math.round(random(1, 2))
             switch (roadworksimagesL2) {
                 case 1: roadworksL2 = createSprite(200, Math.round(random(delvan.y - 1800, -11000)), 50, 300);
@@ -472,7 +474,7 @@ function draw() {
             RoadworkGroup.add(roadworksL2);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -500 && delvan.y > -2300) {
+        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -500 && delvan.y > -2300 && spawnrw===true) {
             var roadworksimagesR = Math.round(random(1, 2))
             switch (roadworksimagesR) {
                 case 1: roadworksR = createSprite(600, Math.round(random(delvan.y - 1500, -2000)), 50, 300);
@@ -492,7 +494,7 @@ function draw() {
             RoadworkGroup.add(roadworksR);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -3900 && delvan.y > -12000) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -3900 && delvan.y > -12000 && spawnrw===true) {
             var roadworksimagesR1 = Math.round(random(1, 2));
             switch (roadworksimagesR1) {
                 case 1: roadworksR1 = createSprite(600, Math.round(random(delvan.y - 1100, -12000)), 50, 300);
@@ -512,7 +514,7 @@ function draw() {
             RoadworkGroup.add(roadworksR1);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -21000 && delvan.y > -32000) {
+        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -21000 && delvan.y > -32000 && spawnrw===true) {
             var roadworksimagesR3 = Math.round(random(1, 2));
             switch (roadworksimagesR3) {
                 case 1: roadworksR3 = createSprite(600, Math.round(random(delvan.y - 1100, -32000)), 50, 300);
@@ -533,7 +535,7 @@ function draw() {
             RoadworkGroup.add(roadworksR3);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -15000 && delvan.y > -29000) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -15000 && delvan.y > -29000 && spawnrw===true) {
             var roadworksimagesL3 = Math.round(random(1, 2));
             switch (roadworksimagesL3) {
                 case 1: roadworksL3 = createSprite(200, Math.round(random(delvan.y - 1100, -29000)), 50, 300);
@@ -554,7 +556,7 @@ function draw() {
             RoadworkGroup.add(roadworksL3);
         }
 
-        if (frameCount % 100 === 0) {
+        if (frameCount % 100 === 0 && spawntraf === true) {
             PTraffic = createSprite(350, delvan.y - 800, 40, 80);
             PTraffic.lifetime = 700;
             var PTrafficvar = Math.round(random(1, 2));
@@ -577,7 +579,7 @@ function draw() {
             TrafficGroup.add(PTraffic);
         }
 
-        if (frameCount % 100 === 0) {
+        if (frameCount % 100 === 0 && spawntraf === true) {
             OTraffic = createSprite(450, delvan.y - 800, 40, 80);
             OTraffic.lifetime = 200;
             var OTrafficvar = Math.round(random(1, 2));
@@ -602,6 +604,12 @@ function draw() {
 
         TrafficGroup.collide(TrafficAr);
         TrafficGroup.collide(RoadworkGroup);
+
+        for(var i = 0; i < TrafficGroup.length; i++) {
+            if (TrafficGroup.get(i).y > delvan.y+200) {
+                TrafficGroup.get(i).destroy();
+            }
+        }
 
         if(delvan.isTouching(HousePA)) {
             delvan.collide(TrafficAr);

@@ -82,7 +82,7 @@ class HTMLPSCHARS {
     }
 
     startDisplay() {
-        this.startinst.position(950, 140);
+        this.startinst.position(950, 170);
         this.startinst.html("Press E to start the engine");
         this.startinst.style('color', 'white');
         this.startinst.style('user-select', 'none');
@@ -121,7 +121,7 @@ class HTMLPSCHARS {
     }
 
     ccat() {
-        this.cc.position(10, 230);
+        this.cc.position(10, 260);
         this.cc.html("CC : OFF");
         this.cc.style('color', 'white');
         this.cc.style('user-select', 'none');
@@ -131,7 +131,7 @@ class HTMLPSCHARS {
         this.cc.style('padding', '10px');
         this.cc.style('border-radius', '10px');
 
-        this.ccinst.position(10, 260);
+        this.ccinst.position(10, 290);
         this.ccinst.html("Press C to turn ON");
         this.ccinst.style('color', 'white');
         this.ccinst.style('user-select', 'none');
@@ -141,7 +141,7 @@ class HTMLPSCHARS {
         this.ccinst.style('padding', '10px');
         this.ccinst.style('border-radius', '5px');
 
-        this.cctimer.position(10, 290);
+        this.cctimer.position(10, 320);
         this.cctimer.html("Total time in CC : "+Math.round(cctime));
         this.cctimer.style('color', 'white');
         this.cctimer.style('background-color', 'black');
@@ -175,39 +175,39 @@ class HTMLPSCHARS {
         this.framecounter.style('padding', '10px');
         this.framecounter.style('border-radius', '5px')
 
-        this.odometer.position(1030, 410);
+        this.odometer.position(1030, 440);
         this.odometer.html("Travelled: " + Math.round(delvan.y - delvan.y - delvan.y) + "m");
         this.odometer.style('color', 'white');
         this.odometer.style('font-family', 'Trebuchet MS');
         this.odometer.style('user-select', 'none');
         this.odometer.style('text-align', 'center');
 
-        this.DTtimert.position(880, 460);
+        this.DTtimert.position(880, 490);
         this.DTtimert.html("Total sec Driving : " + Math.round(DTtimer));
         this.DTtimert.style('color', 'white');
         this.DTtimert.style('font-family', 'Trebuchet MS');
         this.DTtimert.style('text-align', 'center');
         this.DTtimert.style('user-select', 'none');
 
-        this.oppodtimert.position(880, 500);
+        this.oppodtimert.position(880, 530);
         this.oppodtimert.html("Total sec in Opposite Lane : " + Math.round(oppotimer));
         this.oppodtimert.style('color', 'white');
         this.oppodtimert.style('font-family', 'Trebuchet MS');
         this.oppodtimert.style('user-select', 'none');
 
-        this.packagesleft.position(1150, 460);
+        this.packagesleft.position(1150, 490);
         this.packagesleft.html("Packages Left : " + packages);
         this.packagesleft.style('color', 'white');
         this.packagesleft.style('font-family', 'Trebuchet MS');
         this.packagesleft.style('user-select', 'none');
 
-        this.packagesdeli.position(1150, 500);
+        this.packagesdeli.position(1150, 530);
         this.packagesdeli.html("Packages Delivered : " + packagedeli);
         this.packagesdeli.style('color', 'white');
         this.packagesdeli.style('font-family', 'Trebuchet MS');
         this.packagesdeli.style('user-select', 'none');
 
-        this.mtimer.position(980, 340);
+        this.mtimer.position(980, 370);
         this.mtimer.html("Time left : " + timer + " Seconds");
         this.mtimer.style('color', 'white');
         this.mtimer.style('font-family', 'Trebuchet MS');
@@ -216,7 +216,7 @@ class HTMLPSCHARS {
         this.mtimer.style('border-radius', '25px');
         this.mtimer.style('user-select', 'none');
 
-        this.restartinst.position(980, 530);
+        this.restartinst.position(980, 560);
         this.restartinst.html("Press F5 or E to restart");
         this.restartinst.style('color', 'white');
         this.restartinst.style('font-family', 'Trebuchet MS');
@@ -228,7 +228,7 @@ class HTMLPSCHARS {
     }
 
     timeTakenShow() {
-        this.timetakeninst.position(10, 100);
+        this.timetakeninst.position(10, 130);
         this.timetakeninst.html("Total time taken : ");
         this.timetakeninst.style('color', 'white');
         this.timetakeninst.style('background-color', 'black');
@@ -237,7 +237,7 @@ class HTMLPSCHARS {
         this.timetakeninst.style('font-family', 'Trebuchet MS');
         this.timetakeninst.style('user-select', 'none');
 
-        this.timetaken.position(10, 140);
+        this.timetaken.position(10, 170);
         this.timetaken.html(" " + timertaken + " Sec");
         this.timetaken.style('color', 'white');
         this.timetaken.style('background-color', 'black');
@@ -246,7 +246,7 @@ class HTMLPSCHARS {
         this.timetaken.style('border-radius', '15px');
         this.timetaken.style('user-select', 'none');
 
-        this.mtimereas.position(10, 350);
+        this.mtimereas.position(10, 380);
         this.mtimereas.html(" " + timer + " Sec");
         this.mtimereas.style('color', 'white');
         this.mtimereas.style('background-color', 'black');
@@ -290,7 +290,7 @@ class HTMLPSCHARS {
     }
 
     DropPackageInstructShow() {
-        this.dropackinst.position(20, 520);
+        this.dropackinst.position(20, 560);
         this.dropackinst.html("Press D to drop the package.");
         this.dropackinst.style('color', 'white');
         this.dropackinst.style('font-family', 'Trebuchet MS');
@@ -304,7 +304,7 @@ class HTMLPSCHARS {
     }
 
     DropPackageInstructFirstShow() {
-        this.dropackinstfirst.position(20, 450);
+        this.dropackinstfirst.position(20, 500);
         this.dropackinstfirst.html("Drop the package in the designated area first!");
         this.dropackinstfirst.style('color', 'white');
         this.dropackinstfirst.style('font-family', 'Trebuchet MS');
@@ -318,13 +318,13 @@ class HTMLPSCHARS {
     }
 
     moreAdd() {
-        this.morecoming.position(870, 300);
+        this.morecoming.position(870, 320);
         this.morecoming.html("More coming up....");
         this.morecoming.style('color', 'white');
         this.morecoming.style('background-color', 'black');
         this.morecoming.style('padding', '5px');
 
-        this.slash.position(1235, 300);
+        this.slash.position(1235, 320);
         this.slash.html(" " + packagedeli + " /  " + " 11");
         this.slash.style('color', 'white');
         this.slash.style('background-color', 'black');
@@ -334,7 +334,7 @@ class HTMLPSCHARS {
     }
 
     mHouse1DashDisplay() {
-        this.mHouse1delivinst.position(870, 100);
+        this.mHouse1delivinst.position(870, 120);
         this.mHouse1delivinst.html("Deliver a Package to Aryan's House at : " + Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y) + " Mts.");
         this.mHouse1delivinst.style('font-family', 'Trebuchet MS')
         this.mHouse1delivinst.style('color', 'red');
@@ -346,7 +346,7 @@ class HTMLPSCHARS {
 
     mHouse1DashDisplayDeliv() {
         this.mHouse1delivinst.hide();
-        this.mHouse1delivinstDeli.position(870, 100);
+        this.mHouse1delivinstDeli.position(870, 120);
         this.mHouse1delivinstDeli.html("Package Delivered to Aryan's House. (+10 Sec)");
         this.mHouse1delivinstDeli.style('color', 'limegreen');
         this.mHouse1delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -357,7 +357,7 @@ class HTMLPSCHARS {
     }
 
     mHouse2DashDisplay() {
-        this.mHouse2delivinst.position(870, 140);
+        this.mHouse2delivinst.position(870, 160);
         this.mHouse2delivinst.html("Deliver a Package to De Costa's House at : " + Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y) + " Mts.");
         this.mHouse2delivinst.style('font-family', 'Trebuchet MS')
         this.mHouse2delivinst.style('color', 'red');
@@ -369,7 +369,7 @@ class HTMLPSCHARS {
 
     mHouse2DashDisplayDeliv() {
         this.mHouse2delivinst.hide();
-        this.mHouse2delivinstDeli.position(870, 140);
+        this.mHouse2delivinstDeli.position(870, 160);
         this.mHouse2delivinstDeli.html("Package Delivered to De Costa's House. (+20 Sec)");
         this.mHouse2delivinstDeli.style('color', 'limegreen');
         this.mHouse2delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -380,7 +380,7 @@ class HTMLPSCHARS {
     }
 
     mHouse3DashDisplay() {
-        this.mHouse3delivinst.position(870, 220);
+        this.mHouse3delivinst.position(870, 240);
         this.mHouse3delivinst.html("Deliver a Package to Radha's House at : " + Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y) + " Mts.");
         this.mHouse3delivinst.style('font-family', 'Trebuchet MS')
         this.mHouse3delivinst.style('color', 'red');
@@ -392,7 +392,7 @@ class HTMLPSCHARS {
 
     mHouse3DashDisplayDeliv() {
         this.mHouse3delivinst.hide();
-        this.mHouse3delivinstDeli.position(870, 220);
+        this.mHouse3delivinstDeli.position(870, 240);
         this.mHouse3delivinstDeli.html("Package Delivered to Radha's House. (+10 Sec)");
         this.mHouse3delivinstDeli.style('color', 'limegreen');
         this.mHouse3delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -403,7 +403,7 @@ class HTMLPSCHARS {
     }
 
     mHouse4DashDisplay() {
-        this.mHouse4delivinst.position(870, 180);
+        this.mHouse4delivinst.position(870, 200);
         this.mHouse4delivinst.html("Deliver a Package to Rajat's House at : " + Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y) + " Mts.");
         this.mHouse4delivinst.style('font-family', 'Trebuchet MS')
         this.mHouse4delivinst.style('color', 'red');
@@ -415,7 +415,7 @@ class HTMLPSCHARS {
 
     mHouse4DashDisplayDeliv() {
         this.mHouse4delivinst.hide();
-        this.mHouse4delivinstDeli.position(870, 180);
+        this.mHouse4delivinstDeli.position(870, 200);
         this.mHouse4delivinstDeli.html("Package Delivered to Rajat's House. (+10 Sec)");
         this.mHouse4delivinstDeli.style('color', 'limegreen');
         this.mHouse4delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -426,7 +426,7 @@ class HTMLPSCHARS {
     }
 
     mHouse5DashDisplay() {
-        this.mHouse5delivinst.position(870, 260);
+        this.mHouse5delivinst.position(870, 280);
         this.mHouse5delivinst.html("Deliver a Package to Arjun's House at : " + Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y) + " Mts.");
         this.mHouse5delivinst.style('font-family', 'Trebuchet MS');
         this.mHouse5delivinst.style('color', 'red');
@@ -438,7 +438,7 @@ class HTMLPSCHARS {
 
     mHouse5DashDisplayDeliv() {
         this.mHouse5delivinst.hide();
-        this.mHouse5delivinstDeli.position(870, 260);
+        this.mHouse5delivinstDeli.position(870, 280);
         this.mHouse5delivinstDeli.html("Package Delivered to Arjun's House. (+15 Sec)");
         this.mHouse5delivinstDeli.style('color', 'limegreen');
         this.mHouse5delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -453,11 +453,11 @@ class HTMLPSCHARS {
         this.mHouse2delivinstDeli.hide();
         this.mHouse3delivinstDeli.hide();
         this.mHouse4delivinstDeli.hide();
-        this.mHouse5delivinstDeli.position(870, 100);
+        this.mHouse5delivinstDeli.position(870, 120);
     }
 
     mHouse6DashDisplay() {
-        this.mHouse6delivinst.position(870, 140);
+        this.mHouse6delivinst.position(870, 160);
         this.mHouse6delivinst.html("Deliver a Package to Chowgule's House at : " + Math.round(HousePA[5].y - HousePA[5].y - HousePA[5].y + delvan.y) + " Mts.");
         this.mHouse6delivinst.style('color', 'red');
         this.mHouse6delivinst.style('font-family', 'Trebuchet MS');
@@ -469,7 +469,7 @@ class HTMLPSCHARS {
 
     mHouse6DashDisplayDeliv() {
         this.mHouse6delivinst.hide();
-        this.mHouse6delivinstDeli.position(870, 140);
+        this.mHouse6delivinstDeli.position(870, 160);
         this.mHouse6delivinstDeli.html("Package Delivered to Chowgule's House. (+20 Sec)");
         this.mHouse6delivinstDeli.style('color', 'limegreen');
         this.mHouse6delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -480,7 +480,7 @@ class HTMLPSCHARS {
     }
 
     mHouse7DashDisplay() {
-        this.mHouse7delivinst.position(870, 180);
+        this.mHouse7delivinst.position(870, 200);
         this.mHouse7delivinst.html("Deliver a Package to Kamat's House at : " + Math.round(HousePA[6].y - HousePA[6].y - HousePA[6].y + delvan.y) + " Mts.");
         this.mHouse7delivinst.style('color', 'red');
         this.mHouse7delivinst.style('font-family', 'Trebuchet MS');
@@ -492,7 +492,7 @@ class HTMLPSCHARS {
 
     mHouse7DashDisplayDeliv() {
         this.mHouse7delivinst.hide();
-        this.mHouse7delivinstDeli.position(870, 180);
+        this.mHouse7delivinstDeli.position(870, 200);
         this.mHouse7delivinstDeli.html("Package Delivered to Kamat's House. (+30 Sec)");
         this.mHouse7delivinstDeli.style('color', 'limegreen');
         this.mHouse7delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -503,7 +503,7 @@ class HTMLPSCHARS {
     }
 
     mHouse8DashDisplay() {
-        this.mHouse8delivinst.position(870, 220);
+        this.mHouse8delivinst.position(870, 240);
         this.mHouse8delivinst.html("Deliver a Package to Gregory's House at : " + Math.round(HousePA[7].y - HousePA[7].y - HousePA[7].y + delvan.y) + " Mts.");
         this.mHouse8delivinst.style('color', 'red');
         this.mHouse8delivinst.style('font-family', 'Trebuchet MS');
@@ -515,7 +515,7 @@ class HTMLPSCHARS {
 
     mHouse8DashDisplayDeliv() {
         this.mHouse8delivinst.hide();
-        this.mHouse8delivinstDeli.position(870, 220);
+        this.mHouse8delivinstDeli.position(870, 240);
         this.mHouse8delivinstDeli.html("Package Delivered to Gregory's House. (+20 Sec)");
         this.mHouse8delivinstDeli.style('color', 'limegreen');
         this.mHouse8delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -526,7 +526,7 @@ class HTMLPSCHARS {
     }
 
     mHouse9DashDisplay() {
-        this.mHouse9delivinst.position(870, 260);
+        this.mHouse9delivinst.position(870, 280);
         this.mHouse9delivinst.html("Deliver a Package to Neha's House at : " + Math.round(HousePA[8].y - HousePA[8].y - HousePA[8].y + delvan.y) + " Mts.");
         this.mHouse9delivinst.style('color', 'red');
         this.mHouse9delivinst.style('font-family', 'Trebuchet MS');
@@ -538,7 +538,7 @@ class HTMLPSCHARS {
 
     mHouse9DashDisplayDeliv() {
         this.mHouse9delivinst.hide();
-        this.mHouse9delivinstDeli.position(870, 260);
+        this.mHouse9delivinstDeli.position(870, 280);
         this.mHouse9delivinstDeli.html("Package Delivered to Neha's House. (+20 Sec)");
         this.mHouse9delivinstDeli.style('color', 'limegreen');
         this.mHouse9delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -549,7 +549,7 @@ class HTMLPSCHARS {
     }
 
     mHouse10DashDisplay() {
-        this.mHouse10delivinst.position(870, 140);
+        this.mHouse10delivinst.position(870, 160);
         this.mHouse10delivinst.html("Deliver a Package to Srivastava's House at : " + Math.round(HousePA[9].y - HousePA[9].y - HousePA[9].y + delvan.y) + " Mts.");
         this.mHouse10delivinst.style('color', 'red');
         this.mHouse10delivinst.style('font-family', 'Trebuchet MS');
@@ -561,7 +561,7 @@ class HTMLPSCHARS {
 
     mHouse10DashDisplayDeliv() {
         this.mHouse10delivinst.hide();
-        this.mHouse10delivinstDeli.position(870, 140);
+        this.mHouse10delivinstDeli.position(870, 160);
         this.mHouse10delivinstDeli.html("Package Delivered to Srivastava's House. (+10 Sec)");
         this.mHouse10delivinstDeli.style('color', 'limegreen');
         this.mHouse10delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -572,7 +572,7 @@ class HTMLPSCHARS {
     }
 
     mHouse11DashDisplay() {
-        this.mHouse11delivinst.position(870, 180);
+        this.mHouse11delivinst.position(870, 200);
         this.mHouse11delivinst.html("Deliver a Package to Bishnoi's House at : " + Math.round(HousePA[10].y - HousePA[10].y - HousePA[10].y + delvan.y) + " Mts.");
         this.mHouse11delivinst.style('color', 'red');
         this.mHouse11delivinst.style('font-family', 'Trebuchet MS');
@@ -584,7 +584,7 @@ class HTMLPSCHARS {
 
     mHouse11DashDisplayDeliv() {
         this.mHouse11delivinst.hide();
-        this.mHouse11delivinstDeli.position(870, 180);
+        this.mHouse11delivinstDeli.position(870, 200);
         this.mHouse11delivinstDeli.html("Package Delivered to Bishnoi's House.");
         this.mHouse11delivinstDeli.style('color', 'limegreen');
         this.mHouse11delivinstDeli.style('font-family', 'Trebuchet MS');
@@ -599,7 +599,7 @@ class HTMLPSCHARS {
         this.mHouse6delivinstDeli.hide();
         this.mHouse7delivinstDeli.hide();
         this.mHouse8delivinstDeli.hide();
-        this.mHouse9delivinstDeli.position(870, 100);
+        this.mHouse9delivinstDeli.position(870, 120);
     }
 
     OverFlowInt() {
@@ -622,7 +622,7 @@ class HTMLPSCHARS {
 
     dashDisplayForEnd() {
 
-        this.instEnd.position(930, 65);
+        this.instEnd.position(930, 70);
         this.instEnd.html("Sorry, you met in an Accident!");
         this.instEnd.style('color', 'white');
         this.instEnd.style('user-select', 'none');
@@ -632,14 +632,12 @@ class HTMLPSCHARS {
         this.slash.hide();
 
         this.odometer.html("You travelled : " + Math.round(delvan.y - delvan.y - delvan.y) + " in Mts.");
-        this.odometer.position('970', '410');
+        this.odometer.position(1000, 440)
 
         this.framecounter.html("Accident!")
         this.framecounter.style('color', 'orange');
 
-        this.DTtimert.position(1000, 440);
         this.DTtimert.html("Total time in sec Driven : " + Math.round(DTtimer));
-        this.oppodtimert.position(980, 460);
 
     }
 
@@ -654,11 +652,9 @@ class HTMLPSCHARS {
         this.framecounter.style('color', 'orange');
 
         this.odometer.html("You travelled : " + Math.round(delvan.y - delvan.y - delvan.y) + " in Mts.");
+        this.odometer.position(1000, 440)
 
-        this.DTtimert.position(1000, 440);
         this.DTtimert.html("Total time in sec Driven : " + Math.round(DTtimer));
-        this.oppodtimert.position(980, 460);
-
     }
 
     dashHideWin() {
@@ -714,6 +710,8 @@ class HTMLPSCHARS {
         this.angrymode.html("Altaer Mode : ON");
         this.angrymode.style('color', 'white');
         this.angrymode.style('font-family', 'Trebuchet MS');
+        this.morecoming.hide();
+        this.slash.hide();
     }
 
     dashDisplaydevMode() {

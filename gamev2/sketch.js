@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D AV Made with P5.JS & P5.PLAY.JS
-//Stable Release V2.02.3
+//Stable Release V2.07.3
 
 p5.disableFriendlyErrors = true;
 
@@ -21,6 +21,7 @@ var riverimg, railwayimg;
 var dashboard;
 var road;
 var upar, rightar, uparimage, rightarimage;
+var nav1e43image, nav1e43, nav1e43intimage, nav1e43int, nav2e52image, nav2e52intimage, nav2e52int;
 var ipath, ipathLT, ipathLL, ipathLB, ipathBlock;
 var laneM;
 var PTraffic, OTraffic, TrafficGroup;
@@ -36,6 +37,7 @@ let cctime = 0;
 
 var cc = false;
 var trafftouch = false;
+var spawntraf = true; 
 
 var mHouse1PA, mHouse2PA, mHouse3PA, mHouse4PA, mHouse5PA, mHouse6PA, mHouse7PA, mHouse8PA, mHouse9PA, mHouse10PA;
 var PA500x, PA400x; 
@@ -128,10 +130,15 @@ function preload() {
     uparimage = loadImage("images/directions/upar.bmp");
     rightarimage = loadImage("images/directions/rightar.bmp");
 
+    nav1e43image = loadImage("images/directions/interstateRuralE43.bmp");
+    nav1e43intimage = loadImage("images/directions/interstateRuralE43int.bmp");
+    nav2e52image = loadImage("images/directions/interstateCityE52.bmp");
+    nav2e52intimage = loadImage("images/directions/interstateCityE52int.bmp");
+
 }
 
 function setup() {
-    createCanvas(1360, 600);
+    createCanvas(1360, 630);
 
     console.log("%cPackage Delivery Sim 2D AV - Dev Console","color: lightgreen; font-family: Trebuchet MS; font-size: 25px");
     console.log("%cPaste codes here. Click below the empty area to type, SHIFT + ENTER to leave a line. Right click to clear console.", "color : lightblue");
@@ -221,11 +228,6 @@ function setup() {
     laneL9 = createSprite(160, -119050, 5, 5700);
     laneL9.shapeColor = rgb(255, 255, 255);
     allLanes.push(laneL9);
-
-    // ------------------------------------------------------------------END LANE !
-    // laneE = createSprite(width / 2, -32200, 5000, 5);
-    // laneE.shapeColor = rgb(255, 0, 0);
-    // allLanes.push(laneE);
 
     ipath = createSprite(75, -100, 150, 600);
     ipath.shapeColor = rgb(70, 70, 70);
@@ -405,6 +407,15 @@ function setup() {
     upar2 = createSprite(280, -650, 60, 30);
     upar2.addImage(uparimage);
 
+    nav1e43 = createSprite(280, -24200, 200, 65);
+    nav1e43.addImage(nav1e43image);
+    nav1e43int = createSprite(280, -39000, 200, 24);
+    nav1e43int.addImage(nav1e43intimage);
+    nav2e52 = createSprite(280, -58000, 200, 65);
+    nav2e52.addImage(nav2e52image);
+    nav2e52int = createSprite(280, -74000, 200, 24);
+    nav2e52int.addImage(nav2e52intimage);
+
     delvan = createSprite(80, 0, 25, 125);
     delvan.addImage(testimage);
     delvan.scale = 0.85;
@@ -449,22 +460,22 @@ function draw() {
     image(backgroundHousesR8, width / 2, -53320, 392, 4520);
     image(backgroundHousesR9, width / 2, -57920, 392, 4520);
 
-    image(backgroundcitiesL1, -280, -80000, 392, 4520);
-    image(backgroundcitiesL2, -280, -84550, 392, 4520);
+    image(backgroundcitiesL1, -240, -80000, 392, 4520);
+    image(backgroundcitiesL2, -240, -84550, 392, 4520);
     image(backgroundcitiesL3, -240, -89070, 392, 4520);
     image(backgroundcitiesL4, -240, -93590, 392, 4520);
     image(backgroundcitiesL5, -240, -98110, 392, 4520);
     image(backgroundcitiesL6, -240, -102630, 392, 4520);
     image(backgroundcitiesL7, -240, -107150, 392, 4520);
-    image(backgroundcitiesL8, -240, -111670, 392, 4520);
+    image(backgroundcitiesL8, -200, -111670, 392, 4520);
     image(backgroundcitiesL9, -240, -116190, 392, 4520);
     image(backgroundcitiesL10, -240, -120710, 392, 4520);
 
-    image(backgroundcitiesR1, width / 2, -80520, 392, 4520);
-    image(backgroundcitiesR2, width / 2, -84520, 392, 4520);
+    image(backgroundcitiesR1, width / 2 - 40, -80520, 392, 4520);
+    image(backgroundcitiesR2, width / 2 - 80, -84520, 392, 4520);
     image(backgroundcitiesR3, width / 2 - 40, -89100, 392, 4520);
     image(backgroundcitiesR4, width / 2 - 40, -93620, 392, 4520);
-    image(backgroundcitiesR5, width / 2 - 40, -98200, 392, 4520);
+    image(backgroundcitiesR5, width / 2 - 80, -98200, 392, 4520);
     image(backgroundcitiesR6, width / 2 - 40, -102720, 392, 4520);
     image(backgroundcitiesR7, width / 2 - 40, -107240, 392, 4520);
     image(backgroundcitiesR8, width / 2 - 40, -111760, 392, 4520);
@@ -725,9 +736,9 @@ function draw() {
             htmlps.mHouse11DashDisplayDeliv();
         }
 
-        if (frameCount % 80 === 0) {
+        if (frameCount % 80 === 0 && spawntraf === true  ) {
             PTraffic = createSprite(350, delvan.y - 800, 40, 80);
-            PTraffic.lifetime = 500;
+            PTraffic.lifetime = 700;
             var PTrafficvar = Math.round(random(1, 2));
             switch (PTrafficvar) {
                 case 1: PTraffic.x = Math.round(random(300, 375));
@@ -748,9 +759,15 @@ function draw() {
             TrafficGroup.add(PTraffic);
         }
 
-        if (frameCount % 100 === 0) {
+        if (TrafficGroup.isTouching(HousePA)) {
+            trafftouch = true;
+        } else {
+            trafftouch = false;
+        }
+
+        if (frameCount % 100 === 0 && spawntraf === true && trafftouch===false) {
             OTraffic = createSprite(450, delvan.y - 800, 40, 80);
-            OTraffic.lifetime = 200;
+            OTraffic.lifetime = 400;
             var OTrafficvar = Math.round(random(1, 2));
             switch (OTrafficvar) {
                 case 1: OTraffic.x = Math.round(random(425, 470));
@@ -769,12 +786,13 @@ function draw() {
             }
             TrafficAr.push(OTraffic);
             TrafficGroup.add(OTraffic);
+   
         }
-
-        if (TrafficGroup.isTouching(HousePA)) {
-            trafftouch = true;
-        } else {
-            trafftouch = false;
+        
+        for(var i = 0; i < TrafficGroup.length; i++) {
+            if (TrafficGroup.get(i).y > delvan.y+200) {
+                TrafficGroup.get(i).destroy();
+            }
         }
 
         TrafficGroup.collide(TrafficAr);
@@ -786,11 +804,11 @@ function draw() {
             TrafficGroup.collide(HousePA);
         }
 
-        if (timertaken < 55) {
+        if (timertaken < 200) {
             htmlps.timeTakenGreen();
         }
 
-        if (timertaken > 55) {
+        if (timertaken > 199) {
             htmlps.timeTakenYellow();
         }
 
@@ -859,9 +877,10 @@ function draw() {
 
     if (gameState === angrymode) {
 
-        timer = 500;
+        timer = 1000;
 
         TrafficGroup.destroyEach();
+        mHouseBounds.length = 0;
 
         htmlps.devmodeON();
         htmlps.dashHideWin();
@@ -907,6 +926,7 @@ function draw() {
     drawSprites();
 
     if (gameState === Win) {
+        cc = false;
         background(0, 0, 0);
         htmlps.GameStateWin();
         htmlps.DropPackageInstructHide();
@@ -946,7 +966,7 @@ function oppotimerCounter() {
 }
 
 function CCCounter() {
-    if(delvan.velocityY == -10 && gameState === Play) {
+    if(delvan.velocityY===-10 && cc===true ) {
         cctime++;
     }
 }

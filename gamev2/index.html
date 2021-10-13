@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang = en>
 
     <head>
         <title>Package Delivery Sim 2D P5 - AV</title>
@@ -14,7 +14,7 @@
     <script src="p5.play.js"></script>
 
     <style>
-
+        *{ transition: all 0.3s; }
         body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
         canvas { display: block; }
         h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
@@ -22,7 +22,7 @@
         #sett {display: none;}
         .AV h7 { font-size: 32px; color: white; font-weight: 900; text-align: right;}
         .loading { padding: 150px; display: grid; place-items:center;}
-        
+        .doesnt { font-size: 22px; color: white; text-align: center; display: none; }
         .fader-anim {        -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
             @keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
             @-moz-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
@@ -52,6 +52,7 @@
             <h6 class="AV">Package Delivery Sim 2D : <cite> AV </cite> P5 </h6>
             <h6 id="auth" class="authent">Fetching files...</h6>
             <h6>Initializing the required resources for you... Just a moment... Please?</h6>
+            <h6 class="doesnt">If it doesn't load, refresh the page.</h6>
             <h6 id="sett">Setting up...</h6>
         </div>
 
@@ -66,6 +67,9 @@
                 document.getElementById('auth').style.display = "none";
                 document.getElementById('sett').style.display = "block";
             }, 2000);
+            setTimeout(function(){
+                document.getElementsByClassName('doesnt').style.display = "block"
+            }, 7000);
         </script>
 
 </body>

@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D LT Made with P5.JS & P5.PLAY.JS
-//Stable Release V1.14.2
+//Stable Release V1.12.9
 
 p5.disableFriendlyErrors = true;
 
@@ -379,8 +379,16 @@ function draw() {
             htmlps.DropPackageInstructFirstHide();
         }
 
-        if (fr < 10) {
-            htmlps.badframes();
+        var defFps = Math.round(frameRate());
+
+        if (defFps < 20) {
+            htmlps.framecounter.style('color', 'red');
+        } else if (defFps < 30) {
+            htmlps.framecounter.style('color', 'orange');
+        } 
+        if (defFps < 10) {
+            htmlps.framecounter.style('background-color', 'red');
+            htmlps.framecounter.style('color', 'black');
         }
 
         htmlps.mHouse1DashDisplay();
@@ -398,6 +406,19 @@ function draw() {
             mHouseBounds[0].remove();
             htmlps.mHouse1DashDisplayDeliv();
             timer = timer+10;
+        }
+
+        if(packagedeli == 1) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 2) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 3) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 4) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y) + " M"); 
         }
 
         if(delvan.isTouching(HousePA[1]) && gameState === Play && keyDown("D")) {

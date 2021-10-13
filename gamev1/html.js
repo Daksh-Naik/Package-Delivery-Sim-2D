@@ -17,6 +17,8 @@ class HTMLPSCHARS {
         this.timetaken = createElement('h3');
         this.packagesleft = createElement('h4');
         this.packagesdeli = createElement('h4');
+        this.nexthouse = createElement('h4');
+        this.nexthousen = createElement('h3');
 
         this.dropackinst = createElement('h3');
         this.dropackinstfirst = createElement('h3');
@@ -153,6 +155,18 @@ class HTMLPSCHARS {
         this.mtimereas.style('border-radius', '15px');
         this.mtimereas.style('user-select', 'none');
 
+        this.nexthouse.html("Next house in:");
+        this.nexthouse.position(700, 500);
+        this.nexthouse.style('background-color', 'black');
+        this.nexthouse.style('color', 'white');
+        this.nexthouse.style('padding', '10px');
+        
+        this.nexthousen.position(745, 540);
+        this.nexthousen.html(" "+Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y) + " M");
+        this.nexthousen.style('background-color', 'black');
+        this.nexthousen.style('color', 'white');
+        this.nexthousen.style('padding', '10px');
+        this.nexthousen.style('text-align', 'right');
     }
 
     timeTakenShow() {
@@ -358,7 +372,8 @@ class HTMLPSCHARS {
         this.restartinst.style('font-family', 'Trebuchet MS');
         this.restartinst.style('user-select', 'none');
         this.restartinst.style('background-color', 'black');
-        this.restartinst.style('padding', '10px')
+        this.restartinst.style('padding', '10px');
+
     }
 
     dashDisplayForDue() {
@@ -388,6 +403,8 @@ class HTMLPSCHARS {
     dashHideWin() {
         this.framecounter.hide();
         this.packagesleft.hide();
+        this.nexthousen.hide();
+        this.nexthouse.hide();
     }
 
     GameStateWin() {

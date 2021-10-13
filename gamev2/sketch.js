@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D AV Made with P5.JS & P5.PLAY.JS
-//Stable Release V2.07.3
+//Stable Release V2.08.4
 
 p5.disableFriendlyErrors = true;
 
@@ -520,6 +520,7 @@ function draw() {
     if (gameState === Play) {
 
         htmlps.startDisplayHide();
+        htmlps.tutoriaSt();
         
         if (keyDown("UP_ARROW")) {
             delvan.y = delvan.y - 10;
@@ -576,11 +577,11 @@ function draw() {
             delvan.y = delvan.y +5;
         }
 
-        if (cc == true && keyDown("LEFT_ARROW")) {
+        if (delvan.velocityY === -10 && keyDown("LEFT_ARROW")) {
             delvan.x = delvan.x - 5;
         }
 
-        if (cc == true && keyDown("RIGHT_ARROW")) {
+        if (delvan.velocityY === -10 && keyDown("RIGHT_ARROW")) {
             delvan.x = delvan.x + 5;
         }
 
@@ -594,10 +595,11 @@ function draw() {
 
         if (delvan.y < -500 && gameState === Play) {
             htmlps.timeTakenShow();
+            htmlps.tutoriaStH();
         }
 
         htmlps.dashDisplay();
-
+    
         if (delvan.isTouching(HousePA)) {
             htmlps.DropPackageInstructShow();
         } else {
@@ -610,9 +612,18 @@ function draw() {
             htmlps.DropPackageInstructFirstHide();
         }
 
-        if (fr < 10) {
-            htmlps.badframes();
+        var defFps = Math.round(frameRate());
+
+        if (defFps < 20) {
+            htmlps.framecounter.style('color', 'red');
+        } else if (defFps < 30) {
+            htmlps.framecounter.style('color', 'orange');
+        } 
+        if (defFps < 10) {
+            htmlps.framecounter.style('background-color', 'red');
+            htmlps.framecounter.style('color', 'black');
         }
+
 
         htmlps.mHouse1DashDisplay();
         htmlps.mHouse2DashDisplay();
@@ -734,6 +745,37 @@ function draw() {
             HousePA[10].remove();
             mHouseBounds[10].remove();
             htmlps.mHouse11DashDisplayDeliv();
+        }
+
+        if(packagedeli == 1) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 2) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 3) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 4) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 5) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[5].y - HousePA[5].y - HousePA[5].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 6) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[6].y - HousePA[6].y - HousePA[6].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 7) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[7].y - HousePA[7].y - HousePA[7].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 8) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[8].y - HousePA[8].y - HousePA[8].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 9) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[9].y - HousePA[9].y - HousePA[9].y + delvan.y) + " M"); 
+        }
+        if(packagedeli == 10) {
+            htmlps.nexthousen.html(" "+Math.round(HousePA[10].y - HousePA[10].y - HousePA[10].y + delvan.y) + " M"); 
         }
 
         if (frameCount % 80 === 0 && spawntraf === true  ) {
@@ -966,7 +1008,7 @@ function oppotimerCounter() {
 }
 
 function CCCounter() {
-    if(delvan.velocityY===-10 && cc===true ) {
+    if(delvan.velocityY===-10 && gameState === Play) {
         cctime++;
     }
 }

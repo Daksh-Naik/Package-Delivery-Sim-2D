@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D LT Made with P5.JS & P5.PLAY.JS
-//Stable Release V1.12.9
+//Stable Release V1.13.4
 
 p5.disableFriendlyErrors = true;
 
@@ -632,10 +632,18 @@ function draw() {
             }
         }
 
-        if(delvan.isTouching(HousePA)) {
-            delvan.collide(TrafficAr);
-            TrafficGroup.collide(HousePA);
-        } 
+        for(var allR = 0; i < RoadworkGroup.length; i++) {
+            if (RoadworkGroup.get(i).y > delvan.y+400) {
+                RoadworkGroup.get(i).destroy();
+            }
+        }
+
+        for(var i = 0; i < HousePA.length; i++) {
+            var cust = HousePA[i].y - delvan.y;
+            if (cust > -500) {
+                TrafficGroup.collide(HousePA[i]);
+            }
+        }
 
         if (timertaken < 55) {
             htmlps.timeTakenGreen();

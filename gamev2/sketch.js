@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D AV Made with P5.JS & P5.PLAY.JS
-//Stable Release V2.08.4
+//Stable Release V2.08.9
 
 p5.disableFriendlyErrors = true;
 
@@ -419,7 +419,7 @@ function setup() {
     delvan = createSprite(80, 0, 25, 125);
     delvan.addImage(testimage);
     delvan.scale = 0.85;
-
+    
     dashboard = createSprite(1100, delvan.y - 165, 530, 700);
     dashboard.shapeColor = rgb(30, 30, 30);
 
@@ -624,7 +624,6 @@ function draw() {
             htmlps.framecounter.style('color', 'black');
         }
 
-
         htmlps.mHouse1DashDisplay();
         htmlps.mHouse2DashDisplay();
         htmlps.mHouse3DashDisplay();
@@ -801,12 +800,6 @@ function draw() {
             TrafficGroup.add(PTraffic);
         }
 
-        if (TrafficGroup.isTouching(HousePA)) {
-            trafftouch = true;
-        } else {
-            trafftouch = false;
-        }
-
         if (frameCount % 100 === 0 && spawntraf === true && trafftouch===false) {
             OTraffic = createSprite(450, delvan.y - 800, 40, 80);
             OTraffic.lifetime = 400;
@@ -837,15 +830,15 @@ function draw() {
             }
         }
 
-        TrafficGroup.collide(TrafficAr);
-
-        if(delvan.isTouching(HousePA) && trafftouch == false) {
-            delvan.collide(TrafficAr);
-            TrafficGroup.collide(HousePA);
-        } else {
-            TrafficGroup.collide(HousePA);
+        for(var i = 0; i < HousePA.length; i++) {
+            var cust = HousePA[i].y - delvan.y;
+            if (cust > -500) {
+                TrafficGroup.collide(HousePA[i]);
+            }
         }
 
+        TrafficGroup.collide(TrafficAr);
+        
         if (timertaken < 200) {
             htmlps.timeTakenGreen();
         }
@@ -885,7 +878,7 @@ function draw() {
         }
 
     }
-
+    
     if (delvan.isTouching(TrafficGroup)) {
         gameState = End;
     }

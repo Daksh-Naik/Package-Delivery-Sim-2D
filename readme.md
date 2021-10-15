@@ -5,6 +5,6 @@ JavaScript, HTML and CSS.
 
 
 Latest versions : 
-AV v2.08.4 and 
-LT v1.12.9
+AV v2.08.9 and 
+LT v1.13.4
 

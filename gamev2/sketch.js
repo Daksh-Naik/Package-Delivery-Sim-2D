@@ -832,7 +832,7 @@ function draw() {
 
         for(var i = 0; i < HousePA.length; i++) {
             var cust = HousePA[i].y - delvan.y;
-            if (cust > -500) {
+            if (cust > -1000) {
                 TrafficGroup.collide(HousePA[i]);
             }
         }

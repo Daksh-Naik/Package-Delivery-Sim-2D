@@ -1,88 +1,60 @@
 *{ margin: 0px; box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
-body {
-    user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-
-    background-color: rgb(0, 0, 0);
-    text-align: center;
-    color: rgb(255, 255, 255);
-    transition: all 0.3s;
-    font-family: 'Trebuchet MS';
-}
-
-img { width: 100%; max-width: 100%; height: auto; margin-left: auto; margin-right: auto; }
-a{ color: lightskyblue; text-decoration: none; font-weight: 900; transition: 0.3s;}
-a:hover{ text-decoration: underline; color: rgb(183, 227, 255);}
+body { user-select: none; -webkit-user-select: none; -ms-user-select: none; overflow-x: hidden;
+    background-color: rgb(0, 0, 0); text-align: center; color: rgb(255, 255, 255); transition: all 0.3s; font-family: 'Trebuchet MS'; }
+img { width: 100%; height: auto; margin-left: auto; margin-right: auto; }
+a{ color: rgb(135, 206, 250); text-decoration: none; font-weight: 900; transition: 0.3s;}
+a:hover{ text-decoration: underline; color: rgb(245, 245, 107);}
 h2{ margin: 30px; padding: 10px; }
 h3{ margin: 10px; padding: 10px; }
 h4{ margin: 10px; }
-
 kbd { padding: 0px 5px 0px 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: 'Segoe UI'; font-weight: 700; margin: 0px 5px 0px 5px; transition: 0.3s; text-transform: uppercase; box-shadow: 3px 3px 5px rgba(173, 173, 173, 0.3);}
 kbd:hover { background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.9);  }
-
 code {  user-select: text; background-color: rgb(223, 223, 223); color: black; padding: 1px 5px 1px 5px; border-radius: 5px; transition: 0.3s; font-weight: 900;} 
 code:hover{ background-color: black; color: white;}
-
-
 ul{ margin: 15px; }
 li{ margin: 5px; }
-
+.defim { width:max-content; margin: 60px 0px 0px 0px; position: relative; top: -1000px; transition: 0.5s ease-out; z-index: -1; }
+.scrold { padding: 20px 0px 10px 0px; position: relative; bottom: -100px; transition: 0.5s;}
 .av { color: rgb(255, 0, 102); }
 .lt { color: rgb(128, 255, 128); }
-
+.topper { position: relative; transform: translateY(100px); opacity: 0; transition: 0.5s ease; z-index: 95; }
+.topper.active{ transform: translateY(0px); opacity: 1; }
+.scroller {  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); z-index: 99; position: fixed; bottom: -50px; right: 20px; background-color: rgba(0, 0, 0, 0.800); color: black; padding: 10px; cursor: pointer; transition: 0.3s ease; background: url("top.png"); width:45px; height: 30px;}
+.scroller:hover { filter:sepia(20); box-shadow: 0px 0px 20px rgb(37, 37, 37); }
+dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { padding: 5px 0px 5px 5px; }
 ::-webkit-scrollbar { width: 20px; background-color: black; transition: 0.5s; }
 ::-webkit-scrollbar-track { background: black; }
-::-webkit-scrollbar-thumb { background:rgb(166, 255, 166); border-radius: 0px; transition: 0.5s; }
+::-webkit-scrollbar-thumb { background:url(gamev1/images/delvan/delivvan-cur.png); border-radius: 2px; background-repeat:space; }
 ::-webkit-scrollbar-thumb:hover { background: rgb(114, 255, 114) }
-
-.fader-anim {        -webkit-animation: fadein 2s; -moz-animation: fadein 2s;  -ms-animation: fadein 2s;  -o-animation: fadein 2s;  animation: fadein 2s; }
-                    
-        @keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-    
-        @-moz-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-    
-        @-webkit-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-    
-        @-ms-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-    
-        @-o-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-
-        .defnavbar { position: fixed; top: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.300); display: flex; }
-        .defnavbar-logo { border-radius: 0px 0px 100px 0px; background-color: rgba(0, 0, 0, 0.600); color: rgb(115, 255, 0);
-            padding: 10px 40px 10px 10px; transition: 0.3s; font-weight: 900; text-rendering: optimizeLegibility; }
-        .defnavbar-logo:hover { background-color: rgba(0, 0, 0, 0.900); letter-spacing: 1px; color: rgb(180, 250, 123); }
-        .defnavbar-overlay-menubut { background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
-            cursor: pointer; position: fixed; right: 0px; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
-            transition: 0.3s; border-radius: 10px 10px 10px 100px; text-shadow: 2px 2px 4px #000000; }
-        .defnavbar-overlay-menubut:hover { letter-spacing: 2px; color: rgb(196, 232, 255); }
-        .overlay { height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.700);
-            overflow-x: hidden; transition: 0.5s; }
-        .overlay-content { display: flex; flex-direction: column; justify-content: space-around; position: relative;
-            text-align: center; margin-top: 30px; }
-        .overlay a { margin: 25px; padding: 8px; text-decoration: none; font-size: 40px; display: block; transition: 0.3s; text-shadow: 3px 3px 5px #000000; } 
-        .overlay a:hover { color: #f1f1f1; }
-        .overlay .overlayclosebtn { display: none; position: fixed; top: 20px; right: 45px; font-size: 60px; cursor: pointer; z-index: 99; }
-    
-        @media only screen and (max-width: 500px) {
-            .defnavbar-overlay-menubut { bottom: 0; border-radius: 100px 0px 0px 0px; }
-            .overlay a { font-size: 20px; }
-            .overlayclosebtn { right: 10px; }
-            #scroll-to-top { position:fixed; right:10px; bottom: 100px; }
-        }
+.fader-anim { -webkit-animation: fadein 2s; -moz-animation: fadein 2s;  -ms-animation: fadein 2s;  -o-animation: fadein 2s;  animation: fadein 2s; }       
+@keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-moz-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-webkit-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-ms-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+@-o-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
+.defnavbar { z-index: 100; position: fixed; top: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.500); backdrop-filter: blur(3px); display: flex; }
+.defnavbar-logo { border-radius: 0px 0px 100px 0px; background-color: rgba(0, 0, 0, 0.700); color: rgb(180, 250, 123);
+    padding: 10px 40px 10px 10px; transition: 0.3s; font-weight: 900; }
+.defnavbar-logo:hover { background-color: rgba(0, 0, 0, 0.900); letter-spacing: 1px; color: rgb(216, 247, 191); }
+.defnavbar-overlay-menubut { background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
+    cursor: pointer; position: fixed; right: 0px; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
+    transition: 0.3s; border-radius: 10px 10px 10px 100px; text-shadow: 2px 2px 4px #000000; }
+.defnavbar-overlay-menubut:hover { letter-spacing: 2px; color: rgb(196, 232, 255); }
+.overlay { height: 100%; width: 0; position: fixed; z-index: 100; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.700);
+    overflow-x: hidden; transition: 0.5s; }
+.overlay::-webkit-scrollbar-thumb { background: grey; }
+.overlay-content { display: flex; flex-direction: column; justify-content: space-around; position: relative;
+        text-align: center; margin-top: 30px; }
+.overlay a { margin: 25px; padding: 8px; text-decoration: none; font-size: 40px; display: block; transition: 0.3s; text-shadow: 3px 3px 5px #000000; } 
+.overlay a:hover { color: #f1f1f1; }
+.overlay .overlayclosebtn { display: none; position: fixed; top: 20px; right: 45px; font-size: 60px; cursor: pointer; z-index: 99; }
+    @media only screen and (max-width: 1050px) {
+        .defim { display: none; }
+        .scrold { display: none; }
+    }    
+    @media only screen and (max-width: 500px) {
+        .defnavbar-overlay-menubut { bottom: 0; border-radius: 100px 0px 0px 0px; }
+        .overlay a { font-size: 20px; }
+        .overlayclosebtn { right: 10px; }
+    }

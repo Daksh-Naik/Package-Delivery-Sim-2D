@@ -38,6 +38,15 @@
         .MOBILE { display: none; padding: 20px; color: rgb(255, 56, 56); }
         .cheatsinfor { padding: 30px; font-size: 30px;}
         .faq {padding: 40px;}
+        .main { margin: 0px 0px 0px 250px; }
+        .sidenav { height: 100%; width: 0px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #111; overflow-x: hidden;
+            padding: 60px 0px 60px 0px; text-align: left; transition: 0.5s ease; }
+        .sidenav::-webkit-scrollbar-thumb {  background: #818B99; border: 8px solid transparent; border-radius: 9px; background-clip: content-box; }
+        .sidenav dl {  padding: 20px 0px 20px 40px; }
+        .sidenav h3 { color: rgb(218, 241, 255); padding: 20px 0px 0px 0px; margin: 0px; }
+        .sidenav dt { color: rgb(255, 255, 203); padding-left: 20px; }
+        .sidenav dd { padding-left: 40px; }
+
 
         @media only screen and (max-width: 830px) {
             .introduct { padding: 10px; }
@@ -51,15 +60,13 @@
             .gamelogo-text { margin-top: 70px; margin-left: 10px; margin-right: 10px; margin-bottom: 70px; }
             .cheats kbd { padding: 0px; }
             h2 {  font-size: 25px; }
+            .sidenav { display: none; }
+            .main { margin: 0px 0px 0px 0px; }
         }
 
-        @media only screen and (max-width: 850px) {
-            .MOBILE { display: block; }
-        }
-
-        @media only screen and (max-width:450px) {
-            .faq { padding: 10px;}
-        }
+        @media only screen and (max-width: 850px) { .MOBILE { display: block; } }
+        @media only screen and (max-width:600px) { img { display: none; } }
+        @media only screen and (max-width:450px) { .faq { padding: 10px;} }
 
         </style>
 </head>
@@ -90,6 +97,56 @@
     </div>
 
     <div>
+        <span class="scroller" id="skrol" onclick="GotoTopFunction()"></span>
+    </div>
+
+    <div class="sidenav" id="sidenav">
+        <div>
+            <dl>
+                <a  href="#title"><h3>Intro</h3></a>
+            </dl>
+            <dl>
+                <a href="#req"><h3>Requirements</h3></a>
+                <a href="#reqsetup"><dd>- Setup</dd></a>
+                <a href="#reqfaq"><dd>- FAQ</dd></a>
+                <a href="#looks"><dd>- Looks</dd></a>
+            </dl>
+            <dl>
+                <a href="#list"><h3>Cheats List</h3></a>
+                <a href="#faq"><dd>- Cheats FAQ</dd></a>
+            </dl>
+            <dl>
+                <a href="#action"><h3>In - Action</h3></a>
+                <a href="#time"><dt>> Alter Time</dt></a>
+                <a href="#packages"><dt>> Alter Packages</dt></a>
+                <a href="#truefalse"><dt>> Remove Objections</dt></a>
+                <a href="#gameStates"><dt>> Change Game States</dt></a>
+                <a href="#position"><dt>> Change Positions</dt></a>
+                <a href="#teleport"><dt>> Teleport</dt></a>
+                <a href="#gameplay"><dt>> Game Play</dt></a>
+                <a href="#combos"><dt>> Combos</dt></a>
+            </dl>
+            <dl>
+                <a href="#more"><h3>More</h3></a>
+            </dl>
+        </div>
+    </div>
+
+    <section class="main">
+
+        <div>
+            <picture class="fader-anim">
+                <source type="image/avif" srcset="thumbnailvv.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
+                <img id="ima" class="defim" src="thumbnailv.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
+            </picture>
+        </div>
+    
+        <div>
+            <h2 class="scrold" id="skrld">&#8595 Scroll Down &#8595</h2>
+        </div>
+    
+
+    <div>
         <h1 class="gamelogo-text" id="title">Package Delivery Sim 2D <cite>P5</cite></h1>
         <h2>Cheats - Hacks</h2>
         <h3>Alter / ease the game!</h3>
@@ -105,7 +162,7 @@
 
     <section class="instruct" id="req">
         <div style="text-align: left;">
-            <h3> - What do I need?</h3>
+            <h3 id="reqsetup"> - What do I need?</h3>
             <p>The most important thing needed is your <strong class="note">Browser's Developer Console / Tools.</strong> No, don't worry, you don't need to download it. It's already installed.</p>
             <br>
             <p>Hot-keys / Keybinds for various browsers : </p>
@@ -113,7 +170,7 @@
                 <dt>Google Chrome / Mozilla FireFox / Microsoft Edge (Windows / Linux OS)</dt>
                 <dd>Press <kbd> F12 </kbd> or <kbd> CTRL + SHIFT + I </kbd> to start Dev Console.</dd>
             </dl>
-            <dl>
+            <dl id="reqfaq">
                 <dt>Safari Browser (Mac OS)</dt>
                 <dd>Press <kbd> Shift + ⌘ + J </kbd> or try <kbd> F12 </kbd> to start Dev Console.</dd>
             </dl>
@@ -121,7 +178,7 @@
             <cite>Q. Help! None of these work! I can't find it!</cite>
             <p> - You may right click anywhere within this browser screen, find for an option, somewhat like <strong>Inspect</strong> and click on it.</p>
             <br>
-            <cite>Q. How does it look like?</cite>
+            <cite id="looks">Q. How does it look like?</cite>
             <p> - A side panel will show up on your Right (Chrome). If you're on Mozilla Firefox / MS Edge, the panel will show up at the bottom.</p>
             <br>
             <p>Go to <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools" target="_blank" rel="norefferer">Mozilla's Introduction to Dev Console</a> to learn more about Developer Consoles / Tools.</p>
@@ -140,6 +197,7 @@
                 <h2>Ready? Let's go!</h2>
                 <h3><a href="index.html">Follow this link to go back to index.</a></h3>
             </div>
+
             <div class="cheatsinfor" id="list">
                 <h4>Types of cheats experimented :</h4>
                 <ul>
@@ -201,7 +259,7 @@
         </div>
         <div class="cheats-time" id="cheatstime">
             <p class="note">Select and copy your desired <code>cheat code</code>, then, go back to the game screen, fire up the developer console, click anywhere in the empty area and paste!</p>
-            <h3>Alter Time :</h3>
+            <h3 id="time">Alter Time :</h3>
             <p>To alter time, following are some of the <strong>variables</strong> you can type to modify / change digits.</p>
             <dl>
                 <dt>- To alter / change <strong>Remaining Time Left,</strong></dt>
@@ -422,6 +480,30 @@
         </p>
     </div>
 
+    </section>
+
+    <script>
+        var selec = document.getElementById('skrol');
+        window.onscroll = function() {
+            scrollToTopFunction();
+            skrld.style.bottom = "1000px"
+        }
+        function scrollToTopFunction() {
+           if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 60) {
+            skrol.style.bottom = "50px";
+            skrol.style.backgroundColor = "rgb(135, 206, 250)";
+           } else {
+            skrol.style.bottom = "-50px";
+            skrol.style.backgroundColor = "black";
+           }  }
+        selec.onmouseover = () => { skrol.style.bottom = "60px" }
+        selec.onmouseleave = () => { skrol.style.bottom = "50px" }
+        function GotoTopFunction() {
+           document.body.scrollTop = 10;
+           document.documentElement.scrollTop = 0;
+        }
+    </script>
+
     <script>
         var closebuto = document.getElementById("closebuto");
         function openNav() {
@@ -433,6 +515,16 @@
             document.getElementById("myNav").style.width = "0%";
             closebuto.style.display = "none";
         }
+    </script>
+    <script>
+        var sel = document.getElementById("sidenav");
+        setTimeout(function () {
+            ima.style.top = "0px";
+            sel.style.width = "250px";
+        }, 500);
+        setTimeout(function() {
+            skrld.style.bottom = "50px";
+        }, 1000);
     </script>
     
 </body>

@@ -40,6 +40,10 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
 .defnavbar-overlay-menubut { background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
     cursor: pointer; position: fixed; right: 0px; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
     transition: 0.3s; border-radius: 10px 10px 10px 100px; text-shadow: 2px 2px 4px #000000; }
+.overlay-menubut { display: none; position: fixed; bottom: 0px; left: 0px; 
+    background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
+    cursor: pointer; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
+    transition: 0.3s; border-radius: 10px 100px 10px 10px; text-shadow: 2px 2px 4px #000000; }
 .defnavbar-overlay-menubut:hover { letter-spacing: 2px; color: rgb(196, 232, 255); }
 .overlay { height: 100%; width: 0; position: fixed; z-index: 100; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.700);
     overflow-x: hidden; transition: 0.5s; }
@@ -54,7 +58,8 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
         .scrold { display: none; }
     }    
     @media only screen and (max-width: 500px) {
-        .defnavbar-overlay-menubut { bottom: 0; border-radius: 100px 0px 0px 0px; }
+        .defnavbar-overlay-menubut { display: none; }
+        .overlay-menubut { display: block; }
         .overlay a { font-size: 20px; }
         .overlayclosebtn { right: 10px; }
     }

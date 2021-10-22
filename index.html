@@ -27,22 +27,15 @@
             h1:hover { color: rgb(219, 219, 219); }
             p {margin: 5px;}
 
-            
-
-            #scroll-to-top{ display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; font-size: 20px;
-                border: none; outline: none; cursor: pointer; padding: 15px; border-radius: 4px; color: black;
-                background-color: rgb(0, 255, 13); transition: 0.3s; font-weight: 900;}
-            #scroll-to-top:hover { color: rgb(9, 255, 0); background-color:rgb(26, 26, 26); }
-
             .title {
-                padding: 45px; margin: 200px 0px 50px 0px;  background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
+                padding: 45px; margin: 50px 0px 50px 0px;  background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
                 background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
             .title:hover {font-size: 45px;}
 
             .game-story { color: rgb(255, 87, 121); font-weight: 800; padding: 30px; transition: 0.5s; font-size:20px; }
             .game-story:hover { color: #ff92a8; font-size: 21px; }
 
-            .game-specs { border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); margin: 10px; font-size: 19px; font-weight: 400; padding: 25px; color: rgb(194, 190, 255); transition: 0.3s; }
+            .game-specs { border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); margin: 10px; font-size: 19px; font-weight: 400; padding: 25px; color: rgb(190, 231, 255); transition: 0.3s; }
             .game-specs:hover { color: #d3d1ff; }
             .game-specs-tested{ margin: 20px; text-align: left; }
             .game-specs-tested-machi{ margin: 20px; text-align: right;}
@@ -71,43 +64,43 @@
             .lighttd2:hover { background-color: rgb(144, 238, 144); color: rgb(0, 0, 0); }
             .verstable th { padding: 40px; width: 300px; }
 
-            .controlsLT { color: #bfffbf;     background: linear-gradient(to top left, #000000 73%, #006d00 100%); margin: 15px; padding: 30px; font-size: larger; }
-
-            .ohyesLT{ background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; justify-content: space-around;
-                background: linear-gradient(to bottom right, #000000 73%, #006d00 100%); }
-
-            .buttonPLT{ font-size: 35px; background: linear-gradient(to bottom left, #73ff00 0%, #ffffff 100%); color: black;
-                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s;  box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.452); }
-            .buttonPLT:hover{ text-decoration: none; font-size: 40px; background: linear-gradient(to top right, #73ff00 0%, #ffffff 100%); color: black; }
+            .controlsLT { color: #bfffbf;     background: linear-gradient(to top left, #000000 50%, #006d00 100%); margin: 15px; padding: 30px; font-size: larger; }
+            .buttonPLT { position: relative; font-size: 40px; color: #3eff7f; background-color: rgba(0, 0, 0, 0.300); 
+                backdrop-filter: blur(4px); font-weight: 900; margin: 40px; padding: 10px 40px 10px 40px; transition: 0.3s; z-index: 99; }
+            .buttonPLT:hover { word-spacing: 2px;color: black; background-color: #3eff7f; box-shadow: 0px 0px 40px #3eff7f; text-decoration: none; transition-delay: 0.4s; }
+            .buttonPLT:before{ content: ''; position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-top: 2px solid #3eff7f;
+                border-left: 2px solid #3eff7f; transition: 0.3s; }
+            .buttonPLT:hover:before { width: 100%; height: 100%; }
+            .buttonPLT:after{ content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-bottom: 2px solid #3eff7f;
+                border-right: 2px solid #3eff7f; transition: 0.3s; }
+            .buttonPLT:hover:after{ width: 100%; height: 100%; }
+            .ohyesLT{ margin: 10px; padding: 25px; justify-content: space-around;
+                background: linear-gradient(to bottom right, #000000 50%, #006d00 100%); }
             .stablerelLT{ margin: 10px; }
             .buttonPnodis { text-decoration: none; padding:40px; border-radius: 25px;  color:rgb(255, 0, 0); font-weight: 800;font-size: 30px; transition: 0.3s;  }
 
-            .controlsAV { color: #fac8fa; background: linear-gradient(to top left, #000000 73%, #ff0066 100%); margin: 15px; padding: 30px; font-size: larger; }
-
-            .ohyesAV { background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; justify-content: space-around;
-                background: linear-gradient(to bottom right, #000000 73%, #ff0066 100%); }
+            .controlsAV { color: rgb(250, 200, 250); background: linear-gradient(to top left, #000000 50%, #ff0066 100%); margin: 15px; padding: 30px; font-size: larger; }
+            .buttonPAV { box-shadow: 0px 0px 10px #ff66ff49; position: relative; font-size: 40px; color: #ff66ff; background-color: rgba(0, 0, 0, 0.100); 
+                backdrop-filter: blur(4px); font-weight: 900; margin: 60px 0px 60px 0px; padding: 10px 40px 10px 40px; transition: 0.3s; z-index: 99; }
+            .buttonPAV:hover { word-spacing: 2px; color: black; background-color: #ff66ff; box-shadow: 0px 0px 40px #ff66ff; text-decoration: none; transition-delay: 0.4s; }
+            .buttonPAV:before{ content: ''; position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-top: 2px solid #ff66ff;
+                border-left: 2px solid #ff66ff; transition: 0.3s; }
+            .buttonPAV:hover:before { width: 100%; height: 100%; }
+            .buttonPAV:after{ content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 10px; border-bottom: 2px solid #ff66ff;
+                border-right: 2px solid #ff66ff; transition: 0.3s; }
+            .buttonPAV:hover:after{ width: 100%; height: 100%; }
+            .ohyesAV { background-color: rgb(25, 25, 25); margin: 10px; padding: 25px; background: linear-gradient(to bottom right, #000000 50%, #ff0066 100%); }
             
-            .buttonPAV{ font-size: 35px; background: linear-gradient(to bottom left, #ff66ff 0%, #ffffff 100%); color: black;
-                font-weight: 900; border-radius: 25px; margin: 40px; padding: 10px 40px; transition: 0.3s; box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.452);}
-            .buttonPAV:hover{ text-decoration: none; font-size: 40px; background: linear-gradient(to top right, #ff66ff 0%, #ffffff 100%); color: black; }
-
             .updates {padding: 20px 20px; border-radius: 15px; background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgb(17, 17, 17) 100%); }
-
             .hints { color:rgb(255, 255, 255); font-weight: 300; transition: 0.3s; }
-            
             .knownbugs {  font-weight: 500; transition: 0.3s; list-style-type:square; }
- 
             .stats { padding: 0px 5px; background-color: initial; transition: 0.3s; font-size: 18px; font-weight: 500; }
-
-            .game-credits { background-color: rgb(20, 20, 20); padding: 10px; font-size: 20px; transition: 0.4s; border-top-style: solid; border-width: 5px; border-color: rgb(131, 131, 131); }
+            .game-credits { background: linear-gradient(to bottom, #000000 0%, rgb(10, 10, 10) 10%);; padding: 10px; font-size: 20px; transition: 0.4s; }
             .game-credits:hover { background-color: rgb(15, 15, 15); }
-
             .p5-js-cred { font-weight: 900; padding: 10px 30px; color:#ed225d; text-decoration: none; transition: 0.3s; }
             .p5-js-cred:hover { color: #fa759b; font-size: 25px; }
-
-            .externals-cred { padding: 10px 20px; }
-            .externals-cred-links {display: flex; justify-content: space-around;}
-
+            .externals-cred { padding: 10px 20px; margin: 50px 0px 50px 0px; }
+            .externals-cred-links {display: flex; justify-content: space-around; margin: 30px 0px 30px 0px;}
             .coding-train { font-family: 'Comic Sans MS'; color: rgb(255, 19, 255); padding: 10px 30px; font-weight: 600; font-size: 20px; transition: 0.3s;    }
             .coding-train:hover { color: rgb(197, 0, 197); font-size: 21px; }
             .w3sch { color:rgb(0, 190, 0); font-weight: 900; padding: 10px 30px; font-size: 20px; transition: 0.3s; }
@@ -122,57 +115,55 @@
             .webdev:hover { color: rgb(65, 65, 65); font-size: 21px; }
             .removebg { color: rgb(119, 119, 119); font-size: 20px; padding: 10px 30px; text-decoration: none; transition: 0.3s; }
             .removebg:hover { color: rgb(255, 255, 255); font-size: 21px; }
+            .squoosh { color: #FF3385; } .squoosh:hover { color: #ff5d9e; font-size: 21px; }
 
             .languages-prog { color: lightgreen; font-weight: 200; padding: 10px 20px; transition: 0.3s }
             .languages-prog:hover{color: rgb(84, 228, 84); }
-
+            .how { padding: 40px; text-align: left; font-size: 19px;}
             .host { padding: 25px; font-weight: 400; transition: 0.5s; }
             .host:hover { background-color: rgb(25, 25, 25); }
             .hosta { transition: 0.5s; }
             .hosta:hover { color: #3eff7f; background-color: rgb(20, 20, 20); font-size: 23px; }
 
             .information { font-size: 15px; padding: 30px 20px; border-radius: 25px; transition: 0.8s; }
-            
             .impo { background-color: black; font-style: italic; font-size: 18px; padding: 10px 30px; transition: 0.5s; }
-
             address{color: rgb(133, 133, 133); transition: 0.5s; padding: 20px 30px; }
             address:hover { color: rgb(220, 220, 220); background-color: rgb(15, 15, 15); }
-
             .siteam3e { color:rgb(133, 133, 133); text-decoration: none; transition: 0.3s; }
-            .siteam3e:hover { color:orange; font-size: 21px; text-decoration: underline; }
+            .siteam3e:hover { color:orange; font-size: 15px; text-decoration: underline; }
 
             .gamelogo { margin: 10px; padding: 50px; background-color: black;}
-            .gamelogo-text{
-                font-size: 50px;
-                background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
-                background-clip: unset;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .cheating {
-                background-color: rgb(15, 15, 15);
-                padding: 40px;
-                margin: 10px;
-            }
-            
-            dt { padding: 40px 40px 10px 40px; font-size: 21px; font-weight: 900; }
-            dd { padding-top: 10px; padding-left: 50px; }
-
+            .gamelogo-text{ font-size: 50px; background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
+                background-clip: unset; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+            .pressCTRL { padding: 20px; color: rgb(255, 102, 102); }
+            .cheating { background-color: rgb(15, 15, 15); padding: 40px; margin: 10px; }
+            .shc { margin: 50px 0px 50px 0px; padding: 40px 0px 40px 20px; }
+            .shc section:nth-child(odd) { text-align: left; padding: 20px 50px 20px 20px; }
+            .shc section:nth-child(odd) dd { padding: 10px 20px 10px 70px; }
+            .shc section:nth-child(even) { text-align: right; padding: 20px 20px 20px 50px; }
+            .shc section:nth-child(even) dd { padding: 10px 70px 10px 20px; }
+            .asd { position: relative; left: -1000px; transition: 0.5s; z-index: -2; }
+            .dsa { position: relative; right: -1000px; transition: 0.5s;z-index: -2;}
             .MOBILE { display: none; padding: 20px; color: rgb(255, 40, 40); background-color: rgba(27, 27, 27, 0.123); }
-            
             hr { margin: 20px; margin-left: 100px; margin-right: 100px; }
+
+    @media only screen and (min-height: 810px) {
+        .scrold { display: none; }
+    }
 
     @media only screen and (min-width: 1300px) {
         .buttonPnodis { display: none; }
         #plagame {  display: none; }
         .abc { display: none; }
+        .pressCTRL { display: none; }
     }
 
     @media only screen and (max-width : 1299px) {
         .buttonPLT { display:none; } 
         .buttonPAV { display:none; }
+        .pressCTRL { display: block; }
         img { display: none; }
+        .scrold { display: none; }
         .stablerelLT { display: none; }
         .stablerelAV {display: none;}
         .topnav .plagame { display: none; }
@@ -206,6 +197,7 @@
         .gamelogo{ margin: 5px; padding: 10px; }
         .game-specs{ padding:5px }
         .game-specs-tested{ margin: 1px }
+        .how {padding: 10px;}
     }
 
     @media only screen and (max-width:400px) {
@@ -240,43 +232,166 @@
                 <a href="#Game-Story">Story</a>
                 <a href="#Specs">Specs & Req</a>
                 <a href="#brief-overview">Brief Info</a>
+                <a href="#compare">Compare AV & LT</a>
                 <a href="#LT-game" style="color: rgb(128, 255, 128);" class="abc">Play : Lite (LT)</a>
                 <a href="#AV-game" style="color: rgb(255, 0, 102);" class="abc">Play : Advanced (AV)</a>
                 <a href="cheats.html" target="_blank" rel="norefferer">Cheats</a>
                 <a href="#updates">News & Updates</a>
                 <a href="#tips">Tips & Tricks</a>
                 <a href="#Troubleshooting">Troubleshoot</a>
-                <a href="#credits">Info & Credits</a>
+                <a href="#credits">Stats & Credits</a>
             </div>
     </div>
 
+        <div>
+            <span class="scroller" id="skrol" onclick="GotoTopFunction()"></span>
+        </div>
+
+        <div>
+            <picture class="fader-anim">
+                <source type="image/avif" srcset="thumbnailvv.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
+                <img id="ima" class="defim" src="thumbnailv.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
+            </picture>
+        </div>
+
+        <div>
+            <h2 class="scrold" id="skrld">&#8595 Scroll Down &#8595</h2>
+        </div>
 
         <h1 id="title" class="title">Package Delivery Sim 2D<cite style="font-size: 20px; "> P5</cite></h1><br>
         
         <div>
-            <p class="MOBILE">Sorry, you won't be able to play this game on this device. You have a too less resolution. Kindly switch over to atleast <strong>1300x600</strong> resolution device to play it.</p>
+            <p class="MOBILE">Sorry, you won't be able to play this game on this device. You have a too less resolution. <br><br>
+                Press <kbd>CTRL</kbd> + <kbd> - </kbd> to zoom out the screen in order to play this game.<br><br> OR <br><br>
+                Kindly switch over to atleast <strong>1300x600</strong> resolution device to play it.</p>
         </div>
 
-        <div class="game-story" id="Game-Story">
+        <div class="game-story topper" id="Game-Story">
             <h2 style="font-size: 40px;">The Story</h2>
             <p>A Package Courier has to deliver packages to the respective houses before the due time.<br>Can you help the Courier deliver the packages before it's too late?</p><br>
         </div>
 
-        <div class="game-specs" id="Specs">
+        <h2 class="topper">Why play?</h2>
+        <div class="shc">
+            <section>
+                <div>
+                    <dl>
+                        <h2 class="asd">Race, Arcade & Simulation - all at the same time.</h2>
+                        <dd class="topper">Race without worrying about the police, Arcade like in 1990's, along with Simulation of the deliveries.</dl>
+                    </dl>
+                </div>    
+            </section>
+            <section>
+                <div>
+                    <dl>
+                        <h2 class="dsa">Presence of assistance - everytime.</h2>
+                        <dd class="topper">With over 5 - 7 components assisting you to deliver, never letting you down.</dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <dl>
+                        <h2 class="asd">Eye comfort & Accessibility ensured.</h2>
+                        <dd class="topper">Bright contrastive traffic, so are the texts & elements.</dd>
+                    </dl>
+                </div>
+            </section>
+            <section>
+                <div><dl>
+                        <h2 class="dsa">Two versions - <cite class="lt">LT</cite> & <cite class="av">AV</cite>.</h2>
+                        <dd class="topper">Both having their own advantages.</dd>
+                </div></dl>
+            </section>
+            <section>
+                <div><dl>
+                        <h2 class="asd">Much more interactive than most projects you see in the community.</h2>
+                        <dd class="topper"> Thanks to constant updates.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">Audience - first consideration.</h2>
+                    <dd class="topper">Always, you first.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">No sounds.</h2>
+                    <dd class="topper">To avoid flickering, annoying sounds are avoided.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="asd">Tutorial inside.</h2>
+                    <dd class="topper">A short guide that directs you to play.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">Press P to Pause.</h2>
+                    <dd class="topper">Welcomes you back after you've switched tabs / looking at something else.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="asd">2 Major Landscapes / Backgrounds.</h2>
+                    <dd>Deliver in cities & villages / minor areas.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">Level 4 Traffic AI in <cite class="av">AV</cite></h2>
+                    <dd>Almost like real - life traffic.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="asd">Adaptive Cruise Control in <cite class="av">AV</cite></h2>
+                    <dd>Warns you if you're about to crash. Slows down adaptively to the preceding traffic.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">Ability to hack / cheat.</h2>
+                    <dd>If the game is too hard, you can <a href="cheats.html" target="_blank">read this guide for cheating.</a></dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="asd">No second chances.</h2>
+                    <dd class="topper">You don't respawn at the hospital in real life.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl>
+                    <h2 class="dsa">Privacy matters.</h2>
+                    <dd class="topper">No information stored. I don't need it anyway.</dd>
+                </dl></div>
+            </section>
+            <section>
+                <div><dl >
+                    <h2 class="asd">Detailed information.</h2>
+                    <dd class="topper">Read more below.</dd>
+                </dl></div>
+            </section>
+        </div>
+
+        <div class="game-specs topper" id="Specs">
             <h2>Min System Requirements - Game Specifications</h2>
             <h3>A Laptop / Desktop is a must.</h3>
             <p>(Keyboard is necessary)</p>
             <br>
             <p>It's highly recommended that you turn on your <strong>browser's hardware acceleration before playing this game.</strong></p>
             <br><br>
-                <div class="game-specs-tested">
+                <div class="game-specs-tested topper">
                     <p>Tested and experimented on browsers like : </p>
                     <br>
                     <ul>
                         <li>Google Chrome : 92.0.4515.159 (64-bit)</li>
                             <ul>
                                 <li>Average FPS : 30 - 48</li>
-                                <li>Average CPU Usage : 60 - 80%</li>
+                                <li>Average CPU Usage : 40 - 60%</li>
                                 <li>I recommend this one.</li>
                             </ul>
                         <br>
@@ -290,25 +405,25 @@
                         <li>Microsoft Edge : 92.0.902.73 (64-bit)</li>
                             <ul>
                                 <li>Average FPS : 30 - 48</li>
-                                <li>Average CPU Usage : 50 - 80%</li>
+                                <li>Average CPU Usage : 30 - 60%</li>
                                 <li>This one's good. The gameplay here was as smooth as butter.</li>
                             </ul>
                     </ul>
                 </div>
                 <br><br>
-                <div class="game-specs-tested-machi">
+                <div class="game-specs-tested-machi topper">
                     <p>Requirements and Performance assurance (not much accurate).</p>
                     <p>(entirely depends upon your device)</p>
                     <br>
                     <ul>
-                        <li>Minimum CPU Speed : 1.8ghz (Avg CPU Usage : 60 - 70% on integrated graphics)</li>
+                        <li>Minimum CPU Speed : 1.8ghz (Avg CPU Usage : 40 - 70% on integrated graphics)</li>
                         <li>Memory Utilization upto 10% - 15%</li>
-                        <li><cite class="lt">For LT</cite> About 4.72 MB of resources to download.</li>
+                        <li><cite class="lt">For LT</cite> About 4.92 MB of resources to download.</li>
                         <li><cite class="av">For AV</cite> About 7.03 MB of resources to download.</li>
                     </ul>
                 </div>
                 <br><br>
-                <div class="game-specs-about">
+                <div class="game-specs-about topper">
                     <p>Other information :</p>
                     <br>
                     <ul>
@@ -318,16 +433,17 @@
                     </ul>
                 </div>
                 <br><br>
-                <div class="game-specs-other">
+                <div class="game-specs-other topper">
                     <p>Higher FPS gameplay will be coming soon (I don't get paid for this :/).</p>
                     <p>If you are playing on integrated graphics and you're facing low FPS (However, it's quite rare), please don't play for long periods of time.</p>
+                    <br>
                     <p>The game gets a bit laggy after some distance. So it's highly recomended that you close all other background-tabs on your browser and apps before playing the game.</p>
                 </div>
         </div>
         
-        <div class="brief" id="brief-overview">
+        <div class="brief topper" id="brief-overview">
             <h2>Game brief</h2>
-            <div class="brief-simp">
+            <div class="brief-simp topper">
                 <h3>Information</h3>
                 <p>Package Delivery Sim 2D is a simulation - arcade web-browser game. As the name suggests, it's 2D, and has cam display
                     from Top. The sole purpose of this game is for entertainment obviously, where you have to deliver packages within the 
@@ -352,16 +468,16 @@
                 <BR><BR>
                 <p>Read the below information to learn more!</p>
             </div>
-            <div class="brief-two">
+            <div class="brief-two topper">
                 <h3>The versions</h3>
                 <p>Recently introduced versions, namely <cite class="lt">LT (Light)</cite> and <cite class="av">AV (Advanced)</cite>, are two stable versions that 
                     are quite flexible. They both run on the same library, concept, story and idealogy. Don't worry, they both are pretty easy
                     to play, but you will have to compromise in hardware, software, and bandwith in the <cite>AV</cite> version. </p>
             </div>
-            <div class="verstable">
+            <div class="verstable topper">
                 <h2>Comparison - <cite class="av">AV</cite> and <cite class="lt">LT</cite></h2>
         
-                <table>
+                <table id="compare">
                     <tr>
                         <th class="advanced">(AV) Advanced</th>
                         <th class="props">- Properties -</th>
@@ -410,7 +526,22 @@
                     <tr>
                         <td class="advancedtd">7.03MB</td>
                         <td class="propstd">- Size -</td>
-                        <td class="lighttd">4.72MB</td>
+                        <td class="lighttd">4.92MB</td>
+                    </tr>
+                    <tr>
+                        <td class="advancedtd2">ADV 4</td>
+                        <td class="propstd2">- Traffic AI -</td>
+                        <td class="lighttd2">BAS 1</td>
+                    </tr>
+                    <tr>
+                        <td class="advancedtd">Rural - Urban</td>
+                        <td class="propstd">- Map -</td>
+                        <td class="lighttd">Rural</td>
+                    </tr>
+                    <tr>
+                        <td class="advancedtd2">Yes</td>
+                        <td class="propstd2">- Crash Warning -</td>
+                        <td class="lighttd2">No</td>
                     </tr>
                 </table>
                 <p><cite class="av">AV</cite> version is quite boring, it can also be called as <cite class="av">Endurance.</cite> Make sure you don't sleep behind the wheel!</p>
@@ -418,99 +549,121 @@
             </div>
         </div>
 
-        <div>
+        <div class="topper">
             <picture>
                 <source type="image/avif" srcset="gamev1/images/overscreenshot.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
                 <img src="gamev1/images/overscreenshot.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
             </picture>
-            </div>
+        </div>
+        <hr>
+        <div class="topper">
+            <picture>
+                <source type="image/avif" srcset="gamev1/images/overscreenshotavv.avif" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D" />
+                <img src="gamev1/images/overscreenshotav.png" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D">
+            </picture>
+        </div>
         <hr>
 
         <div style="text-align:center ;">
-            <a class="buttonPnodis">&#9940; Sorry, it has been detected that your device doesn't support this game.<br>
-                Kindly switch to a Laptop / Desktop with<br>a resolution of 1300x600 or higher. &#9940;</a><br><br><br><br>
+            <p class="buttonPnodis">&#9940; Sorry, it has been detected that your device has a too less resolution.<br><br>
+                Press <kbd>CTRL</kbd> + <kbd> - </kbd> to zoom out the screen in order to play. <br><br> OR <br><br>
+                Kindly switch to a Laptop / Desktop with<br>a resolution of 1300x600 or higher. &#9940;</p><br><br><br><br>
         </div>
 
-        <div class="controlsLT" id="LT-game" name="keys">
-            <h2>Game Controls / Keybinds for <cite class="LT">LT</cite></h2>
-            <br>
-            <p>Press <kbd>UP ARROW</kbd> to move forward (up).</p>
-            <p>Press <kbd>DOWN ARROW</kbd> to move backward (down).</p>
-            <p>Press <kbd>LEFT ARROW</kbd> and <kbd>RIGHT ARROW</kbd> keys to steer / rotate.</p>
-            <br>
-            <p>Press <kbd>W</kbd> key to move forward (up) faster.</p>
-            <p>Press <kbd>D</kbd> key to drop a package at a house.</p>
-            <p>Press <kbd>F5</kbd> or <kbd>E</kbd> key to restart / refresh the game.</p>
+        <div class="controlsLT topper" id="LT-game" name="keys">
+                <h2>Game Controls for Lite <cite class="LT">LT</cite></h2>
+                <br>
+                <p>Press <kbd>UP ARROW</kbd> to move forward (up).</p>
+                <p>Press <kbd>DOWN ARROW</kbd> to move backward (down).</p>
+                <p>Press <kbd>LEFT ARROW</kbd> and <kbd>RIGHT ARROW</kbd> keys to steer / rotate.</p>
+                <p>Press <kbd>W</kbd> key to move forward (up) faster.</p>
+                <br>
+                <p>Press <kbd>P</kbd> to Pause.</p>
+                <br>
+                <p>Press <kbd>D</kbd> key to drop a package at a house.</p>
+                <br>
+                <p>Press <kbd>X</kbd> key to turn on Altaer Mode.</p>
+                <br>
+                <p>Press <kbd>F5</kbd> or <kbd>E</kbd> key to restart / refresh the game.</p>
         </div>
 
         <div class="ohyesLT" id="play-game">
+            <h2 class="pressCTRL">Too less resolution detected. Press <kbd>CTRL</kbd> and <kbd> - </kbd> to zoom out in order to play.</h2>
             <br><br>
             <p class="stablerelLT" style="color: rgb(182, 255, 122);">Play Lite : Shorter, easier, lighter, basic version. Quit anytime by closing the tab.</p>
-            <p class="stablerelLT" style="font-size: 13px; margin:10px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
-            <h2><a class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D LT P5</a></h2><br>
-            <p class="stablerelLT">Stable Release LT V1.13.4</p>
+            <p class="stablerelLT" style="font-size: 13px; margin:10px 0px 70px 0px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
+            <h2><a id = "bLT" class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D LT P5</a></h2><br>
+            <p class="stablerelLT">Stable Release LT V1.15.2</p>
         </div>
 
-        <div class="controlsAV" id="AV-game" name="keys">
-            <h2>Game Controls / Keybinds for <cite class="AV">AV</cite></h2>
+        <div class="controlsAV topper" id="AV-game" name="keys">
+            <h2>Game Controls for Advanced <cite class="AV">AV</cite></h2>
             <br>
             <p>Press <kbd>UP ARROW</kbd> to move forward (up).</p>
             <p>Press <kbd>DOWN ARROW</kbd> to move backward (down).</p>
             <p>Press <kbd>LEFT ARROW</kbd> and <kbd>RIGHT ARROW</kbd> keys to steer / rotate.</p>
+            <p>Press <kbd>W</kbd> key to accelerate faster.</p>
             <br>
-            <p>Press <kbd>W</kbd> key to move forward (up) faster.</p>
             <p>Press <kbd>D</kbd> key to drop a package at a house.</p>
+            <br>
+            <p>Press <kbd>X</kbd> key to turn on Altaer Mode.</p>
+            <br>
+            <p>Press <kbd>P</kbd> to Pause.</p>
+            <br>
             <p>Press <kbd>C</kbd> key to turn on Cruise Control.</p>
             <p>Press <kbd>V</kbd> key to turn off Cruise Control.</p>
+            <br>
             <p>Press <kbd>F5</kbd> or <kbd>E</kbd> key to restart / refresh the game.</p>
         </div>
 
         <div class="ohyesAV" id="play-game">
+            <h2 class="pressCTRL">Too less resolution detected. Press <kbd>CTRL</kbd> and <kbd> - </kbd> to zoom out in order to play.</h2>
             <br><br>
             <p class="stablerelAV" style="color: rgb(255, 163, 206);">Play Advanced : Lengthier, medium-difficulty, endurance, advanced version. Quit anytime by closing the tab.</p>
-            <p class="stablerelAV" style="font-size: 13px; margin:10px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
-            <h2><a class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D AV P5</a></h2><br>
-            <p class="stablerelAV">Stable Release AV V2.08.9</p>
+            <p class="stablerelAV" style="font-size: 13px; margin:10px 0px 70px 0px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
+            <h2><a id="bAV" class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D AV P5</a></h2><br>
+            <p class="stablerelAV">Stable Release AV V2.10.2</p>
         </div>
 
         <div class="updates" id="updates">
-            <h2>What's new?</h2>
-            <p><cite class="lt">LT V1.13.4 (15th Oct, 2021)</cite> contains :</p>
+            <h2 class="topper">What's new?</h2>
+            <p><cite class="lt">LT V1.15.2 (21st Oct, 2021)</cite> contains :</p>
             <ul>
-                <li>Roadworks resource usage optimised (increases FPS).</li>
-                <li>Traffic now stops for you to deliver the packages safely, accident bug is now fixed. 
-                    (Thanks to <a href="https://community.whitehatjr.com/profile/a7202788-16b0-45f6-b75a-586ea17549c4" target="_blank" rel="norefferer">
-                    @Carelene Joy</a>)</li>
-                <li>Other bug fixes.</li>
-                <li>Resolution optimised (for low resolution devices).</li>
+                <li>Added a short guide.</li>
+                <li>Contrastive texts.</li>
+                <li>Element positions set accordingly.</li>
+                <li>- Road-works limiter enabled.</li>
+                <li>- Traffic Limiter enabled.</li>
+                <li>- Lazy sprites removed.</li>
+                <li>Progressive 'Next House in' Representation. Colors change accordingly the more closer you are to a house.</li>
             </ul>
             <br><br>
-            <p><cite class="av">AV V2.08.09 (15th Oct, 2021)</cite> contains :</p>
+            <p><cite class="av">AV V2.10.2 (21st Oct, 2021)</cite> contains :</p>
             <ul>
-                <li>Traffic now stops for you to deliver the packages safely, accident bug is now fixed. 
-                    (Thanks to <a href="https://community.whitehatjr.com/profile/a7202788-16b0-45f6-b75a-586ea17549c4" target="_blank" rel="norefferer">
-                    @Carelene Joy</a>)</li>
-                <li>Other bug fixes.</li>
-                <li>Resolution optimised (for low resolution devices).
-                    Thanks to 
-                    <a href="https://community.whitehatjr.com/profile/a5696783-f55c-4b0b-8df5-e397710b495a" target="_blank" rel="norefferer">@Master_Coder 4962</a>
-                </li>
+                <li>Contrastive texts.</li>
+                <li>Element positions set accordingly.</li>
+                <li>- Traffic Limiter enabled.</li>
+                <li>- Lazy sprites removed.</li>
+                <li>Progressive 'Next House in' Representation. Colors change accordingly the more closer you are to a house.</li>
+                <li>Preceding Traffic slow down when you're ovetaking them.</li>
+                <li>Oncoming Traffic slow down when you're in the opposite lane.</li>
+                <li>Adaptive Cruise Control : Warns you if you're about to crash, slows down if you're too close.</li>
             </ul>
         </div>
-
         <hr>
-        <div class="hints" id="tips">
+        <div class="hints topper" id="tips">
             <h1 style="font-size: 21px;">Tips and Tricks</h1>
-            <p> There are some tips that you can implement to win : <ul>
+            <p>There are some tips that you can implement to win : </p>
+            <ul>
                 <li>I recommend you keeping a hand around or on <kbd>W</kbd> and <kbd>D</kbd> keys and a hand on <kbd>Arrow</kbd> keys. There's no use of your mouse in this game.</li>
                 <li>Drive upon the solid line (center line) more, rather than staying within the lanes. By this your chances of not hitting the traffic will be reduced.</li>
                 <li>When dropping the packages, stay away from the traffic and go up to the house door to drop the package.</li>
                 <li>Press both <kbd>UP ARROW</kbd> keys and <kbd>DOWN ARROW</kbd> keys to drive even slower, in case if you have to tail-gate the vehicle infront of you.</li>
                 <li>Enable <strong>Browser Hardware Acceleration (If you have a GPU)</strong> to play the game in good frame rates.</li>
-            </ul></p><br>
+            </ul><br>
         </div>
-
-        <div class="knownbugs">
+        <hr>
+        <div class="knownbugs topper">
             <h1 style="font-size: 25px;">Known Bugs and Problems</h1>
             <p style="font-size: 18px;">There are some bugs in the game which you may have noticed :
             <ul>
@@ -544,12 +697,12 @@
             </ul>
         </div>
 
-        <div class="cheating" id="cheats">
+        <div class="cheating topper" id="cheats">
             <h3>Is the game too hard?</h3>
             <p>If it is hard, you can always alter it. <a href="cheats.html" target="_blank">You can hack / cheat it to ease the game play. Follow this link to read more!</a></p>
         </div>
 
-        <div class="game-credits" id="credits">
+        <div class="game-credits topper" id="credits">
             <h2 style="text-decoration: underline;">Stats</h2>
             <div class="stats">
                 <p>It took about : <strong>75 Hours</strong> to develop the UI, Core Game and this Menu.</p>
@@ -558,8 +711,8 @@
                 <br>
                 <p>Games and UI thoroughly refreshed and revised, and tested on different devices.</p>
                 <br><br>
-                <p><cite class="lt">LT : Latest Update : V1.12.09 on 01-09-2021</cite></p>
-                <p><cite class="av">AV : Latest Update : V2.08.04 on 01-09-2021.</cite></p>
+                <p><cite class="lt">LT : Latest Update : V1.15.02 on 21-10-2021</cite></p>
+                <p><cite class="av">AV : Latest Update : V2.10.02 on 21-10-2021.</cite></p>
                 <p><cite>Latest UI Update : 01-09-2021</cite></p>
             <br><br>
             </div>
@@ -578,15 +731,30 @@
             </div>
 
             <div class="externals-cred">
-                <h1 style="font-size: 25px; text-decoration: none;">Also,</h1>
+                <h1 style="font-size: 25px; text-decoration: none;">Thanks to,</h1>
+                <p>References from :</p>
                 <div class="externals-cred-links">
                     <a class="w3sch" href="https://www.w3schools.com/" target="_blank" rel="noreferrer">w3Schools</a>
                     <a class="stckover" href="https://stackoverflow.com/" target="_blank" rel="noreferrer">Stack Overflow</a>
                     <a class="coding-train" href="https://thecodingtrain.com/" target="_blank" rel="noreferrer">The Coding Train!</a>
+                </div>
+                <br>
+                <p>Images made on :</p>
+                <div class="externals-cred-links">
                     <a class="mspaint" href="https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9" target="_blank" rel="noreferrer">MS PAINT</a>
-                    <a class="webdev" href="https://web.dev" target="_blank" rel="noreferrer">web.dev</a>
+                </div>
+                <br>
+                <p>Additional customizations for images :</p>
+                <div class="externals-cred-links">
+                    <a href="https://squoosh.app/" class="squoosh" target="_blank" rel="noreferrer">Squoosh.app</a>
                     <a class="removebg" href="https://remove.bg" target="_blank" rel="noreferrer">remove.bg</a>
                 </div>
+                <br>
+                <p>Accessibility enriched with the help of :</p>
+                <div class="externals-cred-links">
+                    <a class="webdev" href="https://web.dev" target="_blank" rel="noreferrer">web.dev</a>
+                </div>
+                    
             </div>
 
             <div class="host">
@@ -596,6 +764,24 @@
             <div class="languages-prog">
                 Game, Site, UI purely designed by <strong>Javascript, HTML and CSS</strong><br>
             </div>
+
+            <div class="how">
+                <h2>How is this game made?</h2>
+                <p>The procedure of the game-development process started in <strong>June, 2021.</strong> At the start,
+                the game was a complete plain desert. Twice-in-a-month updates have made this game better than it ever was.
+                This game is really simple to create, even a 7 year old can do this.</p>
+                <dl>
+                    <dt>Q. What did you use to make this game?</dt>
+                    <dd>- 3 JS libraries are used to make / dev the core game. Thanks to these libraries, they structured the game.</dd>
+                </dl>
+                <dl>
+                    <dt>Q. Where did you get those images?</dt>
+                    <dd>- You won't get these images from any general store. ALL the images are made by me on MS Paint.</dd>
+                    <dd>Also, creating your own image assets has its own advantage. You don't want to wear sports shoes
+                        in a wedding ceremony, so does the game's theme that keeps it that way. </dd>
+                </dl>
+            </div>
+
             <hr>
             <div class="information">
                 <strong>Package Delivery Sim 2D, made with p5.JS and p5.play.JS</strong>, has been made in such a way, that users with really low-end PCs and Laptops can play this game. With features ranging from interactivity to simplicity,
@@ -632,20 +818,23 @@
         
             <br><br><br><br>
 
-        <button onclick="GotoTopFunction()" id="scroll-to-top" title="Jump to top"> ^ </button>
-
     <script>
-         var mybutton = document.getElementById("scroll-to-top");     
-         window.onscroll = function() {
-            scrollToTopFunction()
+        var selec = document.getElementById('skrol');
+        window.onscroll = function() {
+            scrollToTopFunction();
+            skrld.style.bottom = "1000px"
         }
-         function scrollToTopFunction() {
+        function scrollToTopFunction() {
            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 60) {
-             mybutton.style.display = "block";
+            skrol.style.bottom = "50px";
+            skrol.style.backgroundColor = "rgb(135, 206, 250)";
            } else {
-             mybutton.style.display = "none";
-           } }
-         function GotoTopFunction() {
+            skrol.style.bottom = "-50px";
+            skrol.style.backgroundColor = "black";
+           }  }
+        selec.onmouseover = () => { skrol.style.bottom = "60px" }
+        selec.onmouseleave = () => { skrol.style.bottom = "50px" }
+        function GotoTopFunction() {
            document.body.scrollTop = 10;
            document.documentElement.scrollTop = 0;
         }
@@ -662,6 +851,64 @@
             closebuto.style.display = "none";
         }
     </script>
-    
+    <script>
+        setTimeout(function () {
+            ima.style.top = "0px";
+        }, 1000);
+        setTimeout(function() {
+            skrld.style.bottom = "50px";
+        }, 2000);
+    </script>
+    <script>
+        window.addEventListener('scroll', revasd);
+        var windowHeight = window.innerHeight;
+        var revealPoint = 60;
+        function revasd(){
+            var asdsel = document.querySelectorAll('.asd');
+            for (var i=0; i < asdsel.length; i++) {
+                var getta = asdsel[i].getBoundingClientRect().top;
+                if (getta < windowHeight - revealPoint) {
+                    asdsel[i].style.left = "0px";
+                }
+            }
+        }
+    </script>
+    <script>
+        window.addEventListener('scroll', revdsa);
+        var windowHeight = window.innerHeight;
+        var revealPoint = 60;
+        function revdsa(){
+            var dsasel = document.querySelectorAll('.dsa');
+            for (var i=0; i < dsasel.length; i++) {
+                var getta = dsasel[i].getBoundingClientRect().top;
+                if (getta < windowHeight - revealPoint) {
+                    dsasel[i].style.right = "0px";
+                }
+            }
+        }
+    </script>
+    <script>
+        window.addEventListener('scroll', show);
+        var windowHeight = window.innerHeight;
+        var revealPoint = 10;
+        function show() {
+            var showsel = document.querySelectorAll('.topper');
+            for (var i=0; i < showsel.length; i++) {
+                var getta = showsel[i].getBoundingClientRect().top;
+                if (getta < windowHeight - revealPoint) {
+                    showsel[i].classList.add('active');
+                }
+            }
+        }
+    </script>
+    <script>
+        bLT.onmouseover = () => { bLT.style.left = "20px"; }
+        bLT.onmouseleave = () => {  bLT.style.left = "0px"; }
+    </script>
+    <script>
+        bAV.onmouseover = () => { bAV.style.left = "20px"; }
+        bAV.onmouseleave = () => { bAV.style.left = "0px"; }
+    </script>
+
     </body>
 </html>

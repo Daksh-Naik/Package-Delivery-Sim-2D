@@ -1,9 +1,9 @@
 //Package Delivery Sim 2D AV Made with P5.JS & P5.PLAY.JS
-//Stable Release V2.08.9
+//Stable Release V2.10.4
 
 p5.disableFriendlyErrors = true;
 
-var delvan, testimage, delvanbo;
+var delvan, testimage, delvanbo, delvansense, sensor, sensorap;
 var backgroundHousesR1, backgroundHousesL1, backgroundHousesR2, backgroundHousesL2, backgroundHousesR4,
     backgroundHousesL3, backgroundHousesR3, backgroundHousesL4, backgroundHousesL5, backgroundHousesR5;
 var backgroundHousesR6, backgroundHousesR7, backgroundHousesR8, backgroundHousesR9, backgroundHousesR10, backgroundHousesR11;
@@ -18,13 +18,13 @@ var backgroundcitiesL1, backgroundcitiesR1, backgroundcitiesL2, backgroundcities
 var treeG1, treeG2, treeG3, treeG4, treeG5, treeG6, treeG7, treeG8;
 var riverimg, railwayimg;
 
-var dashboard;
+var dashboard, nav;
 var road;
 var upar, rightar, uparimage, rightarimage;
 var nav1e43image, nav1e43, nav1e43intimage, nav1e43int, nav2e52image, nav2e52intimage, nav2e52int;
 var ipath, ipathLT, ipathLL, ipathLB, ipathBlock;
-var laneM;
-var PTraffic, OTraffic, TrafficGroup;
+var laneM, laneMGroup;
+var PTraffic, OTraffic, TrafficGroup, OTrafficGroup;
 
 let fr = 40;
 let DTtimer = 0;
@@ -56,11 +56,12 @@ var End = 2;
 var Due = 3;
 var Win = 4;
 var angrymode = 5;
+var SS = 6;
 var gameState = Start;
 
 function preload() {
     testimage = loadImage("images/delvan/delivvan-yellow.png");
-
+   
     backgroundHousesR1 = loadImage("images/houses/housesR.jpg");
     backgroundHousesR2 = loadImage("images/houses/housesR2.jpg")
     backgroundHousesR3 = loadImage("images/houses/housesR.jpg");
@@ -300,9 +301,11 @@ function setup() {
     iPathmHouse5BB.visible = false;
     iPaths.push(iPathmHouse5BB);
 
+    laneMGroup = new Group();
     for (var i = -62500; i < 62500; i = i + 600) {
         laneM = createSprite(400, i-62500, 10, 300);
         laneM.shapeColor = rgb(255, 255, 255);
+        laneMGroup.add(laneM);
     }
 
     htmlps = new HTMLPSCHARS();
@@ -420,10 +423,17 @@ function setup() {
     delvan.addImage(testimage);
     delvan.scale = 0.85;
     
+    delvansense = createSprite(80, 0, 50, 300);
+    delvansense.visible = false;
+
     dashboard = createSprite(1100, delvan.y - 165, 530, 700);
     dashboard.shapeColor = rgb(30, 30, 30);
 
+    sensorap = createSprite(80, 0, 50, 50);
+    sensorap.visible = false;
+
     TrafficGroup = new Group();
+    OTrafficGroup = new Group();
 
     setInterval(alarm, 1000);
 
@@ -440,6 +450,10 @@ function draw() {
     htmlps.showTitle();
 
     dashboard.y = delvan.y - 240;
+    delvansense.y = delvan.y - 250;
+    delvansense.x = delvan.x;
+    sensorap.y = delvan.y - 50;
+    sensorap.x = delvan.x;
 
     image(backgroundHousesL1, -280, -5000, 392, 4520);
     image(backgroundHousesL2, -280, -9600, 392, 4520);
@@ -559,7 +573,7 @@ function draw() {
         }
 
         if (keyDown("C") && gameState === Play) {
-            delvan.velocityY=-10;
+            delvan.velocityY= -12;
             cc = true;
         }
 
@@ -577,11 +591,11 @@ function draw() {
             delvan.y = delvan.y +5;
         }
 
-        if (delvan.velocityY === -10 && keyDown("LEFT_ARROW")) {
+        if (delvan.velocityY <= -5 && keyDown("LEFT_ARROW")) {
             delvan.x = delvan.x - 5;
         }
 
-        if (delvan.velocityY === -10 && keyDown("RIGHT_ARROW")) {
+        if (delvan.velocityY <= -5 && keyDown("RIGHT_ARROW")) {
             delvan.x = delvan.x + 5;
         }
 
@@ -593,9 +607,16 @@ function draw() {
             htmlps.ccEr();
         }
 
+        htmlps.cctimer.position(10, 170);
+        htmlps.ccspe.position(10, 200);
+
         if (delvan.y < -500 && gameState === Play) {
             htmlps.timeTakenShow();
             htmlps.tutoriaStH();
+            htmlps.cc.position(10, 250);
+            htmlps.ccinst.position(10, 285);
+            htmlps.cctimer.position(10, 310);
+            htmlps.ccspe.position(10, 335);
         }
 
         htmlps.dashDisplay();
@@ -632,6 +653,67 @@ function draw() {
         htmlps.moreAdd();
 
         delvan.collide(mHouseBounds);
+
+        
+        if (packagedeli == 0) {
+            nav = Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y); 
+            htmlps.nexthousen.html(" "+nav +" M")
+        }
+
+        if(packagedeli == 1) {
+            nav = Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y); 
+            htmlps.nexthousen.html(" "+nav +" M")
+        }
+        if(packagedeli == 2) {
+            nav = Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 3) {
+            nav = Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav +" M"); 
+        }
+        if(packagedeli == 4) {
+            nav = Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 5) {
+            nav = Math.round(HousePA[5].y - HousePA[5].y - HousePA[5].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 6) {
+            nav = Math.round(HousePA[6].y - HousePA[6].y - HousePA[6].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 7) {
+            nav = Math.round(HousePA[7].y - HousePA[7].y - HousePA[7].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M");  
+        }
+        if(packagedeli == 8) {
+            nav = Math.round(HousePA[8].y - HousePA[8].y - HousePA[8].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 9) {
+            nav = Math.round(HousePA[9].y - HousePA[9].y - HousePA[9].y + delvan.y); 
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 10) {
+            nav = Math.round(HousePA[10].y - HousePA[10].y - HousePA[10].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+
+
+        if (nav < 1750) {
+            htmlps.nexthousen.style('color', 'black');
+            htmlps.nexthousen.style('background-color', 'rgb(207, 255, 196)');
+        }
+        if (nav < 950) {
+            htmlps.nexthousen.style('color', 'rgb(250, 187, 40)');
+            htmlps.nexthousen.style('background-color', 'rgb(0, 0, 0)');
+            htmlps.nexthousen.position(700, 110);
+        } else {
+            htmlps.nexthousen.position(745, 110);
+        }
+
 
         if(delvan.isTouching(HousePA[0]) && gameState === Play && keyDown("D")) {
             packages = packages-1;
@@ -745,41 +827,9 @@ function draw() {
             mHouseBounds[10].remove();
             htmlps.mHouse11DashDisplayDeliv();
         }
-
-        if(packagedeli == 1) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 2) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 3) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 4) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 5) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[5].y - HousePA[5].y - HousePA[5].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 6) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[6].y - HousePA[6].y - HousePA[6].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 7) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[7].y - HousePA[7].y - HousePA[7].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 8) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[8].y - HousePA[8].y - HousePA[8].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 9) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[9].y - HousePA[9].y - HousePA[9].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 10) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[10].y - HousePA[10].y - HousePA[10].y + delvan.y) + " M"); 
-        }
-
-        if (frameCount % 80 === 0 && spawntraf === true  ) {
+        
+        if (frameCount % 80 === 0 && spawntraf === true && TrafficGroup.length < 6 ) {
             PTraffic = createSprite(350, delvan.y - 800, 40, 80);
-            PTraffic.lifetime = 700;
             var PTrafficvar = Math.round(random(1, 2));
             switch (PTrafficvar) {
                 case 1: PTraffic.x = Math.round(random(300, 375));
@@ -821,24 +871,115 @@ function draw() {
             }
             TrafficAr.push(OTraffic);
             TrafficGroup.add(OTraffic);
-   
+            OTrafficGroup.add(OTraffic);
         }
-        
+
+        TrafficGroup.collide(TrafficAr);
+
         for(var i = 0; i < TrafficGroup.length; i++) {
             if (TrafficGroup.get(i).y > delvan.y+200) {
                 TrafficGroup.get(i).destroy();
             }
         }
 
+        for(var i=0; i < TrafficGroup.length; i++) {
+            if (TrafficGroup.get(i).x < 400 && TrafficGroup.get(i).y > delvan.y+50) {
+                TrafficGroup.get(i).velocityY = -3;
+            }
+        }
+
+        for(var i=0; i < TrafficGroup.length; i++) {
+            var pT = TrafficGroup.get(i);
+            if (sensorap.isTouching(pT) && pT.x < 400 && delvan.velocityY === -12) {
+                var pTV = pT.velocityY;
+                delvan.velocityY = pTV;
+            } else if (delvan.velocityY === -12) {
+                htmlps.ccspe.style('color', 'palegreen');    
+            } else if (delvan.velocityY >= 0) {
+                htmlps.ccspe.style('color', 'white');
+            } else if (delvan.velocityY > -12) {
+                htmlps.ccspe.style('color', 'orange');
+            }
+        }
+
+        for (var i = 0; i < OTrafficGroup.length; i++) {
+            if (sensorap.isTouching(OTrafficGroup)) {
+                OTrafficGroup.get(i).velocityY = 0;
+            }
+        }
+
+        for (var i = 0; i < OTrafficGroup.length; i++) {
+            if (OTrafficGroup.get(i).x < 430) {
+                OTrafficGroup.get(i).destroy();
+            }
+        }
+
+        for (var i = 0; i < OTrafficGroup.length; i++) {
+            var a = Math.round(random(450, 500))
+            if (delvan.x > 410 && delvan.x < 550 && OTrafficGroup.get(i).y > delvan.y-a) {
+                OTrafficGroup.get(i).velocityY = 1;
+            }
+        }
+
+        for(var i = 0; i < laneMGroup.length; i++) {
+            if (laneMGroup.get(i).y > delvan.y+300) {
+                laneMGroup.get(i).destroy();
+            }
+        }
+
         for(var i = 0; i < HousePA.length; i++) {
             var cust = HousePA[i].y - delvan.y;
-            if (cust > -1000) {
+            if (cust > -2000) {
                 TrafficGroup.collide(HousePA[i]);
             }
         }
 
-        TrafficGroup.collide(TrafficAr);
+        htmlps.pause.position(0, 0);
+        htmlps.pause.style('z-index', '-5'); 
         
+        document.addEventListener( 'visibilitychange' , function() {
+            if (document.hidden && gameState === Play) {
+                gameState = 6;
+            } else {
+                gameState = 6;
+                htmlps.gamePause();
+                htmlps.pause.position(250, 0);
+                htmlps.pause.html("Welcome back. Press E to continue.");
+                delvan.velocityY = 0;
+            }
+        }, false );
+
+        if (keyDown("P") && gameState === Play) {
+            gameState = 6;
+            htmlps.gamePause();
+            htmlps.pause.position(300, 0);
+        } else if (keyDown("P") && gameState === 6) {
+            gameState = Play;
+            htmlps.pause.html(" ");
+            htmlps.pause.position(0, 0);
+        }
+
+        if (gameState === 6) {
+            for(var i = 0; i < TrafficGroup.length; i++) {
+                if (TrafficGroup.get(i).y < delvan.y+200 || TrafficGroup.get(i).y > delvan.y-200) {
+                    TrafficGroup.get(i).destroy();
+                }
+            }
+            delvan.velocityY = 0;
+        }
+
+        if (OTrafficGroup.isTouching(HousePA)) {
+            trafftouch = true;
+        } else {
+            trafftouch = false;
+        }
+
+        if (delvansense.isTouching(TrafficGroup) && !delvan.isTouching(HousePA)) {
+            htmlps.warning();
+        } else {
+            htmlps.warningOff();
+        }
+
         if (timertaken < 200) {
             htmlps.timeTakenGreen();
         }
@@ -866,6 +1007,7 @@ function draw() {
         if (gameState === Due) {
             htmlps.dashDisplayForDue();
             TrafficGroup.setVelocityYEach(0);
+            setTimeout(autoEnd, 5000);
         }
 
         if (gameState === Due && cc == true) {
@@ -877,30 +1019,32 @@ function draw() {
             window.location.reload();
         }
 
+        if (delvan.isTouching(TrafficGroup)) {
+            gameState = End;
+        }
+    
+        if (gameState === End) {
+            htmlps.dashDisplayForEnd();
+            htmlps.allHousesDisplayOff();
+            htmlps.mTimerEasHide();
+            TrafficGroup.setVelocityYEach(0);
+            OTraffic.lifetime = 12000;
+            PTraffic.lifetime = 12000;
+    
+            setTimeout(autoEnd, 5000);
+        }
+    
+        if (gameState === End && cc == true) {
+            delvan.velocityY = 0;
+            htmlps.ccEr();
+        } 
+    
+        if (gameState === End && keyDown("E")) {
+            window.location.reload();
+        }
+
     }
     
-    if (delvan.isTouching(TrafficGroup)) {
-        gameState = End;
-    }
-
-    if (gameState === End) {
-        htmlps.dashDisplayForEnd();
-        htmlps.allHousesDisplayOff();
-        htmlps.mTimerEasHide();
-        TrafficGroup.setVelocityYEach(0);
-        OTraffic.lifetime = 12000;
-        PTraffic.lifetime = 12000;
-    }
-
-    if (gameState === End && cc == true) {
-        delvan.velocityY = 0;
-        htmlps.ccEr();
-    } 
-
-    if (gameState === End && keyDown("E")) {
-        window.location.reload();
-    }
-
      if (packages === 0 && gameState === Play && packagedeli === 11) {
          gameState = Win;
          TrafficGroup.destroyEach();
@@ -977,7 +1121,7 @@ function draw() {
 }
 
 function alarm() {
-    if(delvan.y < -500) {
+    if(delvan.y < -500 && gameState === Play) {
     timer--;
     }
 }
@@ -988,20 +1132,26 @@ function CountSeconds() {
     }
 }
 
+function autoEnd() {
+    if (gameState === End || gameState === Due) {
+        window.location.reload();
+    }
+}
+
 function DTtimerCounter() {
-    if(keyDown("UP_ARROW") && gameState === Play && delvan.y > delvan.y-11 || delvan.velocityY===-10) {
+    if(keyDown("UP_ARROW") && gameState === Play && delvan.y > delvan.y-11 || delvan.velocityY <= -5) {
     DTtimer++;
     }
 }
 
 function oppotimerCounter() {    
-    if (delvan.x > 400 && delvan.x < 550 && keyDown("UP_ARROW") && gameState === Play || delvan.velocityY===-10 && delvan.x > 400 && delvan.x < 550) {
+    if (delvan.x > 400 && delvan.x < 550 && keyDown("UP_ARROW") && gameState === Play || delvan.velocityY <= -5 && delvan.x > 400 && delvan.x < 550) {
         oppotimer++;
     }
 }
 
 function CCCounter() {
-    if(delvan.velocityY===-10 && gameState === Play) {
+    if(delvan.velocityY <= -5 && gameState === Play) {
         cctime++;
     }
 }

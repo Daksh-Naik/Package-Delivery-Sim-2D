@@ -14,9 +14,10 @@
     <script src="p5.play.js"></script>
 
     <style>
-        *{ transition: all 0.3s; }
+        *{ transition: all 0.4s; }
         body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
         canvas { display: block; }
+        .p5Canvas { -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
         h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
         h6 {font-size: 20px; padding: 15px;}
         .LT cite { font-size: h6; color: rgb(128, 255, 128); font-weight: 900; text-align: right;}
@@ -32,11 +33,8 @@
 
         @media only screen and (max-width: 1300px) {
             body {background-color: black;}
-            h1 {display: none;}
-            h2 {display: none;}
-            h3 {display: none;}
-            h4{display: none;}
-            h5{display: block;}
+            .loading { display: none; }
+            h5 { display: block; margin-top: 100px; padding: 40px; }
             canvas {display: none;}
         }
 
@@ -55,9 +53,12 @@
 
         <h5>Error : Too less resolution!<br><br>
         Sorry, you have a too less pixel device. Switch to a higher one of atleast 1300x630 PX</h5>
-
-        <script src="sketch.js"></script>
-        <script src="html.js"></script>
+        <h5>OR, <br>
+        Press CTRL and - to zoom out the screen in order to play.</h5>
 
 </body>
+
+    <script src="sketch.js"></script>
+    <script src="html.js"></script>
+
 </html>

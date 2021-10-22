@@ -1,5 +1,5 @@
 //Package Delivery Sim 2D LT Made with P5.JS & P5.PLAY.JS
-//Stable Release V1.13.4
+//Stable Release V1.15.2
 
 p5.disableFriendlyErrors = true;
 
@@ -9,12 +9,12 @@ var backgroundHousesR1, backgroundHousesL1, backgroundHousesR2, backgroundHouses
 var mHouse1, mHouse2, mHouse3, mHouse4, mHouse5;
 var treeG1, treeG2, treeG3, treeG4;
 
-var dashboard;
+var dashboard, nav;
 var road;
 var upar, rightar, uparimage, rightarimage;
 var ipath, ipathLT, ipathLL, ipathLB, ipathBlock;
-var laneM;
-var PTraffic, OTraffic, TrafficGroup;
+var laneM, laneMGroup;
+var PTraffic, OTraffic, TrafficGroup, OTrafficGroup;
 var RoadworkGroup, roadworksL, roadworksL2, roadworksR, roadworksR2, roadworksR3, roadworksLB1Image, roadworksLB2Image, 
     roadworksRB1Image, roadworksRB2Image;
 
@@ -46,6 +46,7 @@ var End = 2;
 var Due = 3;
 var Win = 4;
 var angrymode = 5;
+var SS = 6;
 var gameState = Start;
 
 function preload() {
@@ -90,7 +91,7 @@ function preload() {
 function setup() {
     createCanvas(1360, 630);
 
-    console.log("%cPackage Delivery Sim 2D - Dev Console","color: lightgreen; font-family: Trebuchet MS; font-size: 25px");
+    console.log("%cPackage Delivery Sim 2D LT - Dev Console","color: lightgreen; font-family: Trebuchet MS; font-size: 25px");
     console.log("%cPaste codes here. Click below the empty area to type, SHIFT + ENTER to leave a line. Right click to clear console.", "color : lightblue");
     console.log("Click on Settings > Preferences > Toggle dark mode to turn on dark mode.")
 
@@ -154,7 +155,6 @@ function setup() {
     ipathLB.shapeColor = rgb(255, 255, 255);
     iPaths.push(ipathLB);
 
-
     ipathLB2 = createSprite(width / 2, 190, 1200, 5);
     ipathLB2.visible = false;
     iPaths.push(ipathLB2);
@@ -210,9 +210,11 @@ function setup() {
     iPathmHouse5BB.visible = false;
     iPaths.push(iPathmHouse5BB);
 
+    laneMGroup = new Group();
     for (var i = -32500; i < 32500; i = i + 600) {
         var laneM = createSprite(400, i, 10, 250);
         laneM.shapeColor = rgb(255, 255, 255);
+        laneMGroup.add(laneM);
     }
 
     htmlps = new HTMLPSCHARS();
@@ -273,14 +275,13 @@ function setup() {
     dashboard.shapeColor = rgb(30, 30, 30);
 
     TrafficGroup = new Group();
+    OTrafficGroup = new Group();
     RoadworkGroup = new Group();
 
     setInterval(alarm, 1000);
-
     setInterval(CountSeconds, 1000);
     setInterval(DTtimerCounter, 1000);
     setInterval(oppotimerCounter, 1000);
-
 }
 
 function draw() {
@@ -330,6 +331,7 @@ function draw() {
     if (gameState === Play) {
 
         htmlps.startDisplayHide();
+        htmlps.startTut();
 
         if (keyDown("UP_ARROW")) {
             delvan.y = delvan.y - 10;
@@ -363,6 +365,9 @@ function draw() {
 
         if (delvan.y < -500 && gameState === Play) {
             htmlps.timeTakenShow();
+            htmlps.startTutH();
+            htmlps.startTutd();
+            htmlps.mtimereas.position(10, 350);
         }
 
         htmlps.dashDisplay();
@@ -391,6 +396,8 @@ function draw() {
             htmlps.framecounter.style('color', 'black');
         }
 
+        if (delvan.y < -2000) { htmlps.tutoria6.hide(); htmlps.tutoria8.hide(); }
+        if (delvan.y < -3700) { htmlps.startDelTut(); }
         htmlps.mHouse1DashDisplay();
         htmlps.mHouse2DashDisplay();
         htmlps.mHouse3DashDisplay();
@@ -399,6 +406,40 @@ function draw() {
 
         delvan.collide(mHouseBounds);
 
+        if (packagedeli == 0) {
+            nav = Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y); 
+            htmlps.nexthousen.html(" "+nav +" M")
+        }
+
+        if(packagedeli == 1) {
+            nav = Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y); 
+            htmlps.nexthousen.html(" "+nav +" M")
+        }
+        if(packagedeli == 2) {
+            nav = Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+        if(packagedeli == 3) {
+            nav = Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav +" M"); 
+        }
+        if(packagedeli == 4) {
+            nav = Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y);
+            htmlps.nexthousen.html(" "+nav + " M"); 
+        }
+
+        if (nav < 1750) {
+            htmlps.nexthousen.style('color', 'black');
+            htmlps.nexthousen.style('background-color', 'rgb(207, 255, 196)');
+        }
+        if (nav < 950) {
+            htmlps.nexthousen.style('color', 'rgb(250, 187, 40)');
+            htmlps.nexthousen.style('background-color', 'rgb(0, 0, 0)');
+            htmlps.nexthousen.position(730, 540);
+        } else {
+            htmlps.nexthousen.position(745, 540);
+        }
+
         if(delvan.isTouching(HousePA[0]) && gameState === Play && keyDown("D")) {
             packages = packages-1;
             packagedeli = packagedeli+1;
@@ -406,19 +447,9 @@ function draw() {
             mHouseBounds[0].remove();
             htmlps.mHouse1DashDisplayDeliv();
             timer = timer+10;
-        }
-
-        if(packagedeli == 1) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 2) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 3) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y) + " M"); 
-        }
-        if(packagedeli == 4) {
-            htmlps.nexthousen.html(" "+Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y) + " M"); 
+            htmlps.tutoria3.hide();
+            htmlps.startTutN();
+            htmlps.tutoria7.hide();
         }
 
         if(delvan.isTouching(HousePA[1]) && gameState === Play && keyDown("D")) {
@@ -428,6 +459,10 @@ function draw() {
             mHouseBounds[1].remove();
             htmlps.mHouse2DashDisplayDeliv();
             timer = timer+20;
+        }
+
+        if (delvan.y < -7000) {
+            htmlps.tutoria4.hide();
         }
 
         if(delvan.isTouching(HousePA[2]) && gameState === Play && keyDown("D")) {
@@ -455,19 +490,17 @@ function draw() {
             htmlps.mHouse5DashDisplayDeliv();
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -200 && delvan.y > -10000 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -200 && delvan.y > -10000 && spawnrw===true && RoadworkGroup.length < 7) {
             var roadworksimagesL = Math.round(random(1, 2))
             switch (roadworksimagesL) {
-                case 1: roadworksL = createSprite(200, Math.round(random(delvan.y - 1800, -10000)), 50, 300);
+                case 1: roadworksL = createSprite(200, Math.round(random(delvan.y - 2000, -10000)), 50, 300);
                     roadworksL.addImage(roadworksLB1Image);
                     roadworksL.scale = 1.5;
-                    roadworksL.lifetime = 700;
                     break;
-                case 2: roadworksL = createSprite(200, Math.round(random(delvan.y - 1800, -10000)), 50, 300);
+                case 2: roadworksL = createSprite(200, Math.round(random(delvan.y - 2000, -10000)), 50, 300);
                     roadworksL.addImage(roadworksLB2Image);
                     roadworksL.scale = 1.6;
                     roadworksL.x = roadworksL.x + 30;
-                    roadworksL.lifetime = 700;
                     break;
                 default: break;
             }
@@ -475,19 +508,17 @@ function draw() {
             RoadworkGroup.add(roadworksL);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 130 === 0 && delvan.y < -1100 && delvan.y > -11000 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 130 === 0 && delvan.y < -1100 && delvan.y > -11000 && spawnrw===true  && RoadworkGroup.length < 7) {
             var roadworksimagesL2 = Math.round(random(1, 2))
             switch (roadworksimagesL2) {
-                case 1: roadworksL2 = createSprite(200, Math.round(random(delvan.y - 1800, -11000)), 50, 300);
+                case 1: roadworksL2 = createSprite(200, Math.round(random(delvan.y - 2000, -11000)), 50, 300);
                     roadworksL2.addImage(roadworksLB1Image);
                     roadworksL2.scale = 1.5;
-                    roadworksL2.lifetime = 700;
                     break;
-                case 2: roadworksL2 = createSprite(200, Math.round(random(delvan.y - 1800, -11000)), 50, 300);
+                case 2: roadworksL2 = createSprite(200, Math.round(random(delvan.y - 2000, -11000)), 50, 300);
                     roadworksL2.addImage(roadworksLB2Image);
                     roadworksL2.scale = 1.6;
                     roadworksL2.x = roadworksL2.x + 30;
-                    roadworksL2.lifetime = 700;
                     break;
                 default: break;
             }
@@ -495,19 +526,17 @@ function draw() {
             RoadworkGroup.add(roadworksL2);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -500 && delvan.y > -2300 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -500 && delvan.y > -2300 && spawnrw===true  && RoadworkGroup.length < 7) {
             var roadworksimagesR = Math.round(random(1, 2))
             switch (roadworksimagesR) {
-                case 1: roadworksR = createSprite(600, Math.round(random(delvan.y - 1500, -2000)), 50, 300);
+                case 1: roadworksR = createSprite(600, Math.round(random(delvan.y - 2000, -2000)), 50, 300);
                     roadworksR.addImage(roadworksRB1Image);
                     roadworksR.scale = 1.5;
-                    roadworksR.lifetime = 700;
                     break;
-                case 2: roadworksR = createSprite(600, Math.round(random(delvan.y - 1500, -2000)), 50, 300);
+                case 2: roadworksR = createSprite(600, Math.round(random(delvan.y - 2000, -2000)), 50, 300);
                     roadworksR.addImage(roadworksRB2Image);
                     roadworksR.scale = 1.6;
                     roadworksR.x = roadworksR.x - 30;
-                    roadworksR.lifetime = 700;
                     break;
                 default: break;
             }
@@ -515,19 +544,17 @@ function draw() {
             RoadworkGroup.add(roadworksR);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -3900 && delvan.y > -12000 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -3900 && delvan.y > -12000 && spawnrw===true  && RoadworkGroup.length < 7) {
             var roadworksimagesR1 = Math.round(random(1, 2));
             switch (roadworksimagesR1) {
-                case 1: roadworksR1 = createSprite(600, Math.round(random(delvan.y - 1100, -12000)), 50, 300);
+                case 1: roadworksR1 = createSprite(600, Math.round(random(delvan.y - 2000, -12000)), 50, 300);
                     roadworksR1.addImage(roadworksRB1Image);
                     roadworksR1.scale = 1.5;
-                    roadworksR1.lifetime = 700;
                     break;
-                case 2: roadworksR1 = createSprite(600, Math.round(random(delvan.y - 1100, -12000)), 50, 300);
+                case 2: roadworksR1 = createSprite(600, Math.round(random(delvan.y - 2000, -12000)), 50, 300);
                     roadworksR1.addImage(roadworksRB2Image);
                     roadworksR1.scale = 1.6;
                     roadworksR1.x = roadworksR1.x - 30;
-                    roadworksR1.lifetime = 700;
                     break;
                 default: break;
             }
@@ -535,19 +562,17 @@ function draw() {
             RoadworkGroup.add(roadworksR1);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -21000 && delvan.y > -32000 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 100 === 0 && delvan.y < -21000 && delvan.y > -32000 && spawnrw===true  && RoadworkGroup.length < 7) {
             var roadworksimagesR3 = Math.round(random(1, 2));
             switch (roadworksimagesR3) {
-                case 1: roadworksR3 = createSprite(600, Math.round(random(delvan.y - 1100, -32000)), 50, 300);
+                case 1: roadworksR3 = createSprite(600, Math.round(random(delvan.y - 2000, -32000)), 50, 300);
                     roadworksR3.addImage(roadworksRB1Image);
                     roadworksR3.scale = 1.5;
-                    roadworksR3.lifetime = 700;
                     break;
-                case 2: roadworksR3 = createSprite(600, Math.round(random(delvan.y - 1100, -32000)), 50, 300);
+                case 2: roadworksR3 = createSprite(600, Math.round(random(delvan.y - 2000, -32000)), 50, 300);
                     roadworksR3.addImage(roadworksRB2Image);
                     roadworksR3.scale = 1.6;
                     roadworksR3.x = roadworksR3.x - 30;
-                    roadworksR3.lifetime = 700;
                     break;
                 default: break;
             }
@@ -556,19 +581,17 @@ function draw() {
             RoadworkGroup.add(roadworksR3);
         }
 
-        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -15000 && delvan.y > -29000 && spawnrw===true) {
+        if (keyDown("UP_ARROW") && frameCount % 110 === 0 && delvan.y < -15000 && delvan.y > -29000 && spawnrw===true  && RoadworkGroup.length < 7) {
             var roadworksimagesL3 = Math.round(random(1, 2));
             switch (roadworksimagesL3) {
-                case 1: roadworksL3 = createSprite(200, Math.round(random(delvan.y - 1100, -29000)), 50, 300);
+                case 1: roadworksL3 = createSprite(200, Math.round(random(delvan.y - 2000, -29000)), 50, 300);
                     roadworksL3.addImage(roadworksLB1Image);
                     roadworksL3.scale = 1.5;
-                    roadworksL3.lifetime = 700;
                     break;
-                case 2: roadworksL3 = createSprite(200, Math.round(random(delvan.y - 1100, -29000)), 50, 300);
+                case 2: roadworksL3 = createSprite(200, Math.round(random(delvan.y - 2000, -29000)), 50, 300);
                     roadworksL3.addImage(roadworksLB2Image);
                     roadworksL3.scale = 1.6;
                     roadworksL3.x = roadworksL3.x + 30;
-                    roadworksL3.lifetime = 700;
                     break;
                 default: break;
             }
@@ -577,9 +600,8 @@ function draw() {
             RoadworkGroup.add(roadworksL3);
         }
 
-        if (frameCount % 100 === 0 && spawntraf === true) {
+        if (frameCount % 100 === 0 && spawntraf === true && TrafficGroup.length < 6) {
             PTraffic = createSprite(350, delvan.y - 800, 40, 80);
-            PTraffic.lifetime = 700;
             var PTrafficvar = Math.round(random(1, 2));
             switch (PTrafficvar) {
                 case 1: PTraffic.x = Math.round(random(330, 370));
@@ -621,10 +643,23 @@ function draw() {
             }
             TrafficAr.push(OTraffic);
             TrafficGroup.add(OTraffic);
+            OTrafficGroup.add(OTraffic)
         }
 
         TrafficGroup.collide(TrafficAr);
         TrafficGroup.collide(RoadworkGroup);
+
+        for(var i = 0; i < laneMGroup.length; i++) {
+            if (laneMGroup.get(i).y > delvan.y+300) {
+                laneMGroup.get(i).destroy();
+            }
+        }
+
+        for(var i = 0; i < OTrafficGroup.length; i++) {
+            if (OTrafficGroup.get(i).x < 420 ) {
+                OTrafficGroup.get(i).destroy();
+            }
+        }
 
         for(var i = 0; i < TrafficGroup.length; i++) {
             if (TrafficGroup.get(i).y > delvan.y+200) {
@@ -632,7 +667,7 @@ function draw() {
             }
         }
 
-        for(var allR = 0; i < RoadworkGroup.length; i++) {
+        for(var i = 0; i < RoadworkGroup.length; i++) {
             if (RoadworkGroup.get(i).y > delvan.y+400) {
                 RoadworkGroup.get(i).destroy();
             }
@@ -640,16 +675,50 @@ function draw() {
 
         for(var i = 0; i < HousePA.length; i++) {
             var cust = HousePA[i].y - delvan.y;
-            if (cust > -1000) {
+            if (cust > -2000) {
                 TrafficGroup.collide(HousePA[i]);
             }
         }
 
-        if (timertaken < 55) {
+        htmlps.pause.position(0, 0);
+        htmlps.pause.style('z-index', '-5'); 
+        
+        document.addEventListener( 'visibilitychange' , function() {
+            if (document.hidden && gameState === Play) {
+                gameState = 6;
+            } else {
+                gameState = 6;
+                htmlps.gamePause();
+                htmlps.pause.position(250, 0);
+                htmlps.pause.html("Welcome back. Press E to continue.");
+                delvan.velocityY = 0;
+            }
+        }, false );
+
+        if (keyDown("P") && gameState === Play) {
+            gameState = 6;
+            htmlps.gamePause();
+            htmlps.pause.position(300, 0);
+        } else if (keyDown("P") && gameState === 6) {
+            gameState = Play;
+            htmlps.pause.html(" ");
+            htmlps.pause.position(0, 0);
+        }
+
+        if (gameState === 6) {
+            for(var i = 0; i < TrafficGroup.length; i++) {
+                if (TrafficGroup.get(i).y < delvan.y+200 || TrafficGroup.get(i).y > delvan.y-200) {
+                    TrafficGroup.get(i).destroy();
+                }
+            }
+            delvan.velocityY = 0;
+        }
+
+        if (timertaken < 60) {
             htmlps.timeTakenGreen();
         }
 
-        if (timertaken > 55) {
+        if (timertaken > 59) {
             htmlps.timeTakenYellow();
         }
 
@@ -658,7 +727,11 @@ function draw() {
         }
 
         if (timer < 15) {
-            htmlps.duetime();
+            htmlps.mtimer.style('color', 'rgb(255, 71, 71)');
+            htmlps.mtimereas.style('color', 'rgb(255, 71, 71)');
+            htmlps.mtimereas.position(10, 270);
+        } else if (delvan.y < -500) {
+            htmlps.mtimereas.position(10, 300);
         }
 
         if (timer < 5) {
@@ -672,33 +745,37 @@ function draw() {
         if (gameState === Due) {
             htmlps.dashDisplayForDue();
             TrafficGroup.setVelocityYEach(0);
+            setTimeout(autoEnd, 5000);
         }
 
         if (gameState === Due && keyDown("E")) {
             window.location.reload();
         }
 
-    }
+        if (delvan.isTouching(TrafficGroup)) {
+            gameState = End;
+        }
+    
+        if (delvan.isTouching(RoadworkGroup)) {
+            gameState = End;
+        }
+    
+        if (gameState === End) {
+            htmlps.dashDisplayForEnd();
+            htmlps.allHousesDisplayOff();
+            htmlps.mTimerEasHide();
+            TrafficGroup.setVelocityYEach(0);
+            OTraffic.lifetime = 12000;
+            PTraffic.lifetime = 12000;
+    
+            setTimeout(autoEnd, 5000);
+        }
+    
+        if (gameState === End && keyDown("E")) {
+            window.location.reload();
+        }
+    
 
-    if (delvan.isTouching(TrafficGroup)) {
-        gameState = End;
-    }
-
-    if (delvan.isTouching(RoadworkGroup)) {
-        gameState = End;
-    }
-
-    if (gameState === End) {
-        htmlps.dashDisplayForEnd();
-        htmlps.allHousesDisplayOff();
-        htmlps.mTimerEasHide();
-        TrafficGroup.setVelocityYEach(0);
-        OTraffic.lifetime = 12000;
-        PTraffic.lifetime = 12000;
-    }
-
-    if (gameState === End && keyDown("E")) {
-        window.location.reload();
     }
 
     if (packages === 0 && gameState === Play) {
@@ -775,8 +852,14 @@ function draw() {
 }
 
 function alarm() {
-    if(delvan.y < -500) {
+    if(delvan.y < -500 && gameState === Play) {
     timer--;
+    }
+}
+
+function autoEnd() {
+    if (gameState === End || gameState === Due) {
+        window.location.reload();
     }
 }
 

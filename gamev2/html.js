@@ -7,6 +7,15 @@ class HTMLPSCHARS {
         this.ensure = createElement('h3');
         this.ensure2 = createElement('h3');
         this.f11 = createElement('h3');
+        this.pause = createElement('h1');
+
+        this.control1 = createElement('h3');
+        this.control2 = createElement('h3');
+        this.control3 = createElement('h3');
+        this.control4 = createElement('h3');
+        this.control5 = createElement('h3');
+        this.control6 = createElement('h3');
+        this.control7 = createElement('h3');
 
         this.usearrk = createElement('h3');
         this.getonde = createElement('h3');
@@ -24,13 +33,14 @@ class HTMLPSCHARS {
         this.packagesdeli = createElement('h4');
         this.nexthouse = createElement('h4');
         this.nexthousen = createElement('h3');
+        this.caution = createElement('h2');
 
         this.cc = createElement('h4');
         this.ccon = createElement('h4');
-        this.cc = createElement('h4');
         this.ccinst = createElement('h4');
         this.cctimer = createElement('h4');
-
+        this.ccspe = createElement('h4');
+      
         this.dropackinst = createElement('h3');
         this.dropackinstfirst = createElement('h3');
 
@@ -74,7 +84,7 @@ class HTMLPSCHARS {
 
     showTitle() {
         this.title.position(837, 1);
-        this.title.html("Package Delivery Sim 2D AV");
+        this.title.html("Package Delivery Sim 2D P5 AV");
         this.title.style('color', 'white');
         this.title.style('user-select', 'none');
         this.title.style('text-decoration', 'underline');
@@ -84,6 +94,7 @@ class HTMLPSCHARS {
         this.title.style('padding', '20px');
         this.title.style('margin', '1px');
         this.title.style('width', '480px');
+
     }
 
     startDisplay() {
@@ -112,6 +123,55 @@ class HTMLPSCHARS {
         this.f11.style('background-color', 'black');
         this.f11.style('padding', '10px');
         this.f11.style('user-select', 'none');
+
+        this.control1.position(900, 255);
+        this.control1.html("Use arrow keys to move.");
+        this.control1.style('color', 'black');
+        this.control1.style('background-color', 'white');
+        this.control1.style('padding', '10px');
+        this.control1.style('user-select', 'none');
+
+        this.control2.position(900, 300);
+        this.control2.html("Press W to drive faster.");
+        this.control2.style('color', 'black');
+        this.control2.style('background-color', 'white');
+        this.control2.style('padding', '10px');
+        this.control2.style('user-select', 'none');
+
+        this.control3.position(900, 345);
+        this.control3.html("Press D to deliver a package.");
+        this.control3.style('color', 'black');
+        this.control3.style('background-color', 'white');
+        this.control3.style('padding', '10px');
+        this.control3.style('user-select', 'none');
+
+        this.control6.position(900, 400);
+        this.control6.html("Press C to turn on Cruise Control.");
+        this.control6.style('color', 'black');
+        this.control6.style('background-color', 'white');
+        this.control6.style('padding', '10px');
+        this.control6.style('user-select', 'none');
+
+        this.control7.position(900, 445);
+        this.control7.html("Press V to turn off Cruise Control.");
+        this.control7.style('color', 'black');
+        this.control7.style('background-color', 'white');
+        this.control7.style('padding', '10px');
+        this.control7.style('user-select', 'none');
+
+        this.control4.position(900, 500);
+        this.control4.html("Press P to Pause.");
+        this.control4.style('color', 'black');
+        this.control4.style('background-color', 'white');
+        this.control4.style('padding', '10px');
+        this.control4.style('user-select', 'none');
+
+        this.control5.position(900, 545);
+        this.control5.html("Press F5 or E to Restart.");
+        this.control5.style('color', 'black');
+        this.control5.style('background-color', 'white');
+        this.control5.style('padding', '10px');
+        this.control5.style('user-select', 'none');
     }
 
     startDisplayHide() {
@@ -119,6 +179,13 @@ class HTMLPSCHARS {
         this.ensure.hide();
         this.ensure2.hide();
         this.f11.hide();
+        this.control1.hide();
+        this.control2.hide();
+        this.control3.hide();
+        this.control4.hide();
+        this.control5.hide();
+        this.control6.hide();
+        this.control7.hide();
     }
 
     tutoriaSt() {
@@ -148,7 +215,7 @@ class HTMLPSCHARS {
     }
 
     ccat() {
-        this.cc.position(10, 260);
+        this.cc.position(10, 100);
         this.cc.html("CC : OFF");
         this.cc.style('color', 'white');
         this.cc.style('user-select', 'none');
@@ -158,7 +225,7 @@ class HTMLPSCHARS {
         this.cc.style('border-radius', '10px');
         this.cc.style('transition', '0.3s')
 
-        this.ccinst.position(10, 290);
+        this.ccinst.position(10, 135);
         this.ccinst.html("Press C to turn ON");
         this.ccinst.style('color', 'white');
         this.ccinst.style('user-select', 'none');
@@ -171,7 +238,7 @@ class HTMLPSCHARS {
 
     ccOn() {
         this.cc.html("CC : ON");
-        this.cc.style('color', 'lightgreen');
+        this.cc.style('color', 'rgb(94, 255, 79)');
         this.ccinst.html("Press V to turn OFF");
     }
 
@@ -242,13 +309,12 @@ class HTMLPSCHARS {
         this.nexthouse.style('padding', '10px');
         
         this.nexthousen.position(730, 110);
-        this.nexthousen.html(" "+Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y) + " M");
+        this.nexthousen.html(" "+nav + " M");
         this.nexthousen.style('background-color', 'black');
         this.nexthousen.style('color', 'white');
         this.nexthousen.style('padding', '10px');
         this.nexthousen.style('text-align', 'right');
 
-        this.cctimer.position(10, 320);
         this.cctimer.html("Total time in CC : "+ Math.round(cctime));
         this.cctimer.style('color', 'white');
         this.cctimer.style('background-color', 'black');
@@ -257,8 +323,25 @@ class HTMLPSCHARS {
         this.cctimer.style('user-select', 'none');
         this.cctimer.style('text-align', 'center');
 
+        var st = delvan.velocityY-delvan.velocityY-delvan.velocityY;
+        this.ccspe.html("CC Speed : "+st);
+        this.ccspe.style('padding', '10px');
+        this.ccspe.style('background-color', 'black');
+
     }
 
+    warning() {
+        this.caution.position(690, 200);
+        this.caution.html("Caution!");
+        this.caution.style('color', 'orange');
+        this.caution.style('background-color', 'black');
+        this.caution.style('padding', '10px');
+    }
+
+    warningOff() {
+        this.caution.html("");
+    }
+ 
     timeTakenShow() {
         this.timetakeninst.position(10, 130);
         this.timetakeninst.html("Total time taken : ");
@@ -285,8 +368,15 @@ class HTMLPSCHARS {
         this.mtimereas.style('user-select', 'none');
     }
 
+    gamePause() {
+        this.pause.html("PAUSED : Press E to Play.");
+        this.pause.style('background-color', 'black');
+        this.pause.style('padding', '10px');
+        this.pause.style('z-index', '50');
+    }
+
     timeTakenGreen() {
-        this.timetaken.style('color', 'limegreen');
+        this.timetaken.style('color', 'rgb(94, 255, 79)');
     }
 
     timeTakenYellow() {
@@ -294,8 +384,8 @@ class HTMLPSCHARS {
     }
 
     goodtime() {
-        this.mtimer.style('color', 'limegreen');
-        this.mtimereas.style('color', 'limegreen');
+        this.mtimer.style('color', 'rgb(94, 255, 79)');
+        this.mtimereas.style('color', 'rgb(94, 255, 79)');
     }
 
     duetime() {
@@ -370,7 +460,7 @@ class HTMLPSCHARS {
         this.mHouse1delivinst.hide();
         this.mHouse1delivinstDeli.position(870, 120);
         this.mHouse1delivinstDeli.html("Package Delivered to Aryan's House. (+10 Sec)");
-        this.mHouse1delivinstDeli.style('color', 'limegreen');
+        this.mHouse1delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse1delivinstDeli.style('user-select', 'none');
         this.mHouse1delivinstDeli.style('background-color', 'black');
         this.mHouse1delivinstDeli.style('padding', '10px');
@@ -391,7 +481,7 @@ class HTMLPSCHARS {
         this.mHouse2delivinst.hide();
         this.mHouse2delivinstDeli.position(870, 160);
         this.mHouse2delivinstDeli.html("Package Delivered to De Costa's House. (+20 Sec)");
-        this.mHouse2delivinstDeli.style('color', 'limegreen');
+        this.mHouse2delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse2delivinstDeli.style('user-select', 'none');
         this.mHouse2delivinstDeli.style('background-color', 'black');
         this.mHouse2delivinstDeli.style('padding', '10px');
@@ -412,7 +502,7 @@ class HTMLPSCHARS {
         this.mHouse3delivinst.hide();
         this.mHouse3delivinstDeli.position(870, 240);
         this.mHouse3delivinstDeli.html("Package Delivered to Radha's House. (+10 Sec)");
-        this.mHouse3delivinstDeli.style('color', 'limegreen');
+        this.mHouse3delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse3delivinstDeli.style('user-select', 'none');
         this.mHouse3delivinstDeli.style('background-color', 'black');
         this.mHouse3delivinstDeli.style('padding', '10px');
@@ -433,7 +523,7 @@ class HTMLPSCHARS {
         this.mHouse4delivinst.hide();
         this.mHouse4delivinstDeli.position(870, 200);
         this.mHouse4delivinstDeli.html("Package Delivered to Rajat's House. (+10 Sec)");
-        this.mHouse4delivinstDeli.style('color', 'limegreen');
+        this.mHouse4delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse4delivinstDeli.style('user-select', 'none');
         this.mHouse4delivinstDeli.style('background-color', 'black');
         this.mHouse4delivinstDeli.style('padding', '10px');
@@ -454,7 +544,7 @@ class HTMLPSCHARS {
         this.mHouse5delivinst.hide();
         this.mHouse5delivinstDeli.position(870, 280);
         this.mHouse5delivinstDeli.html("Package Delivered to Arjun's House. (+15 Sec)");
-        this.mHouse5delivinstDeli.style('color', 'limegreen');
+        this.mHouse5delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse5delivinstDeli.style('user-select', 'none');
         this.mHouse5delivinstDeli.style('background-color', 'black');
         this.mHouse5delivinstDeli.style('padding', '10px');
@@ -483,7 +573,7 @@ class HTMLPSCHARS {
         this.mHouse6delivinst.hide();
         this.mHouse6delivinstDeli.position(870, 160);
         this.mHouse6delivinstDeli.html("Package Delivered to Chowgule's House. (+20 Sec)");
-        this.mHouse6delivinstDeli.style('color', 'limegreen');
+        this.mHouse6delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse6delivinstDeli.style('user-select', 'none');
         this.mHouse6delivinstDeli.style('background-color', 'black');
         this.mHouse6delivinstDeli.style('padding', '10px');
@@ -504,7 +594,7 @@ class HTMLPSCHARS {
         this.mHouse7delivinst.hide();
         this.mHouse7delivinstDeli.position(870, 200);
         this.mHouse7delivinstDeli.html("Package Delivered to Kamat's House. (+30 Sec)");
-        this.mHouse7delivinstDeli.style('color', 'limegreen');
+        this.mHouse7delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse7delivinstDeli.style('user-select', 'none');
         this.mHouse7delivinstDeli.style('background-color', 'black');
         this.mHouse7delivinstDeli.style('padding', '10px');
@@ -525,7 +615,7 @@ class HTMLPSCHARS {
         this.mHouse8delivinst.hide();
         this.mHouse8delivinstDeli.position(870, 240);
         this.mHouse8delivinstDeli.html("Package Delivered to Gregory's House. (+20 Sec)");
-        this.mHouse8delivinstDeli.style('color', 'limegreen');
+        this.mHouse8delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse8delivinstDeli.style('user-select', 'none');
         this.mHouse8delivinstDeli.style('background-color', 'black');
         this.mHouse8delivinstDeli.style('padding', '10px');
@@ -546,7 +636,7 @@ class HTMLPSCHARS {
         this.mHouse9delivinst.hide();
         this.mHouse9delivinstDeli.position(870, 280);
         this.mHouse9delivinstDeli.html("Package Delivered to Neha's House. (+20 Sec)");
-        this.mHouse9delivinstDeli.style('color', 'limegreen');
+        this.mHouse9delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse9delivinstDeli.style('user-select', 'none');
         this.mHouse9delivinstDeli.style('background-color', 'black');
         this.mHouse9delivinstDeli.style('padding', '10px');
@@ -567,7 +657,7 @@ class HTMLPSCHARS {
         this.mHouse10delivinst.hide();
         this.mHouse10delivinstDeli.position(870, 160);
         this.mHouse10delivinstDeli.html("Package Delivered to Srivastava's House. (+10 Sec)");
-        this.mHouse10delivinstDeli.style('color', 'limegreen');
+        this.mHouse10delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse10delivinstDeli.style('user-select', 'none');
         this.mHouse10delivinstDeli.style('background-color', 'black');
         this.mHouse10delivinstDeli.style('padding', '10px');
@@ -588,7 +678,7 @@ class HTMLPSCHARS {
         this.mHouse11delivinst.hide();
         this.mHouse11delivinstDeli.position(870, 200);
         this.mHouse11delivinstDeli.html("Package Delivered to Bishnoi's House.");
-        this.mHouse11delivinstDeli.style('color', 'limegreen');
+        this.mHouse11delivinstDeli.style('color', 'rgb(94, 255, 79)');
         this.mHouse11delivinstDeli.style('user-select', 'none');
         this.mHouse11delivinstDeli.style('background-color', 'black');
         this.mHouse11delivinstDeli.style('padding', '10px');
@@ -622,6 +712,9 @@ class HTMLPSCHARS {
     }
 
     dashDisplayForEnd() {
+        this.usearrk.hide();
+        this.getonde.hide();
+        this.das.hide();
 
         this.instEnd.position(930, 70);
         this.instEnd.html("Sorry, you met in an Accident!");

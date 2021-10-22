@@ -203,9 +203,11 @@
     @media only screen and (max-width:400px) {
         .verstable { margin: 2px; }
         .brief-simp { margin: 0px; }
+        .defnavbar { display: block; }
+        .defnavbar-overlay-menubut { bottom: 0px; border-radius: 100px 0px 0px 0px; }
         dt { padding: 10px; }
         dd { padding: 5px 5px 5px 5px; }
-        .title {padding: 10px;}
+        .title {padding: 10px; margin-top: 100px;}
     }
 
     @media only screen and (min-width: 300) {
@@ -223,6 +225,10 @@
         <div class="defnavbar-overlay-menubut" onClick="openNav()">
             <p>&#9776; Menu</p>
         </div>
+    </div>
+
+    <div class="overlay-menubut" onclick="openNav()">
+        <p>&#9776; Menu</p>
     </div>
 
     <div id="myNav" class="overlay">

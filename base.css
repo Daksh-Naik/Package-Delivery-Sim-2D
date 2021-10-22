@@ -14,13 +14,14 @@ code {  user-select: text; background-color: rgb(223, 223, 223); color: black; p
 code:hover{ background-color: black; color: white;}
 ul{ margin: 15px; }
 li{ margin: 5px; }
+.play { padding: 40px; margin: 100px 0px 100px 0px; color: rgb(114, 255, 114); }
 .defim { width:max-content; margin: 60px 0px 0px 0px; position: relative; top: -1000px; transition: 0.5s ease-out; z-index: -1; }
 .scrold { padding: 20px 0px 10px 0px; position: relative; bottom: -100px; transition: 0.5s;}
 .av { color: rgb(255, 0, 102); }
 .lt { color: rgb(128, 255, 128); }
 .topper { position: relative; transform: translateY(100px); opacity: 0; transition: 0.5s ease; z-index: 95; }
 .topper.active{ transform: translateY(0px); opacity: 1; }
-.scroller {  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); z-index: 99; position: fixed; bottom: -50px; right: 20px; background-color: rgba(0, 0, 0, 0.800); color: black; padding: 10px; cursor: pointer; transition: 0.3s ease; background: url("top.png"); width:45px; height: 30px;}
+.scroller {  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); z-index: 99; position: fixed; bottom: -50px; right: 20px; background-color: rgba(0, 0, 0, 0.800); color: black; padding: 10px; cursor: pointer; transition: 0.3s ease; background: url("top.png"); width:45px; height: 30px;}
 .scroller:hover { filter:sepia(20); box-shadow: 0px 0px 20px rgb(37, 37, 37); }
 dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { padding: 5px 0px 5px 5px; }
 ::-webkit-scrollbar { width: 20px; background-color: black; transition: 0.5s; }
@@ -33,7 +34,8 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
 @-webkit-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
 @-ms-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
 @-o-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
-.defnavbar { z-index: 100; position: fixed; top: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.500); backdrop-filter: blur(3px); display: flex; }
+.defnavbar { z-index: 100; position: fixed; top: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.500); backdrop-filter: blur(3px); display: flex; transition: 0.3s;}
+.defnavbar:hover { box-shadow: 0px 10px 50px rgba(255, 255, 255, 0.300); }
 .defnavbar-logo { border-radius: 0px 0px 100px 0px; background-color: rgba(0, 0, 0, 0.700); color: rgb(180, 250, 123);
     padding: 10px 40px 10px 10px; transition: 0.3s; font-weight: 900; }
 .defnavbar-logo:hover { background-color: rgba(0, 0, 0, 0.900); letter-spacing: 1px; color: rgb(216, 247, 191); }
@@ -43,7 +45,7 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
 .overlay-menubut { display: none; position: fixed; bottom: 0px; left: 0px; 
     background-color: rgba(0, 0, 0, 0.829); font-size: 24px; padding: 20px 20px 20px 40px;
     cursor: pointer; font-weight: 900; letter-spacing: 3px; color: lightskyblue;
-    transition: 0.3s; border-radius: 10px 100px 10px 10px; text-shadow: 2px 2px 4px #000000; }
+    transition: 0.3s; border-radius: 10px 100px 10px 10px; text-shadow: 2px 2px 4px #000000; z-index: 99; }
 .defnavbar-overlay-menubut:hover { letter-spacing: 2px; color: rgb(196, 232, 255); }
 .overlay { height: 100%; width: 0; position: fixed; z-index: 100; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.700);
     overflow-x: hidden; transition: 0.5s; }

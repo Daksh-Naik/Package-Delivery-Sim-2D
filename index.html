@@ -29,6 +29,7 @@
             h1 {padding: 10px; font-size: 40px; text-decoration: underline; transition: 0.3s; color: rgb(255, 255, 255);}
             h1:hover { color: rgb(219, 219, 219); }
             p {margin: 5px;}
+            .defnavbar { top:-100px; }
 
             .title {
                 padding: 45px; margin: 50px 0px 50px 0px;  background: linear-gradient(rgb(115, 255, 0), rgb(255, 255, 255));
@@ -68,7 +69,7 @@
             .verstable th { padding: 40px; width: 300px; }
 
             .controlsLT { color: #bfffbf;     background: linear-gradient(to top left, #000000 50%, #006d00 100%); margin: 15px; padding: 30px; font-size: larger; }
-            .buttonPLT { position: relative; font-size: 40px; color: #3eff7f; background-color: rgba(0, 0, 0, 0.300); 
+            .buttonPLT { text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.100); box-shadow: 0px 0px 10px #3eff7f; position: relative; font-size: 10px; color: #3eff7f; background-color: rgba(0, 0, 0, 0.300); 
                 backdrop-filter: blur(4px); font-weight: 900; margin: 40px; padding: 10px 40px 10px 40px; transition: 0.3s; z-index: 99; }
             .buttonPLT:hover { word-spacing: 2px;color: black; background-color: #3eff7f; box-shadow: 0px 0px 40px #3eff7f; text-decoration: none; transition-delay: 0.4s; }
             .buttonPLT:before{ content: ''; position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-top: 2px solid #3eff7f;
@@ -79,11 +80,12 @@
             .buttonPLT:hover:after{ width: 100%; height: 100%; }
             .ohyesLT{ margin: 10px; padding: 25px; justify-content: space-around;
                 background: linear-gradient(to bottom right, #000000 50%, #006d00 100%); }
+            .buttonPLT:active { top: 5px; background-color: rgba(0, 0, 0, 0.100); color:#3eff7f; }
             .stablerelLT{ margin: 10px; }
             .buttonPnodis { text-decoration: none; padding:40px; border-radius: 25px;  color:rgb(255, 0, 0); font-weight: 800;font-size: 30px; transition: 0.3s;  }
 
             .controlsAV { color: rgb(250, 200, 250); background: linear-gradient(to top left, #000000 50%, #ff0066 100%); margin: 15px; padding: 30px; font-size: larger; }
-            .buttonPAV { box-shadow: 0px 0px 10px #ff66ff49; position: relative; font-size: 40px; color: #ff66ff; background-color: rgba(0, 0, 0, 0.100); 
+            .buttonPAV { box-shadow: 0px 0px 10px #ff66ff49; position: relative; font-size: 40px; color: #ff66ff; background-color: #ff66ff; 
                 backdrop-filter: blur(4px); font-weight: 900; margin: 60px 0px 60px 0px; padding: 10px 40px 10px 40px; transition: 0.3s; z-index: 99; }
             .buttonPAV:hover { word-spacing: 2px; color: black; background-color: #ff66ff; box-shadow: 0px 0px 40px #ff66ff; text-decoration: none; transition-delay: 0.4s; }
             .buttonPAV:before{ content: ''; position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; border-top: 2px solid #ff66ff;
@@ -164,6 +166,7 @@
     @media only screen and (max-width : 1299px) {
         .buttonPLT { display:none; } 
         .buttonPAV { display:none; }
+        .nos { display: none; }
         .pressCTRL { display: block; }
         img { display: none; }
         .scrold { display: none; }
@@ -221,7 +224,7 @@
   
   <body class="fader-anim">
 
-    <div class="defnavbar">
+    <div class="defnavbar" id="nav">
         <div class="defnavbar-logo">
             <h3>Package Delivery Sim 2D <cite>P5</cite></h3>
         </div>
@@ -236,20 +239,31 @@
 
     <div id="myNav" class="overlay">
         <a class="overlayclosebtn" onclick="closeNav()" id="closebuto">&times;</a>
+            <section class="overlay-base" onclick="closeNav()">
             <div class="overlay-content" onclick="closeNav()">
-                <a href="#title" class="defnavbar-logo" style="color: rgb(115, 255, 0);">Package Delivery Sim 2D <cite>P5</cite></a>
+                <h1>About & Info</h1>
                 <a href="#Game-Story">Story</a>
                 <a href="#Specs">Specs & Req</a>
                 <a href="#brief-overview">Brief Info</a>
                 <a href="#compare">Compare AV & LT</a>
-                <a href="#LT-game" style="color: rgb(128, 255, 128);" class="abc">Play : Lite (LT)</a>
-                <a href="#AV-game" style="color: rgb(255, 0, 102);" class="abc">Play : Advanced (AV)</a>
-                <a href="cheats.html" target="_blank" rel="norefferer">Cheats</a>
                 <a href="#updates">News & Updates</a>
-                <a href="#tips">Tips & Tricks</a>
-                <a href="#Troubleshooting">Troubleshoot</a>
                 <a href="#credits">Stats & Credits</a>
             </div>
+            <div class="overlay-content">
+                <div style="background-color: rgba(0, 0, 0, 0.500); border-radius: 50px; backdrop-filter: blur(2px);">
+                    <h1>Play the games!</h1>
+                    <a href="#LT-game" style="color: rgb(128, 255, 128);" class="abc">Play : Lite (LT)</a>
+                    <a href="#AV-game" style="color: rgb(255, 0, 102);" class="abc">Play : Advanced (AV)</a>
+                </div>
+                <div>
+                    <br><br><br>
+                    <h2>Tips & Tricks</h2>
+                    <a href="#tips">Tips & Tricks</a>
+                    <a href="#Troubleshooting">Troubleshoot</a>
+                    <a href="cheats.html" target="_blank" rel="norefferer">Cheats</a>
+                </div>
+            </div>
+            </section>
     </div>
 
         <div>
@@ -272,7 +286,7 @@
         <div>
             <p class="MOBILE">Sorry, you won't be able to play this game on this device. You have a too less resolution. <br><br>
                 Press <kbd>CTRL</kbd> + <kbd> - </kbd> to zoom out the screen in order to play this game.<br><br> OR <br><br>
-                Kindly switch over to atleast <strong>1300x600</strong> resolution device to play it.</p>
+                Kindly switch over to atleast <strong>1300x600</strong> resolution device to play.</p>
         </div>
 
         <div class="game-story topper" id="Game-Story">
@@ -280,7 +294,7 @@
             <p>A Package Courier has to deliver packages to the respective houses before the due time.<br>Can you help the Courier deliver the packages before it's too late?</p><br>
         </div>
 
-        <h2 class="topper">Why play?</h2>
+        <h2 class="topper">Why should I play?</h2>
         <div class="shc">
             <section>
                 <div>
@@ -289,22 +303,6 @@
                         <dd class="topper">Race without worrying about the police, Arcade like in 1990's, along with Simulation of the deliveries.</dl>
                     </dl>
                 </div>    
-            </section>
-            <section>
-                <div>
-                    <dl>
-                        <h2 class="dsa">Presence of assistance - everytime.</h2>
-                        <dd class="topper">With over 5 - 7 components assisting you to deliver, never letting you down.</dd>
-                    </dl>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <dl>
-                        <h2 class="asd">Eye comfort & Accessibility ensured.</h2>
-                        <dd class="topper">Bright contrastive traffic, so are the texts & elements.</dd>
-                    </dl>
-                </div>
             </section>
             <section>
                 <div><dl>
@@ -320,67 +318,49 @@
             </section>
             <section>
                 <div><dl>
-                    <h2 class="dsa">Audience - first consideration.</h2>
-                    <dd class="topper">Always, you first.</dd>
-                </dl></div>
-            </section>
-            <section>
-                <div><dl>
-                    <h2 class="asd">No sounds.</h2>
+                    <h2 class="dsa">No sounds.</h2>
                     <dd class="topper">To avoid flickering, annoying sounds are avoided.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="dsa">Tutorial inside.</h2>
+                    <h2 class="asd">Tutorial inside.</h2>
                     <dd class="topper">A short guide that directs you to play.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="asd">Press P to Pause.</h2>
+                    <h2 class="dsa">Press P to Pause.</h2>
                     <dd class="topper">Welcomes you back after you've switched tabs / looking at something else.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="dsa">2 Major Landscapes / Backgrounds.</h2>
+                    <h2 class="asd">2 Major Landscapes / Backgrounds.</h2>
                     <dd>Deliver in cities & villages / minor areas.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="asd">Level 4 Traffic AI in <cite class="av">AV</cite></h2>
+                    <h2 class="dsa">Level 4 Traffic AI in <cite class="av">AV</cite></h2>
                     <dd>Almost like real - life traffic.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="dsa">Adaptive Cruise Control in <cite class="av">AV</cite></h2>
+                    <h2 class="asd">Adaptive Cruise Control in <cite class="av">AV</cite></h2>
                     <dd>Warns you if you're about to crash. Slows down adaptively to the preceding traffic.</dd>
                 </dl></div>
             </section>
             <section>
                 <div><dl>
-                    <h2 class="asd">Ability to hack / cheat.</h2>
+                    <h2 class="dsa">Ability to hack / cheat.</h2>
                     <dd>If the game is too hard, you can <a href="cheats.html" target="_blank">read this guide for cheating.</a></dd>
                 </dl></div>
             </section>
             <section>
-                <div><dl>
-                    <h2 class="dsa">No second chances.</h2>
-                    <dd class="topper">You don't respawn at the hospital in real life.</dd>
-                </dl></div>
-            </section>
-            <section>
-                <div><dl>
-                    <h2 class="asd">Privacy matters.</h2>
-                    <dd class="topper">No information stored. I don't need it anyway.</dd>
-                </dl></div>
-            </section>
-            <section>
                 <div><dl >
-                    <h2 class="dsa">Detailed information.</h2>
+                    <h2 class="asd">Detailed information.</h2>
                     <dd class="topper">Read more below.</dd>
                 </dl></div>
             </section>
@@ -393,6 +373,8 @@
             <br>
             <p>It's highly recommended that you turn on your <strong>browser's hardware acceleration before playing this game.</strong></p>
             <br><br>
+            <details>
+                <summary>Show details : Various experimented browsers:</summary>
                 <div class="game-specs-tested topper">
                     <p>Tested and experimented on browsers like : </p>
                     <br>
@@ -419,7 +401,10 @@
                             </ul>
                     </ul>
                 </div>
+            </details>
                 <br><br>
+            <details>
+                <summary>Show details : Performance assurance</summary>
                 <div class="game-specs-tested-machi topper">
                     <p>Requirements and Performance assurance (not much accurate).</p>
                     <p>(entirely depends upon your device)</p>
@@ -431,7 +416,10 @@
                         <li><cite class="av">For AV</cite> About 7.03 MB of resources to download.</li>
                     </ul>
                 </div>
+            </details>
                 <br><br>
+            <details>
+                <summary>Show Details : Other</summary>
                 <div class="game-specs-about topper">
                     <p>Other information :</p>
                     <br>
@@ -441,6 +429,7 @@
                         <li>Game Display : Top Cam 2D</li>
                     </ul>
                 </div>
+            </details>
                 <br><br>
                 <div class="game-specs-other topper">
                     <p>Higher FPS gameplay will be coming soon (I don't get paid for this :/).</p>
@@ -454,15 +443,15 @@
             <h2>Game brief</h2>
             <div class="brief-simp topper">
                 <h3>Information</h3>
-                <p>Package Delivery Sim 2D is a simulation - arcade web-browser game. As the name suggests, it's 2D, and has cam display
-                    from Top. The sole purpose of this game is for entertainment obviously, where you have to deliver packages within the 
-                    due time, avoiding crashing into stuff. Yep, its race, arcade and simulation, all at the same time. </p>
+                <p>Package Delivery Sim 2D is a simulation - arcade web-browser game. As the name suggests, it's 2D, and has cam-era display
+                    from Top. The sole purpose of this game is for entertainment obviously, where you have to deliver packages within 
+                    due time, avoiding crashing into stuff. Yep, it's race, arcade, and simulation, all at the same time. </p>
                 <br><br>
                 <p>Here are some similiarities in both the games.</p>
                 <br>
                 <dl>
                     <dt>- About the basics?</dt>
-                    <dd>Basically, you are given a van, some amount of packages, house-adresses, navigation and a cup of coca-cola.<br>
+                    <dd>In a simple sentence, you are given a van, some amount of packages, house addresses, navigation, and a cup of coca-cola.<br>
                         The road is a long strip, you have to drive down the road to deliver packages to the houses.</dd>
                 </dl>
                 <dl>
@@ -479,13 +468,14 @@
             </div>
             <div class="brief-two topper">
                 <h3>The versions</h3>
-                <p>Recently introduced versions, namely <cite class="lt">LT (Light)</cite> and <cite class="av">AV (Advanced)</cite>, are two stable versions that 
-                    are quite flexible. They both run on the same library, concept, story and idealogy. Don't worry, they both are pretty easy
+                <p>Recently introduced versions, namely <cite class="lt">LT (Light)</cite> and <cite class="av">AV (Advanced)</cite>, are two stable versions 
+                    . They both run on the same library, concept, story and idealogy. Don't worry, they both are pretty easy
                     to play, but you will have to compromise in hardware, software, and bandwith in the <cite>AV</cite> version. </p>
             </div>
             <div class="verstable topper">
                 <h2>Comparison - <cite class="av">AV</cite> and <cite class="lt">LT</cite></h2>
-        
+                <details>
+                <summary>Show Comparison Table</summary>
                 <table id="compare">
                     <tr>
                         <th class="advanced">(AV) Advanced</th>
@@ -553,23 +543,30 @@
                         <td class="lighttd2">No</td>
                     </tr>
                 </table>
+            </details>
                 <p><cite class="av">AV</cite> version is quite boring, it can also be called as <cite class="av">Endurance.</cite> Make sure you don't sleep behind the wheel!</p>
                 <p>Tune into spotify and play your favourite playlist while driving.</p>
             </div>
         </div>
 
         <div class="topper">
+            <details class="nos">
+            <summary>Show : Package Delivery Sim 2D P5 - Game Screenshot LT</summary>
             <picture>
-                <source type="image/avif" srcset="gamev1/images/overscreenshot.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
-                <img src="gamev1/images/overscreenshot.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
+                <source  draggable="false" type="image/avif" srcset="gamev1/images/overscreenshot.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
+                <img  draggable="false" src="gamev1/images/overscreenshot.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
             </picture>
+            </details>
         </div>
         <hr>
         <div class="topper">
+            <details class="nos">
+                <summary>Show : Package Delivery Sim 2D P5 - Game Screenshot AV</summary>
             <picture>
-                <source type="image/avif" srcset="gamev1/images/overscreenshotavv.avif" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D" />
-                <img src="gamev1/images/overscreenshotav.png" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D">
+                <source draggable="false" type="image/avif" srcset="gamev1/images/overscreenshotavv.avif" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D" />
+                <img draggable="false" src="gamev1/images/overscreenshotav.png" title="Overview and Legend : Package Delivery Sim 2D P5 AV" alt="Overview and Legend : Package Delivery Sim 2D">
             </picture>
+            </details>
         </div>
         <hr>
 
@@ -600,8 +597,7 @@
             <h2 class="pressCTRL">Too less resolution detected. Press <kbd>CTRL</kbd> and <kbd> - </kbd> to zoom out in order to play.</h2>
             <br><br>
             <p class="stablerelLT" style="color: rgb(182, 255, 122);">Play Lite : Shorter, easier, lighter, basic version. Quit anytime by closing the tab.</p>
-            <p class="stablerelLT" style="font-size: 13px; margin:10px 0px 70px 0px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
-            <h2><a id = "bLT" class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D LT P5</a></h2><br>
+            <h2><a id = "bLT" class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play : Package Delivery Sim 2D LT P5</a></h2><br>
             <p class="stablerelLT">Stable Release LT V1.15.2</p>
         </div>
 
@@ -628,9 +624,8 @@
         <div class="ohyesAV" id="play-game">
             <h2 class="pressCTRL">Too less resolution detected. Press <kbd>CTRL</kbd> and <kbd> - </kbd> to zoom out in order to play.</h2>
             <br><br>
-            <p class="stablerelAV" style="color: rgb(255, 163, 206);">Play Advanced : Lengthier, medium-difficulty, endurance, advanced version. Quit anytime by closing the tab.</p>
-            <p class="stablerelAV" style="font-size: 13px; margin:10px 0px 70px 0px">Before fastening your seatbelt, make sure you read all the information carefully!</p>
-            <h2><a id="bAV" class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play it : Package Delivery Sim 2D AV P5</a></h2><br>
+            <p class="stablerelAV" style="color: rgb(255, 163, 206);">Play Advanced : Lengthier, medium-difficulty, endurance, advanced version. Quit anytime by closing the tab. Just click & play!</p>
+            <h2><a id="bAV" class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play : Package Delivery Sim 2D AV P5</a></h2><br>
             <p class="stablerelAV">Stable Release AV V2.10.2</p>
         </div>
 
@@ -645,6 +640,8 @@
                 <li>- Traffic Limiter enabled.</li>
                 <li>- Lazy sprites removed.</li>
                 <li>Progressive 'Next House in' Representation. Colors change accordingly the more closer you are to a house.</li>
+                <br><br>
+                <li>An update will be rolled out soon.</li>
             </ul>
             <br><br>
             <p><cite class="av">AV V2.10.2 (21st Oct, 2021)</cite> contains :</p>
@@ -661,6 +658,8 @@
         </div>
         <hr>
         <div class="hints topper" id="tips">
+            <details>
+                <summary>Show : Tips & Tricks</summary>
             <h1 style="font-size: 21px;">Tips and Tricks</h1>
             <p>There are some tips that you can implement to win : </p>
             <ul>
@@ -670,6 +669,7 @@
                 <li>Press both <kbd>UP ARROW</kbd> keys and <kbd>DOWN ARROW</kbd> keys to drive even slower, in case if you have to tail-gate the vehicle infront of you.</li>
                 <li>Enable <strong>Browser Hardware Acceleration (If you have a GPU)</strong> to play the game in good frame rates.</li>
             </ul><br>
+        </details>
         </div>
         <hr>
         <div class="knownbugs topper">
@@ -684,9 +684,11 @@
             <li>Can't press 3 arrow-keys at once : This is all dependant on your Keypad / Keyboard. Lenovo and DELL laptops don't have these problems.</li>
             <li>Game Canvas too big : If you're using a Device that has lesser resolution <strong>(eg. lesser than 1300x600)</strong>, this is because the initial game-canvas has been set to this resolution, so kindly switch over to a higher resolution device to play or switch to full screen without being distracted by the scroll.</li>
         </ul></p>
+            <details>
+            <summary>Show Troubleshooting less resolution</summary>
             <h2 id="Troubleshooting">Troubleshooting : Less resolution</h2>
             <p>If you've not yet understood what I mean by resolution, let me put that simple : You need a device that has <cite>1300</cite> pixels width or higher.</p>
-            <p>If you have a device that has higher resolution, but if you still cannot play it, try changing the resolution of your laptop / desktop from your device settings.</p><br><br>
+            <p>If you have a device that has higher resolution, but if you still cannot play, try changing the resolution of your laptop / desktop from your device settings.</p><br><br>
             <p>It's needed so that the element positions do not flicker.</p>
             <br>
             <p>I have no idea what OS you're using. So, try fiddling through your display settings, change some stuff.</p>
@@ -704,6 +706,7 @@
                 <li>Fire up the developer console and <strong>Toggle the device toolbar.</strong> Choose <strong>Laptop - L 4k</strong>
                  option, which will zoom out the screen, enabling you to play the game without any fuss.</li>
             </ul>
+            </details>
         </div>
 
         <div class="cheating topper" id="cheats">
@@ -775,7 +778,9 @@
             </div>
 
             <div class="how">
-                <h2>How is this game made?</h2>
+                <details>
+                <summary>Show : Game's backstory :</summary>
+                    <h2>How is this game made?</h2>
                 <p>The procedure of the game-development process started in <strong>June, 2021.</strong> At the start,
                 the game was a complete plain desert. Twice-in-a-month updates have made this game better than it ever was.
                 This game is really simple to create, even a 7 year old can do this.</p>
@@ -789,6 +794,7 @@
                     <dd>Also, creating your own image assets has its own advantage. You don't want to wear sports shoes
                         in a wedding ceremony, so does the game's theme that keeps it that way. </dd>
                 </dl>
+                </details>
             </div>
 
             <hr>
@@ -866,7 +872,10 @@
         }, 700);
         setTimeout(function() {
             skrld.style.bottom = "50px";
-        }, 2000);
+        }, 1600);
+        setTimeout(function() {
+            nav.style.top = "0px";
+        }, 1200)
     </script>
     <script>
         window.addEventListener('scroll', revasd);
@@ -911,12 +920,39 @@
         }
     </script>
     <script>
-        bLT.onmouseover = () => { bLT.style.top = "20px"; }
-        bLT.onmouseleave = () => {  bLT.style.top = "0px"; }
-    </script>
-    <script>
-        bAV.onmouseover = () => { bAV.style.bottom = "20px"; }
-        bAV.onmouseleave = () => { bAV.style.bottom = "0px"; }
+        window.addEventListener('scroll', function() {
+            var position = bLT.getBoundingClientRect();
+            var pos = bAV.getBoundingClientRect();
+
+            if(position.top >= -800 && position.bottom <= window.innerHeight || position.top >= 550 && position.bottom <= window.innerHeight ) {
+                bLT.style.fontSize = "40px";
+            } else {
+                bLT.style.fontSize = "1px";
+            }
+
+            if(pos.top >= 150 && pos.bottom <= window.innerHeight) {
+                bAV.style.fontSize = "40px";
+                bAV.style.backgroundColor = "rgba(0, 0, 0, 0.1)"
+            } else {
+                bAV.style.fontSize = "1px";
+                bAV.style.backgroundColor = "#ff66ff";
+            }
+
+            bAV.onmouseover = () => { bAV.style.backgroundColor = "#ff66ff" }
+            bAV.onmouseleave = () => { bAV.style.backgroundColor = "rgba(0, 0, 0, 0.1)" }
+
+            if (bLT.getBoundingClientRect().top < 400) {
+                bLT.innerText = "Let's Play! Package Delivery Sim 2D LT P5";
+            } else {
+                bLT.innerText = "Play : Package Delivery Sim 2D LT P5";
+            }
+
+            if (bAV.getBoundingClientRect().top < 400) {
+                bAV.innerText = "Let's Play! Package Delivery Sim 2D P5 AV";
+            } else {
+                bAV.innerText = "Play : Package Delivery Sim 2D AV P5";
+            }
+        });
     </script>
 
     </body>

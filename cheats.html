@@ -88,14 +88,14 @@
             <div class="overlay-content" onclick="closeNav()">
                 <a href="#title" class="defnavbar-logo" style="color: rgb(115, 255, 0);">Package Delivery Sim 2D <cite>P5</cite></a>
                 <a href="#intro">Cheats - Intro</a>
-                <a href="index.html">Back to Index</a>
+                <a href="index.html" id="asd">Back to Index</a>
                 <a href="#req">Requirements</a>
                 <a href="#lyze">Analyze</a>
                 <a href="#list" >- Cheats List -</a>
                 <a href="#faq">FAQ</a>
                 <a href="#action" style="color: rgb(115, 255, 0);">In-action</a>
                 <a href="#more">More</a>
-                <a href="index.html">Back to Index</a>
+                <a href="index.html" id="asd">Back to Index</a>
             </div>
     </div>
 
@@ -160,7 +160,7 @@
         <div class="MOBILE">
             <h3>Note : <br>You will need a Laptop / Desktop to do that. You can't do it on your mobile / tab.</h3>
         </div>
-        <h3><a href="index.html">Follow this link to go back.</a></h3>
+        <h3><a href="index.html" id="asd">Follow this link to go back.</a></h3>
     </div>
 
     <section class="instruct" id="req">
@@ -198,7 +198,7 @@
                     <img src="gamev1/images/devconsole.png" title="Dev Tools / Console : Example" />
                 </picture>
                 <h2>Ready? Let's go!</h2>
-                <h3><a href="index.html">Follow this link to go back to index.</a></h3>
+                <h3><a href="index.html" id="asd">Follow this link to go back to index.</a></h3>
             </div>
 
             <div class="cheatsinfor" id="list">
@@ -215,6 +215,8 @@
                 </ul>
             </div>
             <div class="faq" id="faq">
+                <details>
+                    <summary>Show FAQ</summary>
                 <h3>Some frequently asked questions,</h3>
                 <dl>
                     <dt>Q. Are the cheats saved? How can I reset it?</dt>
@@ -248,6 +250,7 @@
                     <dd> - It's quite a tricky and a practical process - more like a research. With references from the below given examples, you may create your own to ease the game!
                         If you have any existing knowledge of JS and P5.PLAY.JS, it'll be a breeze for you.</dd>
                 </dl>
+            </details>
             </div>
             <div class="MOBILE">
                 <h3>Please, note that <br>you will need a Laptop / Desktop to do that. You can't do it on your mobile / tab.</h3>
@@ -460,7 +463,7 @@
                 </p>
             </dl>
         </div>
-        <h3><a href="index.html">Follow this link to go back to index.</a></h3>
+        <h3><a href="index.html" id="asd">Follow this link to go back to index.</a></h3>
     </section>
 
     <section>
@@ -506,7 +509,10 @@
            document.documentElement.scrollTop = 0;
         }
     </script>
-
+    <script>
+        var dsa = document.getElementById('asd');
+        dsa.onclick = () => { window.close(); }
+    </script>
     <script>
         var closebuto = document.getElementById("closebuto");
         function openNav() {

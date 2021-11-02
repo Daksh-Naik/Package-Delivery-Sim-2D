@@ -13,17 +13,20 @@
     <script src="p5.dom.min.js"></script>
     <script src="p5.play.js"></script>
 
+    <script src="sketch.js"></script>
+        <script src="html.js"></script>
+
     <style>
         *{ transition: all 0.4s; }
         body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
         canvas { display: block; }
-        .p5Canvas { -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
+        .p5Canvas { cursor:none; -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
         h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
         h6 {font-size: 20px; padding: 15px;}
         .LT cite { font-size: h6; color: rgb(128, 255, 128); font-weight: 900; text-align: right;}
         .LT h6 { font-size: 32px; color: white; font-weight: 900; text-align: right;}
         .loading { padding: 150px; display: grid; place-items:center;}
-        
+        h1, h2, h3, h4 { text-shadow: 1px 1px black; -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
         .fader-anim {        -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
             @keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
             @-moz-keyframes fadein { from { opacity: 0; } to   { opacity: 1; } }
@@ -49,7 +52,6 @@
     </style>
 </head>
 <body class="fader-anim">
-
         <div id="p5_loading" class="loading">
             <h6 class="LT">Package Delivery Sim 2D : <cite> LT </cite> P5</h6>
             <h6>Initializing the required resources for you... Just a moment... Please?</h6>
@@ -59,10 +61,5 @@
         Sorry, you have a too less pixel device. Switch to a higher one of atleast 1300x630 PX</h5>
         <h5>OR, <br>
         Press CTRL and - to zoom out the screen in order to play.</h5>
-
 </body>
-
-    <script src="sketch.js"></script>
-    <script src="html.js"></script>
-
 </html>

@@ -1,9 +1,9 @@
 //Package Delivery Sim 2D LT Made with P5.JS & P5.PLAY.JS
-//Stable Release V1.15.2
+//Stable Release V1.17.6
 
 p5.disableFriendlyErrors = true;
 
-var delvan, testimage, delvanbo;
+var delvan, testimage, delvanbo, delvanta;
 var backgroundHousesR1, backgroundHousesL1, backgroundHousesR2, backgroundHousesL2, backgroundHousesR4,
     backgroundHousesL3, backgroundHousesR3, backgroundHousesL4, backgroundHousesL5, backgroundHousesR5;
 var mHouse1, mHouse2, mHouse3, mHouse4, mHouse5;
@@ -50,7 +50,9 @@ var SS = 6;
 var gameState = Start;
 
 function preload() {
-    testimage = loadImage("images/delvan/delivvan-yellow.png");
+    testimage = loadImage("images/delvan/delivvan-yelloww.png");
+    turnru = loadImage("images/delvan/delivvan-R.png");
+    turnlu = loadImage("images/delvan/delivvan-L.png");
 
     backgroundHousesR1 = loadImage("images/houses/housesR.jpg");
     backgroundHousesR2 = loadImage("images/houses/housesR2.jpg")
@@ -269,10 +271,13 @@ function setup() {
 
     delvan = createSprite(80, 0, 25, 125);
     delvan.addImage(testimage);
-    delvan.scale = 0.8;
+    delvan.scale = 0.85;
+
+    delvanta = createSprite(80, 0, 40, 10);
+    delvanta.visible = false;
 
     dashboard = createSprite(1100, delvan.y - 165, 530, 700);
-    dashboard.shapeColor = rgb(30, 30, 30);
+    dashboard.shapeColor = rgb(20, 20, 20);
 
     TrafficGroup = new Group();
     OTrafficGroup = new Group();
@@ -288,6 +293,9 @@ function draw() {
     background(185, 122, 87);
 
     htmlps.showTitle();
+
+    delvanta.y = delvan.y+50;
+    delvanta.x = delvan.x;
 
     dashboard.y = delvan.y - 240;
 
@@ -324,7 +332,7 @@ function draw() {
         htmlps.startDisplay();
     }
 
-    if (keyDown("E")) {
+    if (keyDown("E") && gameState === Start || keyDown("E") && gameState === 6) {
         gameState = Play;
     }
 
@@ -344,6 +352,14 @@ function draw() {
 
         if (keyDown("DOWN_ARROW")) {
             delvan.y = delvan.y + 5;
+        } 
+
+        if (keyDown("RIGHT_ARROW")) {
+            delvan.addImage(turnru);
+        } else if (keyDown("LEFT_ARROW")) {
+            delvan.addImage(turnlu)
+        } else {
+            delvan.addImage(testimage)
         }
 
         if (keyDown("LEFT_ARROW") && keyDown("UP_ARROW")) {
@@ -352,7 +368,6 @@ function draw() {
 
         if (keyDown("RIGHT_ARROW") && keyDown("UP_ARROW")) {
             delvan.x = delvan.x + 5;
-            
         }
 
         if (keyDown("LEFT_ARROW") && keyDown("DOWN_ARROW")) {
@@ -363,11 +378,15 @@ function draw() {
             delvan.x = delvan.x + 5;
         }
 
+        htmlps.Status();
+        htmlps.status.html("Status : 🅿 Idle. Let's go!");
+
         if (delvan.y < -500 && gameState === Play) {
             htmlps.timeTakenShow();
             htmlps.startTutH();
             htmlps.startTutd();
             htmlps.mtimereas.position(10, 350);
+            htmlps.status.html("Status :"+ " ➤ Delivering" +" 📦 To :"+ " Ram");
         }
 
         htmlps.dashDisplay();
@@ -408,24 +427,29 @@ function draw() {
 
         if (packagedeli == 0) {
             nav = Math.round(HousePA[0].y - HousePA[0].y - HousePA[0].y + delvan.y); 
-            htmlps.nexthousen.html(" "+nav +" M")
+            htmlps.nexthousen.html(" "+nav +" M");
         }
 
         if(packagedeli == 1) {
             nav = Math.round(HousePA[1].y - HousePA[1].y - HousePA[1].y + delvan.y); 
-            htmlps.nexthousen.html(" "+nav +" M")
+            htmlps.nexthousen.html(" "+nav +" M");
+            htmlps.status.html("Status :"+ " ➤ Delivering" +" 📦 To :"+ " Chandan");
         }
         if(packagedeli == 2) {
             nav = Math.round(HousePA[3].y - HousePA[3].y - HousePA[3].y + delvan.y);
             htmlps.nexthousen.html(" "+nav + " M"); 
+            htmlps.status.html("Status :"+ " ➤ Delivering" +" 📦 To :"+ " Ratan");
         }
         if(packagedeli == 3) {
             nav = Math.round(HousePA[2].y - HousePA[2].y - HousePA[2].y + delvan.y);
             htmlps.nexthousen.html(" "+nav +" M"); 
+            htmlps.status.position(870, 75);
+            htmlps.status.html("Status :"+ " ➤ Delivering" +" 📦 To :"+ " Gurpreet");
         }
         if(packagedeli == 4) {
             nav = Math.round(HousePA[4].y - HousePA[4].y - HousePA[4].y + delvan.y);
             htmlps.nexthousen.html(" "+nav + " M"); 
+            htmlps.status.html("Status :"+ " ➤ Delivering" +" 📦 To :"+ " Darya");
         }
 
         if (nav < 1750) {
@@ -646,6 +670,8 @@ function draw() {
             OTrafficGroup.add(OTraffic)
         }
 
+        TrafficGroup.collide(delvanta);
+
         TrafficGroup.collide(TrafficAr);
         TrafficGroup.collide(RoadworkGroup);
 
@@ -658,6 +684,13 @@ function draw() {
         for(var i = 0; i < OTrafficGroup.length; i++) {
             if (OTrafficGroup.get(i).x < 420 ) {
                 OTrafficGroup.get(i).destroy();
+            }
+        }
+
+        for (var i = 0; i < OTrafficGroup.length; i++) {
+            var a = Math.round(random(450, 500))
+            if (delvan.x > 410 && delvan.x < 550 && OTrafficGroup.get(i).y > delvan.y-a) {
+                OTrafficGroup.get(i).velocityY = 1;
             }
         }
 
@@ -860,6 +893,7 @@ function alarm() {
 function autoEnd() {
     if (gameState === End || gameState === Due) {
         window.location.reload();
+        htmlps.restartinst.html("Restarting...")
     }
 }
 

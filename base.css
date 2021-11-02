@@ -57,7 +57,7 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
 .overlay a:hover { color: #f1f1f1; }
 .overlay .overlayclosebtn { display: none; position: fixed; top: 20px; right: 45px; font-size: 60px; cursor: pointer; z-index: 99; }
 details { padding: 20px 0px 20px 0px; border: 1px solid yellow;}
-summary { color: rgb(255, 255, 113); padding: 30px 10px 30px 10px; text-align: center; font-weight: bolder; }    
+summary { color: rgb(255, 255, 113); padding: 30px 10px 30px 10px; text-align: center; font-weight: bolder; cursor: pointer; }    
     @media only screen and (max-width: 1050px) {
         .defim { display: none; }
         .scrold { display: none; }

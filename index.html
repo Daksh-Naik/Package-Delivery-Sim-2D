@@ -266,7 +266,7 @@
             </section>
     </div>
 
-    <div class="sidenav" id="sidnav">
+    <div class="sidenav" id="sidnav" onclick="closeNav()">
             <a id="sidtitle" class="sidactive" href="#title"><span class="tooltiptext">Intro</span><ion-icon name="information-outline"></ion-icon></a>
             <a id="sidspecs" href="#Specs"><span class="tooltiptext">System Specs</span><ion-icon name="cog"></ion-icon></a>
             <a id="sidbrief" href="#briefoverview"><span class="tooltiptext">Brief info</span><ion-icon name="receipt"></ion-icon></a>
@@ -277,6 +277,28 @@
             <a id="sidbugs" href="#bugs"><span class="tooltiptext">Known bugs & TS</span><ion-icon name="bug"></ion-icon></a>
             <a id="sidstats" href="#stats"><span class="tooltiptext">Stats</span><ion-icon name="stats-chart-outline"></ion-icon></a>
             <a id="sidcredits" href="#credits"><span class="tooltiptext">Credits</span><ion-icon name="ribbon"></ion-icon></a>
+    </div>
+
+    <div class="disc" id="disclog"><ion-icon name="information-circle-outline"></ion-icon></div>
+    <div class="disclaimer" id="discinfo">
+        <h2>Disclaimer</h2>
+        <p><strong class="lt">Package Delivery Sim 2D P5</strong> is a simple web-browser game purely created from scratch only for the sole purpose
+        of entertainment. This game is intended to not gain credits from <strong class="note">WhiteHatJR</strong>, nor in any inspirational way.
+        </p>
+        <br>
+        <p>The webpages, <a href="index.html">INDEX.HTML</a> and <a href="cheats.html">CHEATS.HTML</a> are developed and designed without
+        any help from the above entity. Website designing and development is purely made from my own knowledge.</p>
+        <p>However, the <strong class="note">Core Game</strong> is developed with the knowledge gained from <strong class="note">WhiteHatJr Courses</strong>. In that
+        case the above entity is well-credited.</p>
+        <br>
+        <p>This web-page's sole purpose is, but limited to a <strong class="note">Landing Page</strong> to provide information in brief about
+        the game. But, this web-page MUST be shared / displayed first before the game. Not displaying this web-page and sharing the
+        core-game on any other plaform indirectly <strong class="note">will result in a complain and a blacklist.</strong></p>
+        <br>
+        <p>So in conclusion, <strong class="note">the core-game is developed in accordance to WhiteHatJR's curriculum,</strong>
+        but this <strong>web-page is designed and developed from my own knowledge.</strong></p>
+        <br><br>
+        <h3 class="disclaimerclos" id="disclose">I've acknowledged this.</h3>
     </div>
 
         <div>
@@ -879,6 +901,7 @@
         }, 1200)
         setTimeout(function() {
             sidnav.style.left = "0px";
+            disclog.style.right = "0px";
         }, 1700)
     </script>
     <script>
@@ -1021,6 +1044,17 @@
                 scAV.classList.remove('sidAVd');
             }
         })
+    </script>
+    <script>
+        var discsel = document.getElementById("disclog").onclick = () => {
+            discinfo.style.right = "0px";
+        }
+        var disclo = document.getElementById("disclose").onclick = () => {
+            discinfo.style.right = "-10000px"
+            discinfo.style.opacity = 0;
+            disclog.style.right = "-10000px"
+            disclog.style.opacity = 0;
+        }
     </script>
 
     </body>

@@ -244,7 +244,7 @@
                 <h1>About & Info</h1>
                 <a href="#Game-Story">Story</a>
                 <a href="#Specs">Specs & Req</a>
-                <a href="#brief-overview">Brief Info</a>
+                <a href="#briefoverview">Brief Info</a>
                 <a href="#compare">Compare AV & LT</a>
                 <a href="#updates">News & Updates</a>
                 <a href="#credits">Stats & Credits</a>
@@ -266,11 +266,24 @@
             </section>
     </div>
 
+    <div class="sidenav" id="sidnav">
+            <a id="sidtitle" class="sidactive" href="#title"><span class="tooltiptext">Intro</span><ion-icon name="information-outline"></ion-icon></a>
+            <a id="sidspecs" href="#Specs"><span class="tooltiptext">System Specs</span><ion-icon name="cog"></ion-icon></a>
+            <a id="sidbrief" href="#briefoverview"><span class="tooltiptext">Brief info</span><ion-icon name="receipt"></ion-icon></a>
+            <a id="sidscreen" href="#screenshots"><span class="tooltiptext">Screenshots</span><ion-icon name="images"></ion-icon></a>
+            <a href="#LT-game" id="scLT" style="color: rgb(128, 255, 128); text-shadow: 1px 1px 10px black; font-size: 25px;"><span class="tooltiptext">Play LT</span>LT</a>
+            <a href="#AV-game" id="scAV" style="color: rgb(255, 0, 102); text-shadow: 1px 1px 10px black; font-size: 25px;"><span class="tooltiptext">Play AV</span>AV</a>
+            <a id="sidtips" href="#tips"><span class="tooltiptext">Tips & Tricks</span><ion-icon name="bulb"></ion-icon></a>
+            <a id="sidbugs" href="#bugs"><span class="tooltiptext">Known bugs & TS</span><ion-icon name="bug"></ion-icon></a>
+            <a id="sidstats" href="#stats"><span class="tooltiptext">Stats</span><ion-icon name="stats-chart-outline"></ion-icon></a>
+            <a id="sidcredits" href="#credits"><span class="tooltiptext">Credits</span><ion-icon name="ribbon"></ion-icon></a>
+    </div>
+
         <div>
             <span class="scroller" id="skrol" onclick="GotoTopFunction()"></span>
         </div>
 
-        <div>
+        <div id="toppa">
             <picture class="fader-anim">
                 <source type="image/avif" srcset="thumbnailvv.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
                 <img id="ima" class="defim" src="thumbnailv.png" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D">
@@ -427,7 +440,7 @@
                 </div>
         </div>
         
-        <div class="brief topper" id="brief-overview">
+        <div class="brief topper" id="briefoverview">
             <h2>Game brief</h2>
             <div class="brief-simp topper">
                 <h3>Information</h3>
@@ -538,7 +551,7 @@
         </div>
 
         <div class="topper">
-            <details class="nos">
+            <details class="nos" id="screenshots">
             <summary>Show : Package Delivery Sim 2D P5 - Game Screenshot LT</summary>
             <picture>
                 <source  draggable="false" type="image/avif" srcset="gamev1/images/overscreenshot.avif" title="Overview and Legend : Package Delivery Sim 2D" alt="Overview and Legend : Package Delivery Sim 2D" />
@@ -586,7 +599,7 @@
             <br><br>
             <p class="stablerelLT" style="color: rgb(182, 255, 122);">Play Lite : Shorter, easier, lighter, basic version. Quit anytime by closing the tab.</p>
             <h2><a id = "bLT" class="buttonPLT" href="gamev1/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play : Package Delivery Sim 2D LT P5</a></h2><br>
-            <p class="stablerelLT">Stable Release LT V1.12.6</p>
+            <p class="stablerelLT">Stable Release LT V1.15.2</p>
         </div>
 
         <div class="controlsAV topper" id="AV-game" name="keys">
@@ -614,7 +627,7 @@
             <br><br>
             <p class="stablerelAV" style="color: rgb(255, 163, 206);">Play Advanced : Lengthier, medium-difficulty, endurance, advanced version. Quit anytime by closing the tab. Just click & play!</p>
             <h2><a id="bAV" class="buttonPAV" href="gamev2/index.html" title="Play the Game! Make sure you read the info above before playing it!" target="_blank">Play : Package Delivery Sim 2D AV P5</a></h2><br>
-            <p class="stablerelAV">Stable Release AV V2.17.6</p>
+            <p class="stablerelAV">Stable Release AV V2.10.2</p>
         </div>
 
         <div class="updates" id="updates">
@@ -653,7 +666,7 @@
         </details>
         </div>
         <hr>
-        <div class="knownbugs topper">
+        <div class="knownbugs topper" id="bugs">
             <h1 style="font-size: 25px;">Known Bugs and Problems</h1>
             <p style="font-size: 18px;">There are some bugs in the game which you may have noticed :
             <ul>
@@ -695,8 +708,8 @@
             <p>If it is hard, you can always alter it. <a href="cheats.html" target="_blank">You can hack / cheat it to ease the game play. Follow this link to read more!</a></p>
         </div>
 
-        <div class="game-credits topper" id="credits">
-            <h2 style="text-decoration: underline;">Stats</h2>
+        <div class="game-credits topper">
+            <h2 style="text-decoration: underline;" id="stats">Stats</h2>
             <div class="stats">
                 <p>It took about : <strong>75 Hours</strong> to develop the UI, Core Game and this Menu.</p>
                 <br>
@@ -710,7 +723,7 @@
             <br><br>
             </div>
             <hr>
-            <h2 style="text-decoration: underline;">Credits</h2>
+            <h2 style="text-decoration: underline;" id="credits">Credits</h2>
 
             <div style="padding: 0px 30px;">
             <p style="text-align: center;">Javascript Libraries used : <br>
@@ -747,7 +760,11 @@
                 <div class="externals-cred-links">
                     <a class="webdev" href="https://web.dev" target="_blank" rel="noreferrer">web.dev</a>
                 </div>
-                    
+                <p>Image Sprites & Symbols by ;</p>
+                <div class="externals-cred-links">
+                    <a href="https://ionic.io/ionicons" target="_blank" rel="norefferer"><ion-icon name="logo-ionic"></ion-icon> Ionicon</a>
+                    <a href="https://fsymbols.com/" target="_blank" rel="norefferer">FSymbols.com</a>
+                </div>
             </div>
 
             <div class="host">
@@ -814,6 +831,9 @@
         
             <br><br><br><br>
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>        
+
     <script>
         var selec = document.getElementById('skrol');
         window.onscroll = function() {
@@ -853,10 +873,13 @@
         }, 700);
         setTimeout(function() {
             skrld.style.bottom = "50px";
-        }, 1600);
+        }, 2000);
         setTimeout(function() {
             nav.style.top = "0px";
         }, 1200)
+        setTimeout(function() {
+            sidnav.style.left = "0px";
+        }, 1700)
     </script>
     <script>
         window.addEventListener('scroll', revasd);
@@ -934,6 +957,70 @@
                 bAV.innerText = "Play : Package Delivery Sim 2D AV P5";
             }
         });
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+
+            if (toppa.getBoundingClientRect().top > -3270) {
+                sidtitle.classList.add('sidactive');
+            } else {
+                sidtitle.classList.remove('sidactive');
+            }
+
+            if (Specs.getBoundingClientRect().top < 210 && Specs.getBoundingClientRect().top > -885) {
+                sidspecs.classList.add('sidactive');
+            } else {
+                sidspecs.classList.remove('sidactive');
+            }
+
+            if (briefoverview.getBoundingClientRect().top < 132 && briefoverview.getBoundingClientRect().top > -1190) {
+                sidbrief.classList.add('sidactive');
+            } else {
+                sidbrief.classList.remove('sidactive');
+            }
+
+            if (screenshots.getBoundingClientRect().top < 449 && screenshots.getBoundingClientRect().top > -130) {
+                sidscreen.classList.add('sidactive');
+            } else {
+                sidscreen.classList.remove('sidactive');
+            }
+
+            if (tips.getBoundingClientRect().top < 535 && tips.getBoundingClientRect().top > 299) {
+                sidtips.classList.add('sidactive');
+            } else {
+                sidtips.classList.remove('sidactive');
+            }
+
+            if (bugs.getBoundingClientRect().top < 390 && bugs.getBoundingClientRect().top > -160) {
+                sidbugs.classList.add('sidactive');
+            } else {
+                sidbugs.classList.remove('sidactive');
+            }
+            
+            if (stats.getBoundingClientRect().top < 474 && stats.getBoundingClientRect().top > 15) {
+                sidstats.classList.add('sidactive');
+            } else {
+                sidstats.classList.remove('sidactive');
+            }
+
+            if (credits.getBoundingClientRect().top < 335) {
+                sidcredits.classList.add('sidactive');
+            } else {
+                sidcredits.classList.remove('sidactive');
+            }
+
+            if (bLT.getBoundingClientRect().top < 1114 && bLT.getBoundingClientRect().top > 319) {
+                scLT.classList.add('sidLTd');
+            } else {
+                scLT.classList.remove('sidLTd');
+            }
+
+            if (bAV.getBoundingClientRect().top < 1150 && bAV.getBoundingClientRect().top > 140) {
+                scAV.classList.add('sidAVd');
+            } else {
+                scAV.classList.remove('sidAVd');
+            }
+        })
     </script>
 
     </body>

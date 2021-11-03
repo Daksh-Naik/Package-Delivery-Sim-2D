@@ -1,4 +1,4 @@
-*{ margin: 0px; box-sizing: border-box; }
+*{ margin: 0px; box-sizing: border-box; transition: 0.3s; }
 html{ scroll-behavior: smooth; }
 body {  overflow-x: hidden; user-select: none; -moz-user-select: none; -webkit-user-select: none;
     background-color: rgb(0, 0, 0); text-align: center; color: rgb(255, 255, 255); transition: all 0.3s; font-family: 'Trebuchet MS'; }
@@ -8,6 +8,7 @@ a:hover{ text-decoration: underline; color: rgb(245, 245, 107);}
 h2{ margin: 30px; padding: 10px; }
 h3{ margin: 10px; padding: 10px; }
 h4{ margin: 10px; }
+.note { color: rgb(255, 207, 118); }
 kbd { padding: 0px 5px 0px 5px; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); font-family: 'Segoe UI'; font-weight: 700; 
     margin: 0px 5px 0px 5px; transition: 0.3s; text-transform: uppercase; box-shadow: 3px 3px 5px rgba(173, 173, 173, 0.3);}
 kbd:hover { background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.9);  }
@@ -64,16 +65,24 @@ dl { padding: 20px 0px 20px 0px; } dt { padding: 10px 0px 10px 0px; } dd { paddi
 .sidenav a { text-decoration: none; color: white; background-color: rgba(170, 170, 170, 0.3); border-radius: 0px 5px 5px 0px; padding: 5px 5px 5px 5px;  }
 .sidenav a .tooltiptext { visibility: hidden; font-size: 0px; text-shadow: 1px 1px 15px black; color: #fff; border-radius: 6px;
     position: relative; z-index: 1; top: -5px; left: 120%; transition: 0.3s; }
-.sidenav .sidactive { color: rgb(255, 255, 0); background-color: rgba(0, 255, 0, 0.3); text-shadow: 1px 1px 15px yellow; }
+.sidenav .sidactive { color:rgb(114, 255, 114); background-color: rgba(0, 0, 0, 0.800); text-shadow: 1px 1px 15px yellow; }
 .sidenav .sidLTd { color: rgb(128, 255, 128); background-color: black; text-shadow: 1px 1px 5px black; box-shadow: 8px -1px 20px 2px rgb(114 255 114); }
 .sidenav .sidAVd { color: rgb(255, 0, 102); background-color: black; text-shadow: 1px 1px 5px black; box-shadow: 8px -1px 20px 2px rgb(255, 0, 102); }
 .sidenav span { color: rgb(135, 206, 250); padding: 0px; margin: 0px; background-color: rgba(0, 0, 0, 0.500); }
 .sidenav a:hover { color: rgb(135, 206, 250); background-color: rgba(29, 29, 29, 0.8); }
 .sidenav a:hover .tooltiptext { visibility: visible; font-size: 19px; padding: 10px; }
+.disc { position: fixed; z-index: 100; top: 120px; right: -10000px; }
+.disc ion-icon { cursor: pointer; color: rgb(255, 207, 118); font-size: 40px; }
+.disc ion-icon:hover { background-color: rgb(255, 207, 118); color: black; font-size: 48px; }
+.disclaimer { transition: 0.3s; position: fixed; z-index: 100; top: 0px; right: -10000px; bottom: 0px; left: 0px; overflow-x: hidden; width: 80%; height: max-content; padding: 40px;
+    background-color: rgba(0, 0, 0, 0.950); margin: auto; box-shadow: inset 0px 0px 20px 4px rgb(255 0 102); }
+.disclaimerclos {  cursor: pointer; width: fit-content; background-color: rgb(255, 207, 118); color: black; padding: 10px 20px 10px 20px; }
+.disclaimerclos:hover { background-color: black; color: rgb(255, 207, 118); }
 ion-icon { font-size: 30px; --ionicon-stroke-width: 16px; transition: 0.3s; text-shadow: 1px 1px 15px black; }
 details { padding: 20px 0px 20px 0px; border: 1px solid yellow;}
 summary { color: rgb(255, 255, 113); padding: 30px 10px 30px 10px; text-align: center; font-weight: bolder; cursor: pointer; }    
-@media only screen and (max-width: 1050px) { .defim { display: none; } .scrold { display: none; } .overlay-base { flex-direction: column; } }    
+@media only screen and (max-width: 1050px) { .disclaimer { display: none; } .disc { display: none; } .defim { display: none; } .scrold { display: none; } .overlay-base { flex-direction: column; } }    
 @media only screen and (max-width: 500px) { .defnavbar-overlay-menubut { display: none; } .overlay-menubut { display: block; } 
 .overlay a { font-size: 20px; } .overlayclosebtn { right: 10px; } .sidenav { display: none; } }
 @media only screen and (max-height: 520px) { .sidenav { display: none; } }
+@media only screen and (max-height: 600px) { .disclaimer { display: none; } .disc { display: none; } }

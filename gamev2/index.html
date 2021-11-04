@@ -18,7 +18,7 @@
         body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
         canvas { display: block; }
         h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
-        h6 {font-size: 20px; padding: 15px;}
+        h6 {font-size: 20px; text-align: center; padding: 15px; transition: 0.3s; }
         h1, h2, h3, h4 { text-shadow: 1px 1px black; }
         .p5Canvas { -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
         #sett {display: none;}
@@ -56,7 +56,8 @@
         <div id="p5_loading" class="loading">
             <h6 class="AV">Package Delivery Sim 2D : <cite> AV </cite> P5 </h6>
             <h6 id="auth" class="authent">Fetching files...</h6>
-            <h6>Initializing the required resources for you... Just a moment... Please?</h6>
+            <h6>Initializing the required resources for you... Just a moment... Please? <br><br>
+            This usually lasts for about 30 seconds...</h6>
             <h6 class="doesnt" id="does">If it takes more than a minute, refresh the page.</h6>
             <h6 id="sett">Setting up...</h6>
         </div>
@@ -77,6 +78,6 @@
             }, 2000);
             setTimeout(function(){
                     document.getElementById('does').style.display = "block";
-            }, 7000);
+            }, 10000);
         </script>
 </html>

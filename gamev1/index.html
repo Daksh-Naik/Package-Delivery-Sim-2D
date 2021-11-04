@@ -21,8 +21,8 @@
         body {background-color: black; font-family: 'Trebuchet MS'; color: white; margin: 0px; padding: 0px;}
         canvas { display: block; }
         .p5Canvas { cursor:none; -webkit-animation: fadein 3s; -moz-animation: fadein 3s;  -ms-animation: fadein 3s;  -o-animation: fadein 3s;  animation: fadein 3s; }
-        h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin-top: 350px;}
-        h6 {font-size: 20px; padding: 15px;}
+        h5 {font-size: 30px; text-align: center; color: rgb(255, 118, 118); letter-spacing: 2px; display: none; margin: 20px 10px 50px 10px;}
+        h6 { text-align: center; font-size: 20px; padding: 15px;}
         .LT cite { font-size: h6; color: rgb(128, 255, 128); font-weight: 900; text-align: right;}
         .LT h6 { font-size: 32px; color: white; font-weight: 900; text-align: right;}
         .loading { padding: 150px; display: grid; place-items:center;}
@@ -53,13 +53,19 @@
 </head>
 <body class="fader-anim">
         <div id="p5_loading" class="loading">
-            <h6 class="LT">Package Delivery Sim 2D : <cite> LT </cite> P5</h6>
-            <h6>Initializing the required resources for you... Just a moment... Please?</h6>
+            <h6 class="LT">
+                You're about to play : <br>
+                <br> Package Delivery Sim 2D : <cite> LT (Lite) </cite> P5</h6>
+
+
+            <h6>Initializing the required resources for you... Just a moment... Please? <br><br>
+            This usually takes about 12 seconds...</h6>
+            <h6>If it takes more than a minute, refresh the page.</h6>
         </div>
 
         <h5>Error : Too less resolution!<br><br>
         Sorry, you have a too less pixel device. Switch to a higher one of atleast 1300x630 PX</h5>
         <h5>OR, <br>
-        Press CTRL and - to zoom out the screen in order to play.</h5>
+        Press CTRL and - to zoom out the screen until you see the canvas in order to play.</h5>
 </body>
 </html>
